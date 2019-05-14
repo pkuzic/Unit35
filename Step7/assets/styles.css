@@ -1,0 +1,71 @@
+/* Standard CSS components */
+
+body
+{
+	padding-top: 			120px;
+	font-family:			Arial;
+}
+
+p
+{
+	line-height: 			30px
+}
+
+a:link, a:visited
+{
+	color:					slateGray;
+	text-decoration:		none;
+	border-bottom: 			1px	dotted slateGray;
+}
+
+a:hover
+{
+	color: 					#444;
+	border-bottom-color: 	#444
+}
+
+small
+{
+	color: 					#666;
+	font-style: 			italic;
+}
+
+ol, li
+{
+	line-height: 35px;
+}
+
+input[type=text], input[type=password], textarea
+{
+	-webkit-appearance: none;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus
+{
+	outline: none;
+}
+
+/* Custom CSS components */
+
+.container
+{
+	width:					500px;
+	margin: 				0 auto;
+}
+
+small2
+{
+	color: 					#666;
+	font-size: 				9pt;
+	text-decoration:		none;
+}
+
+small2:hover
+{
+	color: 					#999;
+	font-size: 				9pt;
+	font-style:				bold;
+}
+
