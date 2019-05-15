@@ -1,0 +1,262 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 14, 2019 at 05:30 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 5.6.36
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `cdk`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `journaltable`
+--
+
+CREATE TABLE `journaltable` (
+  `article_id` int(11) NOT NULL,
+  `journal_reference` int(11) NOT NULL,
+  `article_title` text NOT NULL,
+  `article_abstract` text NOT NULL,
+  `article_reference` text NOT NULL,
+  `article_author` int(11) NOT NULL,
+  `article_published_date` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `journaltable`
+--
+
+INSERT INTO `journaltable` (`article_id`, `journal_reference`, `article_title`, `article_abstract`, `article_reference`, `article_author`, `article_published_date`) VALUES
+(1, 1, 'ON A DISTINCTION BETWEEN HYPOTHETICAL \r\nCONSTRUCTS AND INTERVENING VARIABLES', 'To use the phrases \"intervening variable\" and \"hypothetical construct\" interchangeably leads to fundamental confusions in theoretical discussions. The distinction is between constructs which merely abstract the empirical relationships and those contructs which are hypothetical. Concepts of the first sort are identifiable by: the statement of the concept contains only words reducible to empirical laws; validity of the empirical law is both \"necessary and sufficient for the \'correctness\' of the statements about the concept\"; and the \"quantitative expression of the concept can be obtained without mediate inference by suitable groupings of terms in the quantitative empirical laws.\" But concepts of the second sort do not fulfill these 3 conditions. In the interest of clarity it is proposed that the phrase \"intervening variable\" be restricted to concepts of the first kind, and that the phrase \"hypothetical construct\" be used for those of the second kind. The only rule for proper intervening variables is that of convenience. But hypothetical constructs have a cognitive, factual reference in addition to the empirical data which constitute their support. (PsycINFO Database Record (c) 2012 APA, all rights reserved)', './articles/Hypothetical_Constructs.pdf', 1, 1425942000),
+(2, 1, 'Near Death Experiences and the Evidence - A Review Essay', 'It is probably an understatement to say that the phenomena of near-death experiences (NDEs) is riding a massive wave of popularity and has been for much of the last twenty years. Best-selling books, firsthand articles, television documentaries and movies regularly describe the fascination we have with stories \"from the other side.\"The typically-reported sensations are now common parlance: floating above \r\none\'s dying body, travelling down a dark tunnel, sensing the presence of departed loved ones or spiritual beings, and experiencing a Being of light.', './articles/NDEEssay.pdf', 2, 1426028400),
+(3, 2, 'Maria\'s Near Death Experience: Waiting for the Other Shoe to Drop.', 'Reprinted from:\r\nI\'m not afraid to die; I just don\'t\r\nwant to be there when it happens.\r\nWoody Allen.\r\n\r\nSkeptics enter most debates at a disadvantage because they are usually forced to cast doubt upon comforting beliefs. The idea that so-called \"near-death experiences,\" \r\n\r\nNDEs for short, could count as evidence for survival of the soul is perhaps the most comforting belief of all. Since Raymond Moody (1975) coined the term \"near-death experience\" to describe a reasonably consistent set of experiences recalled by about a third\r\nof those who are resuscitated after near-fatal incidents, such descriptions have been welcomed with enthusiasm by a large segment of the public. The NDE typically begins with a sense of serenity and relief, followed by a feeling that the self is leaving the body (the \"out-of-body experience,\" or OBE). From this vantage point, the disembodied self sometimes feels that it is observing attempts to revive its lifeless body. A subset of those who reach the OBE stage further reports being propelled through a spiral tunnel toward a bright light. For some, the light eventually resolves into a significant religious figure, deceased relative or friend, vista of paradise, etc. As rescue procedures begin to take\r\neffect, these patients often report feeling great reluctance at being pulled back into the painful, uncertain everyday world', './articles/skeptical-inquirer-marias-nde-Marias_Tennis_Shoe_Ebbern_Mulligan_Beyerstein.pdf', 3, 1426114800),
+(4, 3, '“Does It Work?” - Holistic Healers and Assessing Breast Cancer Treatment', 'Complementary and alternative medicine\r\n(CAM), and religious healing, both services and the products, are increasingly used in the contemporary United States. Researchers consistently find that the percentage of people who use CAM is on the rise. \r\n\r\nFor example, Americans spent 10 billion dollars for complementary and alternative health care, most of which\r\ncame out of their own pockets.\r\n\r\nDespite the increasing popularity of CAM and religious healing, however, what exactly constitutes a “successful treatment outcome,” and the criteria\r\naccording to which success of the therapy is measured, remains unclear and ambiguous.', './articles/Does_it_work.pdf', 4, 1426201200),
+(5, 1, 'Tropical Gothic Versus Joaquinesquerie:\r\nQuantifying Their Qualitative Differences', 'In a previous  article published in  this journal,  \"Incongruity, Mathematics, and  Humor  in loaquinesquerie,\"  Binongo (1993a) illustrates bringing in mathematics to help understand literary humor. As subject, Nick Joaquin\'s latest compilation of  stories, loaquinesquerie: \r\n\r\nMyth a la Mod is wed. Far from admitting to be a necessary tool  in  . \r\nliterary analysis, the use of a  mathematical perspective is however \r\nonly a supplementary aid, as a magnifying lens is to a person. With \r\nthe lens, a critic is able to see a  particular aspect of  a work  more \r\nquickly; without the lens,.a person\'s  vision  is in  no way impaired. \r\nThe question,  thus, becomes:  Can mathematics be of  better service \r\nto literary analysis?', './articles/Weight_of_the_soul.pdf', 5, 1426287600),
+(6, 1, 'Prospect Theory: Analysis of Decisions Under Risk', 'The economic theory of the consumer is a combination of positive and normative theories. Since it is based on a rational maximizing model it describes how consumers should choose, but it is alleged to also describe how they do choose. This paper argues that in certain well-defined situations many consumers act in a manner that is inconsistent with economic theory. In these situations economic theory will make systematic errors in predicting behavior. Kanneman and Tversey\'s prospect theory is proposed as the basis for an alternative descriptive theory. Topics discussed are: undeweighting of opportunity costs, failure to ignore sunk costs, scarch behavior choosing not to choose and regret, and precommitment and self-control.\r\n\r\nThe author wishes to acknowledge the many people who have made this paper possible Colleagues, too numerous to name individually, at the Center for Naval University, The National Bureau of Economic Research West University of Rochester have contributed importantly Dael Kahneman, Amos Tversky, H.M. Shefrin. Thomas Russell, and particularly wi.) has supported the research in every possible way.', './articles/Prospect_Theory.pdf', 6, 1426374000),
+(7, 2, 'The Shifting Perspectives Model of Chronic Illness', 'Purpose:\r\nTo present the Shifting Perspectives Model of Chronic Illness, which was derived\r\nfrom a metasynthesis of 292 qualitative research studies.\r\n\r\nDesign:\r\nThe model was derived from a metasynthesis of qualitative research about the reported experiences of adults with a chronic illness. The 292 primary research studies included a\r\nvariety of interpretive research methods and were conducted by researchers from numerous countries and disciplines.\r\n\r\nMethods:\r\nMetastudy, a metasynthesis method developed by the author in collaboration with six other researchers consisted of three analytic components (meta-data-analysis, metamethod, and metatheory), followed by a synthesis component in which new knowledge about the phenomenon was generated from the findings.\r\n\r\nFindings:\r\nMany of the assumptions that underlie previous models, such as a single, linear trajectory of living with a chronic disease, were challenged. The Shifting Perspectives Model indicated that living with chronic illness was an ongoing and continually shifting process in which an illness-in-the-foreground or wellness-in-the-foreground perspective has specific\r\nfunctions in the person’s world.\r\n\r\nConclusions:\r\nThe Shifting Perspectives Model helps users provide an explanation of chronically ill persons’ variations in their attention to symptoms over time, sometimes in ways that seem ill-advised or even harmful to their health. The model also indicates direction to health\r\nprofessionals about supporting people with chronic illness.', './articles/The_Shifting_Perspectives_Model_of_Chronic_Illness.pdf', 7, 1426460400),
+(8, 3, 'Psychological Resilience, Positive Emotions, and Successful Adaptation to\r\nStress in Later Life', 'In 3 studies, the authors investigated the functional role of psychological resilience and positive emotions in the stress process. Studies 1a and 1b explored naturally occurring daily stressors. Study 2 examined data from a sample of recently bereaved widows. Across studies, multilevel random coefficient modeling analyses revealed that the occurrence of daily positive emotions serves to moderate stress reactivity and mediate stress recovery. Findings also indicated that differences in psychological resilience accounted for meaningful variation in daily emotional responses to stress. Higher levels of trait resilience predicted a weaker association between positive and negative emotions, particularly on days characterized by\r\nheightened stress. Finally, findings indicated that over time, the experience of positive emotions functions to assist high-resilient individuals in their ability to recover effectively from daily stress. Implications for research into protective factors that serve to inhibit the scope, severity, and diffusion of daily stressors in later adulthood are discussed.', './articles/Psychological_resilience.pdf', 8, 1426546800),
+(9, 2, 'Reproduction concepts and practices in ancient Egypt mirrored by modern medicine', 'The treasured ancient papyri provide a glimpse into understanding of common concepts and practices in ancient Egypt. The Kahun gynecological papyrus and other texts unveil the traditions of reproduction, conception and delivery. This article addresses the rationale of beliefs and practices of that era. Frequently, the reason for common traditions exercised at the time is based on medical knowledge of female anatomy and physiology during pregnancy.\r\n\r\nSurprisingly some of the remedies commonly used in ancient Egypt were recently explored and found intriguing. This paper was aimed to look at the reflection of archaic practices and concepts of ancient Egypt by the modern mirror of evidence-based medicine.', './articles/Ancient_egypt_medicine.pdf', 9, 1426633200),
+(10, 1, 'Geophagia is not associated with Trichurisor hookworm transmission in Zanzibar, Tanzania', 'Geophagia may be harmful as a method for the transmission of geohelminths. In this study, we pose two questions in a representative sample of 970 pregnant women from Pemba Island, Zanzibar, Tanzania. Can consumed earth be a vector for geohelminth infection? And do\r\ngeophagists have differential parasitic infection? The parasitological content of 59 non-food substance samples was analysed. Cross-sectional data regarding pica behaviour were collected\r\nthrough interviews conducted by local researchers. Ascaris, Trichuris and hookworm status was ascertained through Kato—Katz smears. The prevalence of geophagia at baseline was 5.6% and the overall prevalence of Ascaris, Trichurisand hookworm infection was 5.6%, 33.2% and 32.9%, respectively. \r\n\r\nNo consumed soil samples contained infectious parasitic stages, and only\r\none of the consumed pica substances (charcoal) contained parasites of potential risk to human health. In bivariate analyses, neither the prevalence nor the intensity of infection withAscaris, Trichurisor hookworm differed significantly by geophagia status. Furthermore, in multivariate models, geophagia was not a significant predictor of helminth infection status. We conclude that geophagia is not a source ofTrichurisor hookworm infection among pregnant women in Pemba (insufficient power to evaluate the effect ofAscaris), which is in contrast to existing findings of helminth infection and geophagia.', './articles/Geophangy.pdf', 10, 1426719600),
+(11, 2, 'Plants, medicines and man', 'Plants have long been a source of therapeuticagents used by man. Some 80% of the world’s population still rely upon plants for primary health care; even today in Western medicine, and despite progress in synthetic chemistry, some 25% of prescription medicines are still derived either directly or indirectly from plants. The use of plants in medicines ranges from crude preparations or extracts, to refined extracts and single molecular species. \r\n\r\nIn terms of categories of use this encompasses food supplements, herbal medicines, botanical drugs and prescription medicines. Increased interest in plants as a source of novel pharmacophores recognizes their chemical diversity and versatility, not matched by synthetic chemistry libraries. In spite of the surge of activity in synthetic chemistry over the last 20 years or so, almost half the some 850 small molecules introduced as drugs were derived from plant sources. Over 100 small molecules derived either directlyor indirectly from plants are currently at some point in the clinical trials process. It is argued that the present use of plant-derived drugs and remedies only scratches the surface of what is a major reservoir of untapped potential, the level of biological and chemical diversity possessed by plants having much to offer in the drive for novel therapeutic agents in the fight against disease. \r\n\r\nAdditionally novel developments in plant biotechnology and molecular biology add further dimensions to the use of plants in\r\nthe production of therapeutic agents.', './articles/Plants_medicines_and_man.pdf', 11, 1426806000),
+(12, 2, 'A questionnaire survey about doctor – patient communication, compliance and locus of control among South Indian people with epilepsy.', 'To date, very few studies have investigated patients’ views on the information they receive from the doctor\r\nconcerning epilepsy and its management. Little information is available about the influence of doctor – patient communication and locus of control on the compliance of persons with epilepsy. We investigated, through a\r\nquestionnaire– interview design, among patients attending the epilepsy clinic of a tertiary referral center in South\r\nIndia, their views about the provision of information by the doctor, and their compliance and locus of control. We\r\nalso determined the interrelation between doctor – patient communication, compliance and locus of control. Our subjects comprised 200 adult persons with epilepsy, 113 males and 87 females, mean age 30.5 (range 18 – 67) years.\r\n\r\nOver one-third of the subjects received from the doctor insufficient information about epilepsy and its treatment. There was a significant positive correlation between effective doctor – patient communication and compliance. A majority of our patients had an external locus of control, which negatively influenced the compliance. Even in a comprehensive epilepsy clinic of a model tertiary referral center in a developing country, a significant proportion of patients do not receive optimal information about epilepsy from the doctor. Knowledge about their disease will encourage people with epilepsy to make informed choices, and achieve better compliance and personal control of their problems. Educating primary and secondary care physicians about the importance of doctor – patient communication in the management of epilepsy and educating the public about the positive aspects of life in epilepsy cannot be', './articles/Doctors_using_compliance.pdf', 12, 1426892400);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `journal_details`
+--
+
+CREATE TABLE `journal_details` (
+  `journal_id` int(11) NOT NULL,
+  `journal_image` text NOT NULL,
+  `journal_name` text NOT NULL,
+  `journal_volume` int(11) NOT NULL,
+  `journal_issue` int(11) NOT NULL,
+  `journal_abstract` text NOT NULL,
+  `journal_editorial_title` text NOT NULL,
+  `journal_editorial_content` text NOT NULL,
+  `journal_editorial_author` int(11) NOT NULL,
+  `journal_published_date` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `journal_details`
+--
+
+INSERT INTO `journal_details` (`journal_id`, `journal_image`, `journal_name`, `journal_volume`, `journal_issue`, `journal_abstract`, `journal_editorial_title`, `journal_editorial_content`, `journal_editorial_author`, `journal_published_date`) VALUES
+(1, './images/JOHS/vol1-1big204x280.jpg', 'First Light', 1, 1, 'When writing to Henri Bortoft about coming to a workshop we were doing on Paradox, \r\nhe replied with an article \'The Transformative Potential of Paradox\'. Together with Chris \r\nClarke article \'Is the Universe in a State of Pilgrimage \' from a previous seminar at Birkbeck, \r\nwe had the making of a journal! The issue asks \'What is Holistic Science?\' Some excellent student \r\nessays, a thesis description by Adam Croft, an article by Stephan Harding added to the rich content. \r\nThe issue is dedicated to Brian Goodwin and reprints his article on Darwin . Philip Franses\' editorial \r\nis named as Ariadne\'s Thread, the title Brian was keen on for the Holistic Science Journal, he imagined. \r\nSatish Kumar wrote on \'Knowledge and Wisdom\'. So First Light was born.', 'Ariadne\'s Thread', 'this is vol1:1 - ariadne\'s thread', 1, 1555111111),
+(2, './images/JOHS/vol1-2big204x280.jpg', 'Turning Leaves', 1, 2, 'Turning Leaves is an autumn issue at the turning point of the year, \r\nlooking underneath the current paradigm at new shoots that are coming up. \r\nThe articles reveal underneath the old dying leaves, something novel that is arising. \r\nGoethean science, Inclusionality, Complexity, Leonardo\'s science, Quantum Theory, Process \r\nare all to be found in the pages, in between the tale of the Ox herder seeking \r\nwholeness in the analogy of the lost Ox that disappears and reappears. A stepping stone \r\nleads into the adult wisdom of the journal.', 'Ariadne\'s Thread', '222222222222222222222222222222222222222222', 1, 1111122222),
+(3, './images/JOHS/vol1-3big204x280.jpg', 'Knowing', 1, 3, 'The issue KNOWING brings together for the first time Henri Bortoft, \r\nEmilios Bouratinos and Iain McGilchrist. Each has explored wholeness \r\nfrom their own unique perspective: Henri Bortoft through Goethe and 20th \r\ncentury philosophy; Emilios Bouratios through ancient Greek culture and \r\nmodern science; Iain McGilchrsit through English literature and pyschology; \r\neach have understood wholeness along different paths, \r\nthat are now in this issue brought together. So a process of Knowing \r\nis contrasted with certain objective knowledge. This is also investigated \r\nin fields of biosemiotics, hermeneutics and physics, as well as reports from \r\nthe field. ', 'Ariadne\'s Thread', '333333333333333333333333333333333333333333', 1, 1111133333),
+(4, './images/JOHS/vol1-4big204x280.jpg', 'Signatures of Health', 1, 4, 'This issue explore the\'sign\' \'nature\' by which \r\nhealthy beings leave mark of their identity. \r\nThe issue focuses particularly on the immune system, and the \r\nimmunological homunculus, as presented in two major papers of \r\nIrun Cohen and Graham Jones. Herbal studies provide further \r\nevidence of relevant signatures of plants in their composition \r\nand their healing aptitude.', 'Ariadne\'s Thread', '444444444444444444444444444444444444444444', 1, 1111144444),
+(5, './images/JOHS/vol2-1big204x280.jpg', 'Gate of Wonders', 2, 1, 'When writing to Henri Bortoft about coming to a workshop we were doing on Paradox, \r\nhe replied with an article \'The Transformative Potential of Paradox\'. Together with Chris \r\nClarke article \'Is the Universe in a State of Pilgrimage \' from a previous seminar at Birkbeck, \r\nwe had the making of a journal! The issue asks \'What is Holistic Science?\' Some excellent student \r\nessays, a thesis description by Adam Croft, an article by Stephan Harding added to the rich content. \r\nThe issue is dedicated to Brian Goodwin and reprints his article on Darwin . Philip Franses\' editorial \r\nis named as Ariadne\'s Thread, the title Brian was keen on for the Holistic Science Journal, he imagined. \r\nSatish Kumar wrote on \'Knowledge and Wisdom\'. So First Light was born.', 'Ariadne\'s Thread', '555555555555555555555555555555555555555555', 1, 1111155555),
+(6, './images/JOHS/vol2-2big204x280.jpg', 'Dynamic Wholenss', 2, 2, '<i>Dynamic Wholeness</i> is a tribute to philosopher Henri Bortoft and his extraordinary work \r\ninto a participatory way of seeing. In Basil Hiley\'s article \'The Arithmetic of Wholeness\', \r\nthe different type of logic promoted by Henri Bortoft in his philosophy is followed for its \r\nimplications in modern physics. The approach provides a bridge from our experience of being in \r\nthe world to how we interpret the foundations of physics.\r\n\r\nMathematically we can take non-numerical formative logic as the basis of physics. \r\nPhilosophically we can interpret this logical approach as an engagement with meaning. Taken \r\ntogether, the mathematics and the philosophy imply that in the suspension of logical analysis, \r\na dimension of practical engagement arises that carries its own dynamic of meaning.\r\n\r\nThe issue also brings together many people who knew, worked with or applied Henri\'s ideas \r\nover various periods of his life.  Articles and papers are drawn from all periods of Henri Bortoft\'s \r\nlife, working with David Bohm and Basil Hiley at Birkbeck College , then with JG Bennett, starting his \r\nwork on Goethean Science, coming to Schumacher College where he taught for fourteen years laying the \r\nfoundation of the Holistic Science course.', 'Ariadne\'s Thread', '666666666666666666666666666666666666666666', 1, 1111166666),
+(7, './images/JOHS/vol2-3big204x280.jpg', 'Parallel Time', 2, 3, 'Time is most fundamental to physics and yet its greatest anomaly. \r\nEverything we know, all the concepts and the description of their interrelatedness, \r\nhappen because first there is something called time. Time is the medium of change. \r\nBut how do we then define time if we need time to be the medium of how things change \r\nto know themselves?', 'Ariadne\'s Thread, A Question of Time', '777777777777777777777777777777777777777777', 1, 1221177777),
+(8, './images/JOHS/vol2-4big204x280.jpg', 'Pathways', 2, 4, 'When writing to Henri Bortoft about coming to a workshop we were doing on Paradox, \r\nhe replied with an article \'The Transformative Potential of Paradox\'. Together with Chris \r\nClarke article \'Is the Universe in a State of Pilgrimage \' from a previous seminar at Birkbeck, \r\nwe had the making of a journal! The issue asks \'What is Holistic Science?\' Some excellent student \r\nessays, a thesis description by Adam Croft, an article by Stephan Harding added to the rich content. \r\nThe issue is dedicated to Brian Goodwin and reprints his article on Darwin . Philip Franses\' editorial \r\nis named as Ariadne\'s Thread, the title Brian was keen on for the Holistic Science Journal, he imagined. \r\nSatish Kumar wrote on \'Knowledge and Wisdom\'. So First Light was born.', 'Ariadne\'s Thread', '888888888888888888888888888888888888888888', 1, 1111188888);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `members`
+--
+
+CREATE TABLE `members` (
+  `member_id` int(11) NOT NULL,
+  `member_name_title` text NOT NULL,
+  `member_name_first` text NOT NULL,
+  `member_name_last` text NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `date_joined` int(11) NOT NULL,
+  `date_end` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `newsletterYN` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `members`
+--
+
+INSERT INTO `members` (`member_id`, `member_name_title`, `member_name_first`, `member_name_last`, `username`, `password`, `date_joined`, `date_end`, `email`, `newsletterYN`) VALUES
+(1, 'ms', 'aaaaaaaa', 'bbbb', 'jason', 'aaa', 1234567654, 2147483647, 'qazxsw@plmnko', 'NO'),
+(2, 'mr', 'qwertyuiop', 'qwertyuiop', 'qwertyuiop', 'qwertyuiop', 1426424250, 1457873850, 'qwertyuiop@pp', 'YES'),
+(3, 'mr', 'qwert', 'qwert', 'poiuytrewq', 'poiuytrewq', 1426425795, 1457875395, 'qqq@qqq', 'YES'),
+(4, 'aaa', 'bbb', 'ccc', 'ddd', 'eee', 1111111111, 2147483647, 'qqq@hhh', ''),
+(5, 'Mr', 'Jason Paul', 'Stansbie', 'qqqqqqqqqqqqqqqqqqqqqqqqqq', '1234567890987654321', 1427199110, 1458648710, 'jason@jason.com', 'NO'),
+(6, 'Mr', 'Jason', 'Stansbie', 'asdfghjkl', 'asdfghjkl', 1427208028, 1458657628, 'jason@jason.com', 'YES');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `news_id` int(11) NOT NULL,
+  `news_title` text NOT NULL,
+  `news_posted_by` int(11) NOT NULL,
+  `news_body` text NOT NULL,
+  `news_posted_date` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`news_id`, `news_title`, `news_posted_by`, `news_body`, `news_posted_date`) VALUES
+(1, 'Centre update 1', 2, 'This is news update 1', 1111111111),
+(2, 'Centre update 2', 3, 'This is centre update 2', 1111122222),
+(3, 'Centre update 3', 3, 'This is ctenre update 3', 1111133333),
+(4, 'Centre update 4', 4, 'This is centre update 4', 1111144444);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
+  `user_name_title` text NOT NULL,
+  `user_name_first` text NOT NULL,
+  `user_name_last` text NOT NULL,
+  `user_image` text NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `user_research_area` text NOT NULL,
+  `security_level` int(11) NOT NULL,
+  `user_email` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `user_name_title`, `user_name_first`, `user_name_last`, `user_image`, `username`, `password`, `user_research_area`, `security_level`, `user_email`) VALUES
+(1, 'Professor', 'Michael', 'Green', './images/researchers/michaelgreen.png', 'ProfessorGreen', 'ProfessorGreen', 'Peace studies of the middle east', 4, 'professormichaelgreen@localhost'),
+(2, 'Professor', 'Sally', 'Smith', './images/researchers/sallysmith.png', 'ProfessorSmith', 'ProfessorSmith', 'Political studies, concentrating on Ireland in the 18th, 19th, 20th and 21st centuries', 4, 'professorsallysmith@localhost'),
+(3, 'Professor', 'Solaman', 'Ankerman', './images/researchers/solamanankerman.png', 'ProfessorAnkerman', 'ProfessorAnkerman', 'Health and society', 4, 'professorsolemanankeman@localhost'),
+(4, 'Doctor', 'Rajesh', 'Singh', './images/researchers/rajeshsingh.png', 'DoctorSingh', 'DoctorSingh', 'Religious politics and it’s effect upon health', 3, 'doctorrajeshsingh@localhost'),
+(5, 'Doctor', 'Steven', 'Brown', './images/researchers/stevenbrown.png', 'DoctorBrown', 'DoctorBrown', 'sustainability in local and global communities', 3, 'doctorstevenbrown@localhost'),
+(6, 'Doctor', 'Wilma', 'Green', './images/researchers/wilmagreen.png', 'DoctorGreen', 'DoctorGreen', 'Spirituality, esotericism and the occult', 3, 'doctorwilmagreen@localhost'),
+(7, 'Mr', 'Gary', 'Newman', './images/researchers/garynewman.png', 'MrNewman', 'MrNewman', 'Goethian science applied to the biological sciences', 2, 'mrgarynewman@localhost'),
+(8, 'Ms', 'Lora', 'Felpps', './images/researchers/lorafelpps.png', 'MsFelpps', 'MsFelpps', 'Quantum theory and health', 2, 'mslorafelpps@localhost'),
+(9, 'Ms', 'Tara', 'Drewman', './images/researchers/taradrewman.png', 'MsDrewman', 'MsDrewman', 'Social quantum theory, political process and world economies', 2, 'mstaradrewman@localhost'),
+(10, 'Mr', 'Carl', 'Archer', './images/researchers/carlarcher.png', 'MrArcher', 'MrArcher', 'Comparitive religious studies, deep time and deep ecology', 2, 'mrcarlarcher@localhost'),
+(11, 'Mr', 'William', 'Orgon', 'NA', 'MrOrgon', 'MrOrgon', 'NA', 0, 'mrwilliamorgon@localhost'),
+(12, 'Ms', 'Stephanie', 'Pete', 'NA', 'MsPete', 'MsPete', 'NA', 0, 'msstephaniepete@localhost'),
+(13, 'Ms', 'Carla', 'Kayline', 'NA', 'MsKayline', 'MsKayline', 'NA', 0, 'mscarlakayline@localhost'),
+(14, 'Mr', 'Rajesh', 'Saddu', 'NA', 'MrSaddu', 'MrSaddu', 'NA', 0, 'mrrajeshsaddu@localhost'),
+(15, 'Mr', 'James', 'Spader', 'NA', 'MrSpader', 'MrSpader', 'NA', 0, 'mrjamesspader@localhost'),
+(16, 'Ms', 'Pearl', 'Perrot', 'NA', 'MsPerrot', 'MsPerrot', 'NA', 0, 'mspearlperrot@localhost'),
+(17, 'Mr', 'Gerry', 'McDonald', 'NA', 'MrMcDonald', 'MrMcDonald', 'NA', 1, 'mrgerrymcdonald@localhost'),
+(18, 'Ms', 'Beatrice', 'Beeman', 'NA', 'MsBeeman', 'MsBeeman', 'NA', 1, 'msbeatricebeeman@localhost'),
+(19, 'mr', 'qwerty', 'qwerty', '', 'zxcvb', 'zxcvb', 'NA', 0, '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `journaltable`
+--
+ALTER TABLE `journaltable`
+  ADD PRIMARY KEY (`article_id`);
+
+--
+-- Indexes for table `journal_details`
+--
+ALTER TABLE `journal_details`
+  ADD PRIMARY KEY (`journal_id`);
+
+--
+-- Indexes for table `members`
+--
+ALTER TABLE `members`
+  ADD PRIMARY KEY (`member_id`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`news_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `journaltable`
+--
+ALTER TABLE `journaltable`
+  MODIFY `article_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `journal_details`
+--
+ALTER TABLE `journal_details`
+  MODIFY `journal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `members`
+--
+ALTER TABLE `members`
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,138 @@
+	/* The following styles are just to make the page look nice. */
+
+		/* Workaround to show Arial Black in Firefox. */
+		@font-face
+		{
+			font-family: 'arial-black';
+			src: local('Arial Black');
+		}
+
+		*[contenteditable="true"]
+		{
+			padding: 10px;
+		}
+
+		#DAcontainer
+		{
+			width: 800px;
+			margin: 30px auto 0;
+		}
+
+		#DAheader
+		{
+			overflow: hidden;
+			padding: 0 0 30px;
+			border-bottom: 5px solid #05B2D2;
+			position: relative;
+		}
+
+		#DAheaderLeft,
+		#DAheaderRight
+		{
+			width: 49%;
+			overflow: hidden;
+		}
+
+		#DAheaderLeft
+		{
+			float: left;
+			padding: 10px 1px 1px;
+		}
+
+		#DAheaderLeft h2,
+		#DAheaderLeft h3
+		{
+			text-align: right;
+			margin: 0;
+			overflow: hidden;
+			font-weight: normal;
+		}
+
+		#DAheaderLeft h2
+		{
+			font-family: "Arial Black",arial-black;
+			font-size: 4.6em;
+			line-height: 1.1;
+			text-transform: uppercase;
+		}
+
+		#DAheaderLeft h3
+		{
+			font-size: 2.3em;
+			line-height: 1.1;
+			margin: .2em 0 0;
+			color: #666;
+		}
+
+		#DAheaderRight
+		{
+			float: right;
+			padding: 1px;
+		}
+
+		#DAheaderRight p
+		{
+			line-height: 1.8;
+			text-align: justify;
+			margin: 0;
+		}
+
+		#DAheaderRight p + p
+		{
+			margin-top: 20px;
+		}
+
+		#DAheaderRight > div
+		{
+			padding: 20px;
+			margin: 0 0 0 30px;
+			font-size: 1.4em;
+			color: #666;
+		}
+
+		#DAcolumns
+		{
+			color: #333;
+			overflow: hidden;
+			padding: 20px 0;
+		}
+
+		#DAcolumns > div
+		{
+			float: left;
+			width: 33.3%;
+		}
+
+		#DAcolumns #column1 > div
+		{
+			margin-left: 1px;
+		}
+
+		#DAcolumns #column3 > div
+		{
+			margin-right: 1px;
+		}
+
+		#DAcolumns > div > div
+		{
+			margin: 0px 10px;
+			padding: 10px 20px;
+		}
+
+		#DAcolumns blockquote
+		{
+			margin-left: 15px;
+		}
+
+		#DAtagLine
+		{
+			border-top: 5px solid #05B2D2;
+			padding-top: 20px;
+		}
+
+		#DAtaglist {
+			display: inline-block;
+			margin-left: 20px;
+			font-weight: bold;
+			margin: 0 0 0 20px;
+		}

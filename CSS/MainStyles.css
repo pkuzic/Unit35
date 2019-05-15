@@ -1,0 +1,467 @@
+/* 140 different color pseudonymes (color chart) - http://www.html-color-names.com/color-chart.php */
+
+.Container, .Header, .NavBar, .Body, .Footer, #IFHSMenuBarAndShareITSection  
+{	width:	800px;	
+	border:	0px	dotted slateGray;
+	margin: 0px auto;
+}
+
+.VerySmallClass
+{
+	width: 250px;
+	font-size: 0px;	
+	padding-left: 35pt;
+	padding-bottom: 10pt;
+	
+}
+
+#body
+{	
+	clear: both;
+}
+
+.Header							{	height: 200px;	background-image: url('../images/WebLogo.png');							}
+.Menu							{	height: 70px;	background-image: url('../images/menu.png');							}
+.NavBar							{	height: 70px;																			}
+.PagePurpose					{	height: 50px;																			}
+.Footer							{	height: 200px;	background-image: url('../images/WebLogoFooter.png');					}
+.CenterContent					{	text-align: center;																		}
+																		
+/* 	======================================================================================
+	Custom headings
+	=================================================================================	*/
+
+H7, H8, H9, H10, H11, H12, H13, H15	
+{	color: 			slateGray; 
+	font-family: 	"Arial"; 
+	font-weight:	normal;
+	font-style: 	normal;	
+	
+}
+
+/* Defined headings for normal page text */
+H7		{	font-size: 		14pt;											}	/* used for headings - on the Page Purpose etc.  - Welcome to ... */
+H8		{	font-size: 		12pt;	font-style: italic;						}	/* used for question - e.g. on the home page */
+H9		{	font-size: 		11pt;											}	/* used for normal text on a page - e.g on the home page */
+
+/* Defined headings for normal table text */
+H10		{	font-size: 		12pt;	font-style: italic;						}	/* used for headings in tables - e.g. the news table */
+H11		{	font-size: 		11pt;											}	/* used for normal text in a table - e.g on the News page & Contact us page */
+H12		{	font-size: 		10pt;											}	/* used for table titles - e.g. the top/bottom of the trending table  */
+
+H13		{	font-size: 		9pt;																	}
+
+
+H14		{	font-size: 		10pt;																	}
+H15		{	font-size: 		14pt;																	}
+
+/* http://www.w3schools.com/tags/ref_colorpicker.asp?colorhex=32CD32 */
+small							{	color: DarkSlateGray; font-size: 8pt;															}
+small2							{	color: LightSlateGray; font-size: 8pt;															}
+
+									
+/* 	======================================================================================
+	allows 3 divs sidebyside
+	=================================================================================	*/									
+
+.left-section-box 
+{
+    float: left; width: 450px;
+	
+}
+
+.middle-section-box 
+{
+    float: left; width: 10px;
+	text-align: justified;
+}
+
+.right-section-box 
+{
+    float: left; width: 340px;
+}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+.section-boxNavLeft
+{
+    float: left; width: 20px;
+	
+}
+
+.section-boxNavRight
+{
+    float: left; width: 360px;
+	
+}
+	
+	
+.section-box 
+{
+    float: left; width: 450px;
+	
+}
+
+.section-box2 
+{
+    float: left; width: 10px;
+	text-align: justified;
+}
+
+.section-box3 
+{
+    float: left; width: 340px;
+}
+
+.section-box4
+{
+    float: left; width: 600px;
+	
+}
+
+.section-box5 
+{
+    float: left; width: 199px;
+	text-align: justified;
+}
+									
+/* 	======================================================================================
+	Standard CSS Components
+	=================================================================================	*/
+
+#page							{}
+	
+#page.a:link, #page.a:visited	{	color: slateGray;	text-decoration: none; border-bottom: 1px	dotted slateGray;		}
+#page.a:hover					{	color: #444;		border-bottom-color: #444;											}									
+ol, li							{	line-height: 35px;																		}
+HR								{   border: 1px dotted lightGray;		border-style: none none dotted; 
+								    color: #fff; 					    background-color: #fff;								}
+
+a.trendinglink					
+{	
+	font-family: 		"Arial";	
+	font-size: 			10pt;		
+	font-weight:		normal;	
+	color: 				DarkBlue;
+	text-decoration: 	none; 		
+	border-bottom: 		0px	dotted slateGray;		
+}
+
+a.trendinglink:hover			
+{	
+	color: 				Blue;		
+	text-decoration: 	underline;
+	font-style: 		italic;
+	
+} 
+
+a.trendinglink:visited			
+{	
+	color: 				CornFlowerBlue;							/* http://www.w3schools.com/tags/ref_colorpicker.asp?colorhex=D3D3D3 */
+	font-style: 		italic;
+	text-decoration: 	none; 		
+	border-bottom: 		1px	dotted slateGray;		
+	
+}									
+									
+
+a.memberlink					{	font-family: 	"Arial";	font-size: 		10pt;		font-weight:	normal;				}
+									
+a.memberlink:link, a.memberlink:visited	{	color: slateGray;	text-decoration: none; border-bottom: 1px	dotted slateGray;		}
+a.memberlink:hover					{	color: #444;		border-bottom-color: #444;											}									
+ol, li							{	line-height: 35px;																		}
+HR								{   border: 1px dotted lightGray;		border-style: none none dotted; 
+								    color: #fff; 					    background-color: #fff;								}									
+a.loginlink:link, a.loginlink:visited	{	color: slateGray;	text-decoration: none; border-bottom: 1px	dotted slateGray;		}
+a.loginlink:hover					{	color: #444;		border-bottom-color: #444;											}									
+									
+
+a.foundarticles					{	font-family: 	"Arial";	font-size: 		10pt;		font-weight:	BOLD;	
+									color: slateGray;				text-decoration: none; 		border-bottom: 1px	dotted slateGray;		}
+a.foundarticles:hover			{	color: Blue;		text-decoration: underline											} 
+a.foundarticles:visited			{	color: slateGray;				text-decoration: none; 		border-bottom: 1px	dotted slateGray;		}									
+
+a.choosecalendardate					{	font-family: 	"Arial";	font-size: 		9pt;		font-weight:	BOLD;	
+									color: slateGray;				text-decoration: none; 		border-bottom: 1px	dotted slateGray;		}
+a.choosecalendardate:hover			{	color: Blue;		text-decoration: underline											} 
+a.choosecalendardate:visited			{	color: slateGray;				text-decoration: none; 		border-bottom: 1px	dotted slateGray;		}									
+									
+/*	======================================================================================
+	Styles for the calendar (FULLCALENDAR)
+	==================================================================================	*/	
+	
+#calendar 						{		max-width: 800px;	
+										margin: 0 auto;	
+										font-family: 	"Arial";
+										font-size: 		10pt;
+										font-weight:	normal;
+										color: slateGray;										
+								}	
+
+a.calendar:link, a.calendar:visited				{	color: White;	text-decoration: none; border-bottom: 1px	dotted slateGray;		}
+a.calendar:hover							{	color: #444;		border-bottom-color: #444;											}								
+
+#PDFDisplaybox 
+{	width:	800px;	
+	border:	1px	dotted slateGray;
+	margin: 0px auto;
+	
+}
+
+
+/* This table is used on the INDEX.php page */
+.TrendingTable 													{	width:360px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.TrendingTable th 												{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.0em dotted slateGray; 		}
+.TrendingTable td 												{  	color:#000099;  vertical-align:middle; 	text-align:left;    	border:0.0px dotted slateGray; 		}
+.TrendingTable thead tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
+.TrendingTable thead tr:first-child th:last-child 					{   border-radius: 0.6em 0.6em 0 0;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.TrendingTable tbody tr:last-child td:first-child 					{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.TrendingTable tbody tr:last-child td:last-child 					{	border-radius: 0 0 0 0;																	}
+.TrendingTable tfoot tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																		}
+.TrendingTable tfoot tr:first-child th:last-child 					{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+/* This table is used on the NEWS.php & RESEARCH.php page */
+.tablewithroundedtopandbottom 									{	width:700px; 	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.tablewithroundedtopandbottom th 									{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.0em dotted slateGray; 		}
+.tablewithroundedtopandbottom td 									{  	color:#000099;  vertical-align:middle; 	text-align:left;    	border:0.0px dotted slateGray; 		}
+.tablewithroundedtopandbottom thead tr:first-child th:first-child 	{	border-radius: 0 0 0 0;																	}
+.tablewithroundedtopandbottom thead tr:first-child th:last-child 	{   border-radius: 0.6em 0.6em 0.6em 0.6em;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.tablewithroundedtopandbottom tbody tr:last-child td:first-child 	{   border-radius: 0 0 0 0;						/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.tablewithroundedtopandbottom tbody tr:last-child td:last-child 	{	border-radius: 0 0 0 0;																	}
+.tablewithroundedtopandbottom tfoot tr:first-child th:first-child 	{	border-radius: 0 0 0 0;																	}
+.tablewithroundedtopandbottom tfoot tr:first-child th:last-child 	{   border-radius: 0.6em 0.6em 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+/* This table is used on the NEWS.php & RESEARCH.php page */
+.StyledTable1 													{	border-collapse: collapse; width:700px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.StyledTable1 th 													{   color:#000;   	vertical-align:middle; 	text-align:right;    	border:0.0em dotted slateGray; 		}
+.StyledTable1 td 													{  	color:#000099;  vertical-align:middle; 	text-align:left;    	border:0.0px dotted slateGray; 		}
+.StyledTable1 thead tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
+.StyledTable1 thead tr:first-child th:last-child 					{   border-radius: 0.6em 0.6em 0 0;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.StyledTable1 tbody tr:last-child td:first-child 					{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.StyledTable1 tbody tr:last-child td:last-child 					{	border-radius: 0 0 0 0;																	}
+.StyledTable1 tfoot tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																		}
+.StyledTable1 tfoot tr:first-child th:last-child 					{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+/* This table is used on the PAGEPURPOSE.php page - for the main menu */
+.InvisibleTableBorders 											{	width:800px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.InvisibleTableBorders th 										{   color:#000;   	vertical-align:middle; 	text-align:middle;    	border:0.0em dotted slateGray; 		}
+.InvisibleTableBorders td 										{  	color:#000099;  vertical-align:middle; 	text-align:right;    	border:0.0px dotted slateGray; 		}
+.InvisibleTableBorders thead tr:first-child th:first-child 			{	border-radius: 0 0 0 0;																	}
+.InvisibleTableBorders thead tr:first-child th:last-child 			{   border-radius: 0.6em 0.6em 0 0;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.InvisibleTableBorders tbody tr:last-child td:first-child 			{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.InvisibleTableBorders tbody tr:last-child td:last-child 			{	border-radius: 0 0 0 0;																	}
+.InvisibleTableBorders tfoot tr:first-child th:first-child 			{	border-radius: 0 0 0 0;																		}
+.InvisibleTableBorders tfoot tr:first-child th:last-child 			{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+/* This table is used on the JOURNAL.php page */
+.JournalsTable 													{	border-collapse: collapse; width:360px; 	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.JournalsTable  th 												{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.0em dotted slateGray; 		}
+.JournalsTable  td 												{  	color:#000099;  vertical-align:middle; 	text-align:center;     	border:0.0px dotted slateGray; 		}
+.JournalsTable  thead tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
+.JournalsTable  thead tr:first-child th:last-child 					{   border-radius: 0.6em 0.6em 0.6em 0.6em;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.JournalsTable  tbody tr:last-child td:first-child 					{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.JournalsTable  tbody tr:last-child td:last-child 					{	border-radius: 0 0 0 0;																	}
+.JournalsTable  tfoot tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
+.JournalsTable  tfoot tr:first-child th:last-child 					{   border-radius: 0.6em 0.6em 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+/* This table is used on the JOURNAL.php page */
+.ArticlesTable 													{	border-collapse: collapse; width:360px; 	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.ArticlesTable  th 												{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.0em dotted slateGray; 		}
+.ArticlesTable  td 												{  	color:#000099;  vertical-align:middle; 	text-align:center;     	border:0.0px dotted slateGray; 		}
+.ArticlesTable thead tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
+.ArticlesTable  thead tr:first-child th:last-child 					{   border-radius: 0.6em 0.6em 0em 0em;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.ArticlesTable  tbody tr:last-child td:first-child 					{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.ArticlesTable  tbody tr:last-child td:last-child 					{	border-radius: 0 0 0 0;																	}
+.ArticlesTable  tfoot tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
+.ArticlesTable  tfoot tr:first-child th:last-child 					{   border-radius: 0em 0em 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+/* This table is used on the JOURNAL.php page */
+.JournalInvisibleTableBorders 											{	width:305px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.JournalInvisibleTableBorders th 											{   color:#000;   	vertical-align:middle; 	text-align:middle;    	border:0.0em dotted slateGray; 		}
+.JournalInvisibleTableBorders td 											{  	color:#000099;  vertical-align:middle; 	text-align:left;    	border:0.0px dotted slateGray; 		}
+.JournalInvisibleTableBorders thead tr:first-child th:first-child 			{	border-radius: 0 0 0 0;																	}
+.JournalInvisibleTableBorders thead tr:first-child th:last-child 			{   border-radius: 0.6em 0.6em 0 0;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.JournalInvisibleTableBorders tbody tr:last-child td:first-child 			{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.JournalInvisibleTableBorders tbody tr:last-child td:last-child 			{	border-radius: 0 0 0 0;																	}
+.JournalInvisibleTableBorders tfoot tr:first-child th:first-child 			{	border-radius: 0 0 0 0;																		}
+.JournalInvisibleTableBorders tfoot tr:first-child th:last-child 			{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+/* This table is used on the CONTACTUS.php page */
+.ContactUsTable 													{	border-collapse: collapse; width:360px; 	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.ContactUsTable  th 												{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.0em dotted slateGray; 		}
+.ContactUsTable  td 												{  	color:#000099;  vertical-align:middle; 	text-align:center;     	border:0.0px dotted slateGray; 		}
+.ContactUsTable thead tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
+.ContactUsTable  thead tr:first-child th:last-child 					{   border-radius: 0.6em 0.6em 0em 0em;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.ContactUsTable  tbody tr:last-child td:first-child 					{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.ContactUsTable  tbody tr:last-child td:last-child 					{	border-radius: 0 0 0 0;																	}
+.ContactUsTable  tfoot tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
+.ContactUsTable  tfoot tr:first-child th:last-child 					{   border-radius: 0em 0em 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+/* This table is used on the ADMIN - UPDATEARTICLESONDB.php page */
+.SmallTableWithRoundedTopCorner 											{	width:305px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.SmallTableWithRoundedTopCorner th 										{   color:#000;   	vertical-align:middle; 	text-align:middle;    	border:0.0em dotted slateGray; 		}
+.SmallTableWithRoundedTopCorner td 										{  	color:#000099;  vertical-align:middle; 	text-align:left;    	border:0.0px dotted slateGray; 		}
+.SmallTableWithRoundedTopCorner thead tr:first-child th:first-child 		{	border-radius: 0 0 0 0;																	}
+.SmallTableWithRoundedTopCorner thead tr:first-child th:last-child 			{   border-radius: 0.6em 0.6em 0 0;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.SmallTableWithRoundedTopCorner tbody tr:last-child td:first-child 			{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.SmallTableWithRoundedTopCorner tbody tr:last-child td:last-child 			{	border-radius: 0 0 0 0;																	}
+.SmallTableWithRoundedTopCorner tfoot tr:first-child th:first-child 			{	border-radius: 0 0 0 0;																		}
+.SmallTableWithRoundedTopCorner tfoot tr:first-child th:last-child 			{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+/* This table is used on the ADMIN - UPDATEARTICLESONDB.php page */
+.SmallTableWithRoundedTopCornerandRoundedBottom 											{	width:305px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.SmallTableWithRoundedTopCornerandRoundedBottom th 										{   color:#000;   	vertical-align:middle; 	text-align:middle;    	border:0.0em dotted slateGray; 		}
+.SmallTableWithRoundedTopCornerandRoundedBottom td 										{  	color:#000099;  vertical-align:middle; 	text-align:left;    	border:0.0px dotted slateGray; 		}
+.SmallTableWithRoundedTopCornerandRoundedBottom thead tr:first-child th:first-child 							{	border-radius: 0 0 0 0;																	}
+.SmallTableWithRoundedTopCornerandRoundedBottom thead tr:first-child th:last-child 							{   border-radius: 0.6em 0.6em 0.6em 0.6em;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.SmallTableWithRoundedTopCornerandRoundedBottom tbody tr:last-child td:first-child 							{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.SmallTableWithRoundedTopCornerandRoundedBottom tbody tr:last-child td:last-child 							{	border-radius: 0 0 0 0;																	}
+.SmallTableWithRoundedTopCornerandRoundedBottom tfoot tr:first-child th:first-child 							{	border-radius: 0 0 0 0;																	}
+.SmallTableWithRoundedTopCornerandRoundedBottom tfoot tr:first-child th:last-child 							{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+
+
+/* This table is used on the ADMIN - UPDATEARTICLESONDB.php page */
+.ArticleTable 															{	border-collapse: collapse; width:703px; margin:auto;		font-size:12px;			border:0.0em solid slateGray; 				}
+.ArticleTable th 															{   color:#000;   		vertical-align:middle; 	text-align:center;    	border:0.0em dotted slateGray; 		}
+.ArticleTable td 															{  	color:#000099;  	vertical-align:middle; 	text-align:left;    	border:0.0em dotted slateGray; 		}
+.ArticleTable thead tr:first-child th:first-child 							{	border-radius: 0 0 0 0;																	}
+.ArticleTable thead tr:first-child th:last-child 							{   border-radius: 0.6em 0.6em 0 0;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.ArticleTable tbody tr:last-child td:first-child 							{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.ArticleTable tbody tr:last-child td:last-child 							{	border-radius: 0 0 0 0;																	}
+.ArticleTable tfoot tr:first-child th:first-child 							{	border-radius: 0 0 0 0;																	}
+.ArticleTable tfoot tr:first-child th:last-child 							{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+
+
+
+
+.table11 											{	width:360px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.table11 th 											{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.1em dotted slateGray; 		}
+.table11 td 											{  	color:#000099;  vertical-align:middle; 	text-align:left;    	border:0.1px dotted slateGray; 		}
+
+.table11 thead tr:first-child th:first-child 			{	border-radius: 0 0 0 0;																	}
+.table11 thead tr:first-child th:last-child 			{   border-radius: 0.6em 0.6em 0 0;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+.table11 tbody tr:last-child td:first-child 			{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.table11 tbody tr:last-child td:last-child 				{	border-radius: 0 0 0 0;																	}
+
+.table11 tfoot tr:first-child th:first-child 			{	border-radius: 0 0 0 0;																	}
+.table11 tfoot tr:first-child th:last-child 				{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+
+
+
+
+
+
+
+
+.tableadminaddarticle 									{	width:700px; 	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.tableadminaddarticle  th 								{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.1em dotted slateGray; 		}
+.tableadminaddarticle  td 								{  	color:#000099;  vertical-align:middle; 	text-align:left;    	border:0.1px dotted slateGray; 		}
+
+.tableadminaddarticle  thead tr:first-child th:first-child {	border-radius: 0 0 0 0;																	}
+.tableadminaddarticle  thead tr:first-child th:last-child 	{   border-radius: 0.6em 0.6em 0.6em 0.6em;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+.tableadminaddarticle  tbody tr:last-child td:first-child 	{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
+.tableadminaddarticle  tbody tr:last-child td:last-child 			{	border-radius: 0 0 0 0;																	}
+
+.tableadminaddarticle  tfoot tr:first-child th:first-child 	{	border-radius: 0 0 0 0;																	}
+.tableadminaddarticle  tfoot tr:first-child th:last-child 	{   border-radius: 0em 0em 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+
+
+
+
+
+
+
+
+
+
+
+
+.hide_me { display: none; }
+
+
+
+
+
+.textareastyles
+{
+	/*border: 3px solid #cccccc;*/
+	border: 1px dotted lightGray;		border-style: none none dotted;
+	padding: 5px;
+	font-family: 	"Arial";	font-size: 		9pt;
+}
+
+
+textarea {
+width: 360px;  
+height: 200px;
+border: 0px;
+resize: none; }
+
+
+textarea#styled {
+	width: 340px;
+	height: 120px;
+	border: 0.1em dotted slateGray;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+
+
+
+.styled-select {
+
+   height: 24px;
+   overflow: hidden;
+   background: url(../images/new_drop_arrow.jpg) no-repeat right SeaShell; 
+   border: 1px solid #ccc; 
+   /*width: 610px; */
+   width: 70%;
+   margin: 0 auto;
+
+
+   }
+
+
+
+.styled-select select {
+
+   background: transparent;
+   /* width: 630px; */
+   width: 110%;
+   padding: 1px;
+   font-family: 	"Arial";	font-size: 		9pt;	color: 	slateGray;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 24px;
+   -webkit-appearance: none; 
+   }
+
+
+

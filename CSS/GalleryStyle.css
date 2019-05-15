@@ -1,0 +1,14 @@
+/* 	======================================================================================
+	This stylesheet holds the definition for tables on the gallery page
+	it sets the div <-- FrontEndTableBody --> that will hold the table
+	and defines characteristics for the table, th, td and tr
+	
+	It also defines heading styles for the text
+
+	=================================================================================	*/
+
+.FrontEndTableBody		{	width: 800px;				border: 0px	dotted slateGray;	margin: 0px auto;			}
+.table					{	width: 100%;				color:	orange;												}
+.table, th, td			{	border: 0px solid black;	color:	slateGray;				font-family: "Arial";		}
+.th						{	background-color: Blue;																	}
+.PaddedDescription		{	padding-right: 50px;		padding-left: 50px;				background-color: White;	}

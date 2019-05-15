@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--	Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+		For licensing, see LICENSE.md or http://ckeditor.com/license
+-->
+
+<html>
+	
+	<head>
+		<title>Full Page Editing &mdash; CKEditor Sample</title>
+		<meta charset="utf-8">
+		<script src="ckeditor.js"></script>
+		<script src="./samples/sample.js"></script>
+		<link rel="stylesheet" href="./samples/sample.css">
+		<meta name="ckeditor-sample-required-plugins" content="sourcearea">
+		<meta name="ckeditor-sample-name" content="Full page support">
+		<meta name="ckeditor-sample-group" content="Plugins">
+		<meta name="ckeditor-sample-description" content="CKEditor inserted with a JavaScript call and used to edit the whole page from &lt;html&gt; to &lt;/html&gt;.">
+	</head>
+
+	<body>
+	
+		<form action="./samples/sample_posteddata.php" method="post">
+			
+			<textarea cols="80" id="editor1" name="editor1" rows="10">
+				
+			</textarea>
+		
+			<script>
+				CKEDITOR.replace( 
+					'editor1', 
+					{
+						fullPage: true,
+						allowedContent: true,
+						extraPlugins: 'wysiwygarea'
+					}
+				);
+			</script>
+		
+			<p>		<input type="submit" value="Submit">	</p>
+		</form>
+		
+	</body>
+</html>

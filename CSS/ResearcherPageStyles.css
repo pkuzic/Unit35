@@ -1,0 +1,12 @@
+#ResearcherPageCointainer	{	width: 100%;		background: #FFF;	overflow: hidden; 	/* contain floated elements */		}
+#ResearcherPageLeft 		{	float: left;    	width: 48%;			background-color: #FFF;									}
+#ResearcherPageCenter 		{	float: left;    	width: 4%;			background-color: #FFF;									}
+#ResearcherPageRight		{	float: left;    	width: 48%;			background-color: #FFF;									}
+
+H8
+{
+	color: 			slateGray;
+	font-family: 	"Arial";
+	font-size: 		12pt;
+	font-weight:	normal;
+}
