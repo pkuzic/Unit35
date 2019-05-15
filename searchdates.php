@@ -19,6 +19,7 @@
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 			<link rel="stylesheet" type="text/css" href="./CSS/MainStyles.css">
+			<link rel="stylesheet" type="text/css" href="./CSS/bootstrap.css">
 			
 			<script language="javascript" src="./xinpopcalendar/cal2.js">
 			/*
