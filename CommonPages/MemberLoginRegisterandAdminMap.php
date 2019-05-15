@@ -33,42 +33,7 @@
 					echo '<area shape="rect" coords="432,0,484,50" href=' . $pathtopages . 'members.php alt="Members login page" title="Click here to log in" style="background-color:#FFFFFF;color:#000000;text-decoration:none">';
 					echo '<area shape="rect" coords="486,0,538,50" href=' . $pathtopages . 'CMS/admin/adminpage.php alt="Administration Login" title="Admin" style="background-color:#FFFFFF;color:#000000;text-decoration:none">';
 			?>
-			  <div class="wrapper">
-    <!-- Sidebar Holder -->
-    <nav id="sidebar">
-      <div class="sidebar-header">
-        <h3>The Institute for Holistic Science</h3>
-        </h3>
-      </div>
-
-      <ul class="list-unstyled components">
-        <li class="active">
-          <a href="#">1</a>
-        </li>
-        <li>
-          <a href="#">2</a>
-        </li>
-        <li>
-          <a href="#">3</a>
-        </li>
-        <li>
-          <a href="#">4</a>
-        </li>
-        <li>
-          <a href="#">5</a>
-        </li>
-        <li>
-          <a href="#">6</a>
-        </li>
-
-
-      </ul>
-
-
-    </nav>
-
-    <!-- Page Content Holder -->
-  </div>
+a
 			<?php
 					//echo '<area shape="rect" coords="100,0,200,20" href="register.php" onmouseover = "this.src="bp.png"	onmouseout="HS.png" alt="Register as a new member">';
 				echo '</map>';
