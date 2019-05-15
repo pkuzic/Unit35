@@ -19,10 +19,9 @@
 	<html>
 
 		<head>
-			<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-			<link rel="stylesheet" type="text/css" href="./CSS/MainStyles.css">
-			<link rel="stylesheet" type="text/css" href="./CSS/bootstrap.css">
-			<link rel="stylesheet" type="text/css" href="./CSS/displayarticleCSS.css">
+			<?php 
+				include_once 'includes/head.php'
+			?>
 
 			<?php	include_once('./SetupCKEditorScript1.php');	?>
 			
