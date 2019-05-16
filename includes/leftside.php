@@ -6,7 +6,6 @@
 	<p><a class="nav-link btn btn-light" href="events.php">Events</a></p>
 	<p><a class="nav-link btn btn-light" href="contactus.php">Contact us</a></p>
 	<p><a class="nav-link btn btn-light" href="register.php">Register</a></p>
-	<p><a class="nav-link btn btn-light" href="adminpage.php">Adminpage</a></p>
 	<div class="btn fakebutton" href="CMS/admin/adminpage.php">
 		<form action="members.php" method="post">
 		  <div class="form-group">

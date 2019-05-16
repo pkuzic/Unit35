@@ -106,25 +106,25 @@
 			<?php
 						$optioncount = 0;
 				
-						$optionpagearray = array	(	"admin/updatearticlesondb.php",
+						$optionpagearray = array	(	"updatearticlesondb.php",
 														
 						
 						
-														"admin/adminuser.php?id=1", 	
-														"admin/adminuser.php?id=2", 		
-														"admin/adminuser.php?id=3", 
-														"admin/adminmember.php?id=1", 
-														"admin/adminnewsletter.php?id=1", 
-														"admin/adminnewsletter.php?id=2",
-														"admin/adminnews.php?id=1", 	
-														"admin/adminnews.php?id=2", 		
-														"admin/adminnews.php?id=3",
-														"admin/adminjournal.php?id=1", 
-														"admin/adminjournal.php?id=2", 	
-														"admin/adminjournal.php?id=3",
-														"admin/addarticle.php", 
-														"admin/editarticle.php?id=2", 	
-														"admin/adminarticle.php?id=3",
+														"adminuser.php?id=1", 	
+														"adminuser.php?id=2", 		
+														"adminuser.php?id=3", 
+														"adminmember.php?id=1", 
+														"adminnewsletter.php?id=1", 
+														"adminnewsletter.php?id=2",
+														"adminnews.php?id=1", 	
+														"adminnews.php?id=2", 		
+														"adminnews.php?id=3",
+														"adminjournal.php?id=1", 
+														"adminjournal.php?id=2", 	
+														"adminjournal.php?id=3",
+														"addarticle.php", 
+														"editarticle.php?id=2", 	
+														"adminarticle.php?id=3",
 														"logout.php"
 													);
 
@@ -250,15 +250,17 @@
 				?>
 								
 					<div class="CenterContent">
-						<form action="adminpage.php" method="post" autocomplete="off">						
-								<div class="form-group">
-									<input type = "text" class="form-control" name = "username" placeholder = "Username" />
-								</div>
-								<div class="form-group">
-									<input type = "password" class="form-control" name = "password" placeholder = "Password" />
-								</div>
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</form>		
+						<form action="adminpage.php" method="post" autocomplete="off">
+							<h11>
+								Please input your username and password 
+							</h11>
+						
+							<small>** both fields must be completed </small>
+							<p>
+							<input type = "text" name = "username" placeholder = "Username" />
+							<input type = "password" name = "password" placeholder = "Password" />
+							<input type = "submit" value = "Login" />
+						</form>					
 					</div>
 			<?php
 				}

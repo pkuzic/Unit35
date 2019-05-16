@@ -76,123 +76,37 @@
 									</tr>
 								</table>
 							</div>
-							<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>
-								<img border="0" src="./images/UnderConstruction.jpg" width="183" height="204">	
-							</div>
-						<table class="tablewithroundedtopandbottom"> 
-							<thead>	
-								<tr>	
-									<th colspan="6" bgcolor=<?php echo $TableColour1; ?> >
-										<h12>
-											&nbsp;<br>Please enter the following details (<em>All fields with * needed</em>)...<br>&nbsp;
-										</h12>
-									</th>   
-								</tr>   
-							</thead>
-						</table>
-						<br>
-					
+							<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>					
 						<?php
 							$tablecolourbool = 0;
 							if($tablecolourbool == 0)	{	$tablecolour = $TableColour1;		$tablecolourbool = 1;		}
 							else						{	$tablecolour = $TableColour2;		$tablecolourbool = 0;		}
 						?>
-					
-						<form name="htmlform" method="post" action="html_form_send.php">
-							<table class="StyledTable1"> 
-								<thead>	<tr>	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >	
-													<h12>&nbsp;</h12>	
-												</th>   
-										</tr>   
-								</thead>
+								<form action="html_form_send.php" method="post">
+									<div class="form-group">
+										<label for="first_name">First name</label>
+										<input type="text" class="form-control" name="first_name" placeholder="Enter your first name">
+									</div>
+									<div class="form-group">
+										<label for="last_name">Last name</label>
+										<input type="text" class="form-control" name="last_name" placeholder="Enter your first name">
+									</div>
+									<div class="form-group">
+										<label for="email">Email Name</label>
+										<input type="text" class="form-control" name="email" placeholder="Enter your email">
+									</div>
+									<div class="form-group">
+										<label for="telephone">Contact Number</label>
+										<input type="text" class="form-control" name="telephone" placeholder="Enter your contact number">
+									</div>
+									<div class="form-group">
+										<label for="message">Contact Number</label>
+										<textarea id="styled" class="form-control" name="message" maxlength="1000" cols="39" rows="6"></textarea>
+									</div>
 
-								<tbody>	
-									<tr>	
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	<label for="first_name">	First Name *	</label>	</h11>	</td>	
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	<input  type="text" name="first_name" maxlength="50" size="51">	</h11> </td>	
-									</tr>
-									
-									<tr>	
-										<td colspan="6" bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-									</tr>
-									
-									<tr>	
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	<label for="last_name">	Last Name *	</label>	</h11>	</td>	
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	<input  type="text" name="last_name" maxlength="50" size="51">	</h11> </td>	
-									</tr>
-									
-									<tr>	
-										<td colspan="6" bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-									</tr>
-									
-									<tr>	
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	<label for="email">	Email Name *	</label>	</h11>	</td>	
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	<input  type="text" name="email" maxlength="80" size="51">	</h11> </td>	
-									</tr>
-									
-									<tr>	
-										<td colspan="6" bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-									</tr>
-									
-									<tr>	
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	<label for="telephone">	Telephone Number (may be a mobile) *	</label>	</h11>	</td>	
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	<input  type="text" name="telephone" maxlength="30" size="51">	</h11> </td>	
-									</tr>
-
-									<tr>	
-										<td colspan="6" bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-									</tr>
-									
-									<tr>	
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	<label for="message">	What do you want to tell us? *	</label>	</h11>	</td>	
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-										<td bgcolor= <?php echo " $tablecolour " ?> > <h11>	<textarea  id="styled" name="message" maxlength="1000" cols="39" rows="6"></textarea>	</h11> </td>	
-									</tr>
-									
-									<tr>	
-										<td colspan="6" bgcolor= <?php echo " $tablecolour " ?> > <h11>	&nbsp;	</h11>	</td>
-									</tr>
-
-									<tr>	<td colspan="6" style="text-align:center" bgcolor= <?php echo " $tablecolour " ?>>
-												<INPUT TYPE="image" value="submit" SRC="./images/GreenSubmitButton.png" WIDTH="175"  HEIGHT="75" BORDER="0" ALT="SUBMIT!">
-											</td>
-									</tr>
-								</tbody>
-							
-								<tfoot>	
-									<tr>	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >
-												<h11>	
-													&nbsp; 
-												</h11>
-											</th>    
-									</tr>   
-								</tfoot>
-
-							</table>
-							
-							<br>						
-
-							<table class="tablewithroundedtopandbottom"> 
-								<tfoot>	
-									<tr>	<th colspan="6" bgcolor = <?php echo $TableColour1; ?> >
-											<h12>
-												<br>&nbsp;<br>
-											</h12>
-											</th>    
-									</tr>   
-								</tfoot>
-								
-							</table>
-						</form>
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</form>
+							</div>
 						</div>
 						<div class="sidenav col-md-2 sidenav navbar-light">
 							 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies vestibulum luctus. Aenean tincidunt eget felis vel maximus. Nunc id sapien elementum, sagittis quam luctus, dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, augue non cursus sodales, felis tortor dictum elit, fringilla rutrum turpis ex ac libero. Nullam at ipsum laoreet dui blandit finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent auctor iaculis elit eu interdum. Maecenas at libero id ante placerat imperdiet. Quisque vitae cursus ligula. Cras ac scelerisque dui.
