@@ -36,7 +36,6 @@
 		</head>
 
 		<body>
-			<div id="page">
 			<?php
 				$_SESSION['ADMINPAGEYN'] = "NO";
 				$_SESSION['MEMBERPAGEYN'] = "YES";
@@ -70,16 +69,15 @@
 								
 									<table border="0" cellpadding="5" cellspacing="0" width="800px">
 									<?php
-										if 		($_SESSION['Page_Purpose'] == "index")				{		$Title_Text = "Welcome to the Institute for Holistic Science...";	}
-										else if ($_SESSION['Page_Purpose'] == "about")				{		$Title_Text = "Welcome to the about us page...";	}
-										else if ($_SESSION['Page_Purpose'] == "news")				{		$Title_Text = "Welcome to our news page...";	}
-										else if ($_SESSION['Page_Purpose'] == "journal")			{		$Title_Text = "Welcome to our journal...";	}
-										else if ($_SESSION['Page_Purpose'] == "research")			{		$Title_Text = "Welcome to our research page...";	}
-										else if ($_SESSION['Page_Purpose'] == "contactus")			{		$Title_Text = "Welcome to our contact-us page...";	}
-										else if ($_SESSION['Page_Purpose'] == "events")				{		$Title_Text = "Welcome to our events page...";	}
-										else if ($_SESSION['Page_Purpose'] == "adminpage")			{		$Title_Text = "Welcome to the administration area...";	}
-										else if ($_SESSION['Page_Purpose'] == "updatearticles")		{		$Title_Text = "Welcome to the articles administration area...";	}
-										
+										if 		($_SESSION['Page_Purpose'] == "index")				{		$Title_Text = "Institute for Holistic Science";	}
+										else if ($_SESSION['Page_Purpose'] == "about")				{		$Title_Text = "About Us";	}
+										else if ($_SESSION['Page_Purpose'] == "news")				{		$Title_Text = "News";	}
+										else if ($_SESSION['Page_Purpose'] == "journal")			{		$Title_Text = "Journal";	}
+										else if ($_SESSION['Page_Purpose'] == "research")			{		$Title_Text = "Research";	}
+										else if ($_SESSION['Page_Purpose'] == "contactus")			{		$Title_Text = "Contact Us";	}
+										else if ($_SESSION['Page_Purpose'] == "events")				{		$Title_Text = "Events";	}
+										else if ($_SESSION['Page_Purpose'] == "adminpage")			{		$Title_Text = "Admin Panel";	}
+										else if ($_SESSION['Page_Purpose'] == "updatearticles")		{		$Title_Text = "Articles Moderation";	}
 									?>
 										<tr>										
 											<td align="left">
