@@ -39,7 +39,10 @@
 			$_SESSION['MEMBERPAGEYN'] = "YES";
 			
 			$_SESSION['Page_Purpose'] = "about";
-			include_once("./CommonPages/PagePurpose.php");
+
+			include_once("includes/header.php");
+			include_once("includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
+			include_once("includes/variables.php"); //new pagepurpose.php to identify the purpose
 		?>	
 			
 <?php
@@ -60,19 +63,7 @@
 	
 								<div class="PagePurpose">			
 								
-									<table border="0" cellpadding="5" cellspacing="0" width="800px">
-									<?php
-										if 		($_SESSION['Page_Purpose'] == "index")				{		$Title_Text = "Institute for Holistic Science...";	}
-										else if ($_SESSION['Page_Purpose'] == "about")				{		$Title_Text = "About Us...";	}
-										else if ($_SESSION['Page_Purpose'] == "news")				{		$Title_Text = "News";	}
-										else if ($_SESSION['Page_Purpose'] == "journal")			{		$Title_Text = "Journal";	}
-										else if ($_SESSION['Page_Purpose'] == "research")			{		$Title_Text = "Research";	}
-										else if ($_SESSION['Page_Purpose'] == "contactus")			{		$Title_Text = "Contact Us";	}
-										else if ($_SESSION['Page_Purpose'] == "events")				{		$Title_Text = "Events";	}
-										else if ($_SESSION['Page_Purpose'] == "adminpage")			{		$Title_Text = "Admin Panel";	}
-										else if ($_SESSION['Page_Purpose'] == "updatearticles")		{		$Title_Text = "Articles Moderation";	}
-										
-									?>
+									<table border="0" width="100%">
 										<tr>										
 											<td align="left">
 												<div class="alert alert-info" role="alert">											
@@ -82,12 +73,13 @@
 										</tr>
 									</table>
 								</div>
-								<img border="0" src="./images/UnderConstruction.jpg" width="183" height="204">	
+								<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>
+									<img border="0" src="./images/UnderConstruction.jpg" width="183" height="204">	
+								</div>
+
 							</div>
 							<div class="sidenav col-md-2 sidenav navbar-light">
-								
 								 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies vestibulum luctus. Aenean tincidunt eget felis vel maximus. Nunc id sapien elementum, sagittis quam luctus, dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, augue non cursus sodales, felis tortor dictum elit, fringilla rutrum turpis ex ac libero. Nullam at ipsum laoreet dui blandit finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent auctor iaculis elit eu interdum. Maecenas at libero id ante placerat imperdiet. Quisque vitae cursus ligula. Cras ac scelerisque dui.
-								
 							</div>
 													
 							<br style="clear: left;" />
