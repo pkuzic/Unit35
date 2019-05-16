@@ -4,8 +4,8 @@
 <!-- START of INCLUDES for CKEDITOR -->
 
 			<meta charset="utf-8">
-			<script src="../../CKEditorFiles/Editor/ckeditor.js"></script>						
-			<script src="../../CKEditorFiles/Editor/samples/sample.js"></script>
+			<script src="../CKEditorFiles/Editor/ckeditor.js"></script>						
+			<script src="../CKEditorFiles/Editor/samples/sample.js"></script>
 			<!-- <link rel="stylesheet" href="./E/E/samples/sample.css"> -->
 			<meta name="ckeditor-sample-required-plugins" content="sourcearea">
 			<meta name="ckeditor-sample-name" content="Full page support">
@@ -20,7 +20,7 @@
 
 			<div class="container"> 																	<!-- overall page container div -->
 				<div class="CenterContent">
-					<form action="../../CKEditorFiles/Editor/samples/sample_posteddata.php" method="post">
+					<form action="../CKEditorFiles/Editor/samples/sample_posteddata.php" method="post">
 						Please enter the NEW article abstract<br>
 						<textarea cols="80" id="editor1" name="editor1" rows="10">	
 						</textarea>

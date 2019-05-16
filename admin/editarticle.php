@@ -39,7 +39,7 @@
 
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-			<link rel="stylesheet" type="text/css" href="../../CSS/MainStyles.css">
+			<link rel="stylesheet" type="text/css" href="../CSS/MainStyles.css">
 		</head>
 
 		<body>
@@ -146,7 +146,7 @@
 												<optgroup style="color:SlateGrey;">
 													<option value = "<?php echo $article['article_id']; ?>">
 <?php 													
-														echo 	"<a href = '../../displayarticle.php?id=" . 
+														echo 	"<a href = '../displayarticle.php?id=" . 
 																$article['article_id'] . ">" . 
 																$articlestring . 
 																"</a>"; 
@@ -194,7 +194,7 @@
 								<?php
 									echo "<br><br><hr><h11>Not what you want to do? <br><br>Choose one of the following options <br><br>";
 								?>
-									<a href="../../members.php" class = "memberlink">Visit the members area</a>
+									<a href="../members.php" class = "memberlink">Visit the members area</a>
 									.... [OR] ....
 									<a href="adminpage.php" class = "memberlink">Return to the admin area</a><p>
 								</div>
@@ -213,7 +213,7 @@
 								<br><br>Please logout out OR return to the members area<p>";
 ?>
 						<a href="logout.php" class = "memberlink">Logout<p>
-						<a href="../../members.php" class = "memberlink">Return to the members area<p>
+						<a href="../members.php" class = "memberlink">Return to the members area<p>
 					</div>
 <?php
 				}
@@ -229,8 +229,8 @@
 								<br><br>If you are a not an employee of the centre, please visit our members section to login;
 								<br><br>Or, please visit our registration page to become a member (registration is FREE)<p><p><p></h11>";
 ?>
-						<a href="../../members.php" class = "memberlink">Members area</a><p>
-						<a href="../../register.php" class = "memberlink">Register as a member <small>(this is free) </small></a><p>
+						<a href="../members.php" class = "memberlink">Members area</a><p>
+						<a href="../register.php" class = "memberlink">Register as a member <small>(this is free) </small></a><p>
 						<a href="adminpage.php" class = "memberlink">Return to the admin area</a><p>
 							
 					</div>

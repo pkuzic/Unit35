@@ -58,7 +58,7 @@
 
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-			<link rel="stylesheet" type="text/css" href="../../CSS/MainStyles.css">
+			<link rel="stylesheet" type="text/css" href="../CSS/MainStyles.css">
 		</head>
 
 		<body>
@@ -68,7 +68,7 @@
 			$_SESSION['MEMBERPAGEYN'] = "NO";
 			
 			$_SESSION['Page_Purpose'] = "updatearticles";
-			include_once("../../CommonPages/PagePurpose.php");
+			include_once("../includes/pagepurpose.php");
 		?>	
 			
 			<div class="Container">
@@ -77,7 +77,7 @@
 				<table class="tablewithroundedtopandbottom"> 
 					<thead>	
 						<tr>	
-							<th colspan="6" bgcolor=<?php echo $TableColour1; ?> >
+							<th colspan="6">
 								<h12>
 									&nbsp;<br>Our latest articles (<em>newest article first</em>)...<br>&nbsp;
 								</h12>
@@ -91,8 +91,8 @@
 				
 				foreach ($articles as $article)
 				{
-					if($tablecolourbool == 0)	{	$tablecolour = $TableColour1;		$tablecolourbool = 1;		}
-					else						{	$tablecolour = $TableColour2;		$tablecolourbool = 0;		}
+					if($tablecolourbool == 0)	{	$tablecolour = 'FFFFFF';		$tablecolourbool = 1;		}
+					else						{	$tablecolour = 'FFFFFF';		$tablecolourbool = 0;		}
 				
 					$tablecolourexception = 'FFFFFF';
 				?>
@@ -100,7 +100,7 @@
 					<div class="Container">
 					
 					<?php
-						include("../../CommonPages/ArticleNavigation.php");		// use an include NOT an include_once as if include_once is used
+						include("../CommonPages/ArticleNavigation.php");		// use an include NOT an include_once as if include_once is used
 																				// then the nave bar only shows once - use include in the 
 																				// ArticleNavigation.php for the same reason
 					?>	

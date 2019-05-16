@@ -45,7 +45,7 @@
 
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-			<link rel="stylesheet" type="text/css" href="../../CSS/MainStyles.css">
+			<link rel="stylesheet" type="text/css" href="../CSS/MainStyles.css">
 		</head>
 
 		<body>
@@ -129,9 +129,9 @@
 								
 								<td width="5%" bgcolor= <?php echo " $tablecolour " ?> > 
 									<?php
-										echo "<a href = ../../displayarticle.php?id=" . $article['article_id'] . ">"; 
+										echo "<a href = ../displayarticle.php?id=" . $article['article_id'] . ">"; 
 									?>
-											<img border="0" src="../../images/mg.png" width="26" height="26">	
+											<img border="0" src="../images/mg.png" width="26" height="26">	
 									<?php
 										echo "</a>"; 
 									?>
@@ -142,9 +142,9 @@
 								
 								<td width="5%" bgcolor= <?php echo " $tablecolour " ?> > 
 									<?php
-										echo "<a href = ../../displayarticle.php?id=" . $article['article_id'] . ">"; 
+										echo "<a href = ../displayarticle.php?id=" . $article['article_id'] . ">"; 
 									?>
-											<img border="0" src="../../images/bp.png" width="26" height="26">	
+											<img border="0" src="../images/bp.png" width="26" height="26">	
 									<?php
 										echo "</a>"; 
 									?>

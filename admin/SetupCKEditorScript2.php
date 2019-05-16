@@ -4,8 +4,8 @@
 <!-- START of INCLUDES for CKEDITOR -->
 
 		<meta charset="utf-8">
-		<script src="../../CKEditorFiles/Editor/ckeditor.js"></script>						
-		<script src="../../CKEditorFiles/Editor/samples/sample.js"></script>
+		<script src="../CKEditorFiles/Editor/ckeditor.js"></script>						
+		<script src="../CKEditorFiles/Editor/samples/sample.js"></script>
 		<!-- <link rel="stylesheet" href="./E/E/samples/sample.css"> -->
 		<meta name="ckeditor-sample-required-plugins" content="sourcearea">
 		<meta name="ckeditor-sample-name" content="Full page support">

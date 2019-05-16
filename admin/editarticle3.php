@@ -32,7 +32,7 @@
 	
 	else						
 	{	
-		header('location: ../../index.php');		
+		header('location: ../index.php');		
 		exit();								
 	}
 		
@@ -42,7 +42,7 @@
 
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-			<link rel="stylesheet" type="text/css" href="../../CSS/MainStyles.css">
+			<link rel="stylesheet" type="text/css" href="../CSS/MainStyles.css">
 			
 			<?php	include_once('./SetupCKEditorScript2.php');	?>			
 			
@@ -100,7 +100,7 @@ This form is sent to the posted data page
 --------------------------------------------------------------------------------------------------------------------------------------	*/
 ?>
 
-							<form action="../../CKEditorFiles/Editor/samples/update_sample_posteddata.php" method="post">
+							<form action="../CKEditorFiles/Editor/samples/update_sample_posteddata.php" method="post">
 			
 								<h11>
 									Please input the <strong>NEW details</strong> for the<strong> current </strong>article 
@@ -274,7 +274,7 @@ We will ge the date from a javascript calendar control
 									<br><br>Please logout out OR return to the members area<p>";
 						?>
 							<a href="logout.php" class = "memberlink">Logout<p>
-							<a href="../../members.php" class = "memberlink">Return to the members area<p>
+							<a href="../members.php" class = "memberlink">Return to the members area<p>
 						</div>
 					<?php
 					}
@@ -291,8 +291,8 @@ We will ge the date from a javascript calendar control
 									<br><br>If you are a not an employee of the centre, please visit our members section to login;
 									<br><br>Or, please visit our registration page to become a member (registration is FREE)<p><p><p>";
 ?>
-						<a href="../../members.php" class = "memberlink">Members area</a><p>
-						<a href="../../registration.php" class = "memberlink">Registeration</a><p>
+						<a href="../members.php" class = "memberlink">Members area</a><p>
+						<a href="../registration.php" class = "memberlink">Registeration</a><p>
 						<a href="adminpage.php" class = "memberlink">Return to the admin area</a><p>
 							
 					</div>
