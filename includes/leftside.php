@@ -1,4 +1,4 @@
-<div class="sidenav col-md-2 sidenav navbar-light navbar-expand-md">
+<div class="sidenav col-md-2 navbar-light navbar-expand-md">
 	<p><a class="nav-link btn btn-light" href="index.php">Homepage</a></p>
 	<p><a class="nav-link btn btn-light" href="aboutus.php">About us</a></p>
 	<p><a class="nav-link btn btn-light" href="news.php">News</a></p>

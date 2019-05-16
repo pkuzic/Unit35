@@ -196,15 +196,8 @@ a.calendar:hover							{	color: #444;		border-bottom-color: #444;											}
 .tablewithroundedtopandbottom tfoot tr:first-child th:last-child 	{   border-radius: 0.6em 0.6em 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
 
 /* This table is used on the NEWS.php & RESEARCH.php page */
-.StyledTable1 													{	border-collapse: collapse; width:700px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
-.StyledTable1 th 													{   color:#000;   	vertical-align:middle; 	text-align:right;    	border:0.0em dotted slateGray; 		}
-.StyledTable1 td 													{  	color:#000099;  vertical-align:middle; 	text-align:left;    	border:0.0px dotted slateGray; 		}
-.StyledTable1 thead tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
-.StyledTable1 thead tr:first-child th:last-child 					{   border-radius: 0.6em 0.6em 0 0;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
-.StyledTable1 tbody tr:last-child td:first-child 					{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
-.StyledTable1 tbody tr:last-child td:last-child 					{	border-radius: 0 0 0 0;																	}
-.StyledTable1 tfoot tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																		}
-.StyledTable1 tfoot tr:first-child th:last-child 					{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+.StyledTable1 td 													{  	vertical-align:middle; 	text-align:left;    	border:0.0px dotted slateGray; 			}
+.StyledTable1														{	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1); margin: 0.1em:								}
 
 /* This table is used on the PAGEPURPOSE.php page - for the main menu */
 .InvisibleTableBorders 											{	width:800px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
@@ -384,16 +377,12 @@ textarea#styled {
    }
 
     body {
-      font-family: 'Open Sans', sans-serif;
       background: #fafafa;
     }
     
     p {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1.1em;
-      font-weight: 300;
-      line-height: 1.7em;
-      color: #999;
+      font-family: 'Open Sans', sans-serif!important;
+      color: #000;
     }
     
     a,
@@ -569,7 +558,7 @@ textarea#styled {
 ----------------------------------------------------- */
 
     #wrapper {
-      max-width:1800px;
+     max-width:1800px;
     }
 	
 	.container {

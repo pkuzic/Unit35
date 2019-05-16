@@ -23,6 +23,36 @@
 	include_once ('./CMS/includes/article.php');
 	include_once ('./CMS/includes/connection.php');
 
+	$news = new News;
+	$newss = $news->fetch_news_stories_decending();		// load all news articles into memory
+	
+	$number_of_articles = 0;
+	foreach ($newss as $news)	
+	{
+		$number_of_articles++;		// calculate the number of articles to be shown (will be used in the footer of the tables)
+	}
+/*	########################################################################################################################################
+	We want to load all of the used (staff members) into memory - just the title, first name and last name
+	we want to do this to show who wrote the article in the news section.
+	##################################################################################################################################### */
+	
+	$user_array_title = array();
+	$user_array_first_name = array();
+	$user_array_last_name = array();
+	
+	$usercount = 0;
+	$user = new Users;
+	$users = $user->fetch_researcher_details();			// load all users (staff) into memory
+		
+	foreach ($users as $user)							// cycle through the data (from the DB table) and put it into the appropriate arrays
+	{
+		$user_array_title[$usercount] = $user['user_name_title'];
+		$user_array_first_name[$usercount] = $user['user_name_first'];
+		$user_array_last_name[$usercount] = $user['user_name_last'];
+		$usercount++;
+	}
+	
+
 	$article = new Article;									//	a new instance of class article
 	$articles = $article->fetch_all_date_descending();		// 	Get all of the articles in the database table (in descending order of date)
 	
@@ -42,19 +72,18 @@
 				
 				$_SESSION['Page_Purpose'] = "index";
 				include_once("./CommonPages/PagePurpose.php");
-			?>	
-				
-	<?php
-	/*	########################################################################################################################################
-		This section holds new php includes
-		##################################################################################################################################### */
-		//require_once("includes/functions.php");
+			?>					
+		<?php
+		/*	########################################################################################################################################
+			This section holds new php includes
+			##################################################################################################################################### */
+			//require_once("includes/functions.php");
 
-	/*	########################################################################################################################################
-		This section holds the LHC of the welcome page. It holds a general greeting and general about us
-		The <div class = "container"> is used to center the boxes (the section-box) on the screen	
-		##################################################################################################################################### */
-	?>		
+		/*	########################################################################################################################################
+			This section holds the LHC of the welcome page. It holds a general greeting and general about us
+			The <div class = "container"> is used to center the boxes (the section-box) on the screen	
+			##################################################################################################################################### */
+		?>		
 			<div class="Container">		
 			<!-- header -->	
 					<div class="container-fluid">
@@ -62,12 +91,11 @@
 							<?php 
 								include_once 'includes/leftside.php'
 							?>
-
 							<div id="wrapper" class="col-md-8 text-left">
 	
 								<div class="PagePurpose">			
 								
-									<table border="0" cellpadding="5" cellspacing="0" width="800px">
+									<table border="0" width="100%">
 									<?php
 										if 		($_SESSION['Page_Purpose'] == "index")				{		$Title_Text = "Institute for Holistic Science";	}
 										else if ($_SESSION['Page_Purpose'] == "about")				{		$Title_Text = "About Us";	}
@@ -88,36 +116,51 @@
 										</tr>
 									</table>
 								</div>
-								Can we go to the very root of conflict and be free from it?
-								<br><br>
-								
-								Can we go to the very root of illness and be free from it?
-								<br><br>
-								<h9>	
-								
-								Can we go to the very root of all things within our reality, and free ourselves from the inauthentic and 
-								manufactured meanings which have been bestowed upon them for centuries? Instead, opening ourselves up to contemplate, 
-								with the whole of our being and our authentic selves, the very essence of our True relationship with all phenomena.	
-								<br><br>
-									
-								If you say; “Yes, there might be a different way of knowing and being in the world”, a safe and nurturing space 
-								is allowed to gently emerge; providing us the opportunity to communicate with each other and hold a living enquiry, together.
-								<br><br>
-									
-								If you choose to live in a world where anything and everything is possible, and where absence of evidence 
-								is not evidence of absence, then we invite you to join us in this shared space of enquiry.	
-								<br><br>
-									
-								As PhD researchers we are exploring the deeper implications of quantum physics from a philosophical 
-								and spiritual perspective. Essentially, enquiring into how we can we move forward from a Newtonian 
-								physical view of the universe as being either/or, black/white, binary and abstract, to a space of deep 
-								interconnection and wholeness.	
-								<br><br>
-								
-								We invite you to share this journey with us as we explore the ‘space between’ 
-								different ways of knowing, enquiring into the possibility of bringing many worlds together.
-								<br><br>
-								</h9>
+
+				<?php
+				/*	########################################################################################################################################
+					Now put all of the news articles out in a tabular format
+					##################################################################################################################################### */
+				?>	
+							<?php
+								foreach ($newss as $news)
+								{
+									if($tablecolourbool == 0)	{	$tablecolour = $TableColour1;		$tablecolourbool = 1;		}
+									else						{	$tablecolour = $TableColour2;		$tablecolourbool = 0;		}
+							?>
+
+				<?php
+				/*	########################################################################################################################################
+					Show a table with collapsed border - a solid table
+					##################################################################################################################################### */
+				?>				
+								<div class="StyledTable1 alert">
+									<h4><?php 	
+										$news_title_string = 	$news['news_title'] . " "; 
+										echo $news_title_string;
+										
+									?></h4>
+									<p><?php	echo $news['news_body'];	?></p>
+									<?php
+										$poster = $news['news_posted_by'];
+										$poster_string = 	$user_array_title[$poster] .
+															" " . 			$user_array_first_name[$poster] . 
+															" " . 			$user_array_last_name[$poster] .
+															" (" .	date('l jS F Y', $news['news_posted_date']) . ")";
+										
+										if ($tablecolourbool == 1)
+										{
+											echo "<small><em>" . $poster_string . "</em></small>";					
+										}
+										else 
+										{	
+											echo "<small><em>" . $poster_string . "</em></small>";					
+										}			
+									?>
+								</div>
+								<?php	
+								}
+								?>
 							</div>
 							<div class="sidenav col-md-2 sidenav navbar-light">
 								<table class="TrendingTable">
