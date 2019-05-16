@@ -1,11 +1,5 @@
 /* 140 different color pseudonymes (color chart) - http://www.html-color-names.com/color-chart.php */
 
-.Container, .Header, .NavBar, .Body, .Footer, #IFHSMenuBarAndShareITSection  
-{	width:	800px;	
-	border:	0px	dotted slateGray;
-	margin: 0px auto;
-}
-
 .VerySmallClass
 {
 	width: 250px;
@@ -19,20 +13,18 @@
 {	
 	clear: both;
 }
-
-.Header							{	height: 200px;	background-image: url('../images/WebLogo.png');							}
-.Menu							{	height: 70px;	background-image: url('../images/menu.png');							}
-.NavBar							{	height: 70px;																			}
-.PagePurpose					{	height: 50px;																			}
-.Footer							{	height: 200px;	background-image: url('../images/WebLogoFooter.png');					}
-.CenterContent					{	text-align: center;																		}
 																		
 /* 	======================================================================================
 	Custom headings
 	=================================================================================	*/
 
+h1 {
+	font-size: 50pt;
+	font-weight: 800px;
+}
+
 H7, H8, H9, H10, H11, H12, H13, H15	
-{	color: 			slateGray; 
+{	color: 			#000; 
 	font-family: 	"Arial"; 
 	font-weight:	normal;
 	font-style: 	normal;	
@@ -56,8 +48,8 @@ H14		{	font-size: 		10pt;																	}
 H15		{	font-size: 		14pt;																	}
 
 /* http://www.w3schools.com/tags/ref_colorpicker.asp?colorhex=32CD32 */
-small							{	color: DarkSlateGray; font-size: 8pt;															}
-small2							{	color: LightSlateGray; font-size: 8pt;															}
+small							{	font-size: 8pt;															}
+small2							{	 font-size: 8pt;															}
 
 									
 /* 	======================================================================================
@@ -81,25 +73,6 @@ small2							{	color: LightSlateGray; font-size: 8pt;															}
     float: left; width: 340px;
 }	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 .section-boxNavLeft
 {
     float: left; width: 20px;
@@ -110,8 +83,7 @@ small2							{	color: LightSlateGray; font-size: 8pt;															}
 {
     float: left; width: 360px;
 	
-}
-	
+}	
 	
 .section-box 
 {
@@ -145,8 +117,17 @@ small2							{	color: LightSlateGray; font-size: 8pt;															}
 /* 	======================================================================================
 	Standard CSS Components
 	=================================================================================	*/
+	
+a {
+  color: #212529!important;
+  text-decoration: none;
+  background-color: transparent;
+}
 
-#page							{}
+a:hover {
+  color: #0056b3!important;
+  text-decoration: underline!important;
+}
 	
 #page.a:link, #page.a:visited	{	color: slateGray;	text-decoration: none; border-bottom: 1px	dotted slateGray;		}
 #page.a:hover					{	color: #444;		border-bottom-color: #444;											}									
@@ -154,33 +135,7 @@ ol, li							{	line-height: 35px;																		}
 HR								{   border: 1px dotted lightGray;		border-style: none none dotted; 
 								    color: #fff; 					    background-color: #fff;								}
 
-a.trendinglink					
-{	
-	font-family: 		"Arial";	
-	font-size: 			10pt;		
-	font-weight:		normal;	
-	color: 				DarkBlue;
-	text-decoration: 	none; 		
-	border-bottom: 		0px	dotted slateGray;		
-}
-
-a.trendinglink:hover			
-{	
-	color: 				Blue;		
-	text-decoration: 	underline;
-	font-style: 		italic;
-	
-} 
-
-a.trendinglink:visited			
-{	
-	color: 				CornFlowerBlue;							/* http://www.w3schools.com/tags/ref_colorpicker.asp?colorhex=D3D3D3 */
-	font-style: 		italic;
-	text-decoration: 	none; 		
-	border-bottom: 		1px	dotted slateGray;		
-	
-}									
-									
+						
 
 a.memberlink					{	font-family: 	"Arial";	font-size: 		10pt;		font-weight:	normal;				}
 									
@@ -227,15 +182,7 @@ a.calendar:hover							{	color: #444;		border-bottom-color: #444;											}
 
 
 /* This table is used on the INDEX.php page */
-.TrendingTable 													{	width:360px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
-.TrendingTable th 												{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.0em dotted slateGray; 		}
-.TrendingTable td 												{  	color:#000099;  vertical-align:middle; 	text-align:left;    	border:0.0px dotted slateGray; 		}
-.TrendingTable thead tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
-.TrendingTable thead tr:first-child th:last-child 					{   border-radius: 0.6em 0.6em 0 0;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
-.TrendingTable tbody tr:last-child td:first-child 					{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
-.TrendingTable tbody tr:last-child td:last-child 					{	border-radius: 0 0 0 0;																	}
-.TrendingTable tfoot tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																		}
-.TrendingTable tfoot tr:first-child th:last-child 					{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+.TrendingTable 													{	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
 
 /* This table is used on the NEWS.php & RESEARCH.php page */
 .tablewithroundedtopandbottom 									{	width:700px; 	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
@@ -349,10 +296,6 @@ a.calendar:hover							{	color: #444;		border-bottom-color: #444;											}
 .ArticleTable tfoot tr:first-child th:first-child 							{	border-radius: 0 0 0 0;																	}
 .ArticleTable tfoot tr:first-child th:last-child 							{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
 
-
-
-
-
 .table11 											{	width:360px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
 .table11 th 											{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.1em dotted slateGray; 		}
 .table11 td 											{  	color:#000099;  vertical-align:middle; 	text-align:left;    	border:0.1px dotted slateGray; 		}
@@ -365,14 +308,6 @@ a.calendar:hover							{	color: #444;		border-bottom-color: #444;											}
 
 .table11 tfoot tr:first-child th:first-child 			{	border-radius: 0 0 0 0;																	}
 .table11 tfoot tr:first-child th:last-child 				{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
-
-
-
-
-
-
-
-
 
 .tableadminaddarticle 									{	width:700px; 	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
 .tableadminaddarticle  th 								{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.1em dotted slateGray; 		}
@@ -387,22 +322,7 @@ a.calendar:hover							{	color: #444;		border-bottom-color: #444;											}
 .tableadminaddarticle  tfoot tr:first-child th:first-child 	{	border-radius: 0 0 0 0;																	}
 .tableadminaddarticle  tfoot tr:first-child th:last-child 	{   border-radius: 0em 0em 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
 
-
-
-
-
-
-
-
-
-
-
-
 .hide_me { display: none; }
-
-
-
-
 
 .textareastyles
 {
@@ -463,14 +383,13 @@ textarea#styled {
    -webkit-appearance: none; 
    }
 
-    @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       background: #fafafa;
     }
     
     p {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Open Sans', sans-serif;
       font-size: 1.1em;
       font-weight: 300;
       line-height: 1.7em;
@@ -483,6 +402,7 @@ textarea#styled {
       color: inherit;
       text-decoration: none;
       transition: all 0.3s;
+	  font-family: 'Open Sans', sans-serif;
     }
     
     .navbar {
@@ -644,3 +564,54 @@ textarea#styled {
       }
     }
 
+    /* ---------------------------------------------------
+    NEW STYLES
+----------------------------------------------------- */
+
+    #wrapper {
+      max-width:1800px;
+    }
+	
+	.container {
+		max-width:1280px!important;
+	}
+	
+    /* Remove the bootstrap's navbar's default margin-bottom and rounded borders */ 
+    .header {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      height: 100%;
+	  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    }
+	
+	.navbar {
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1)!important;
+	}
+        
+		
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+      }
+      .row.content {height:auto;} 
+    }
+	
+	.article {
+		margin-bottom: 0rem!important;
+	}
+	
+	.fakebutton {
+		background-color: #f8f9fa!important;
+		border-color: #f8f9fa!important;
+	}

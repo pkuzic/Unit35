@@ -36,150 +36,143 @@
 		</head>
 
 		<body>
-	
-		<?php
-			$_SESSION['ADMINPAGEYN'] = "NO";
-			$_SESSION['MEMBERPAGEYN'] = "YES";
-			
-			$_SESSION['Page_Purpose'] = "index";
-			include_once("./CommonPages/PagePurpose.php");
-		?>	
-			
-<?php
-/*	########################################################################################################################################
-	This section holds the LHC of the welcome page. It holds a general greeting and general about us
-	The <div class = "container"> is used to center the boxes (the section-box) on the screen	
-	##################################################################################################################################### */
-?>			
-			<div class="Container">
-
-				<div class="left-section-box">	<?php //this is the LHS of the contents box, uses a floating div stucture	?>							
+			<div id="page">
+			<?php
+				$_SESSION['ADMINPAGEYN'] = "NO";
+				$_SESSION['MEMBERPAGEYN'] = "YES";
 				
-					<h8>
-						Can we go to the very root of conflict and be free from it?
-						<br><br>
-						Can we go to the very root of illness and be free from it?
-					</h8>
-					<br><br>
-					<h9>	
-						Can we go to the very root of all things within our reality, and free ourselves from the inauthentic and 
-						manufactured meanings which have been bestowed upon them for centuries? Instead, opening ourselves up to contemplate, 
-						with the whole of our being and our authentic selves, the very essence of our True relationship with all phenomena.	
-						<br><br>
-							
-						If you say; “Yes, there might be a different way of knowing and being in the world”, a safe and nurturing space 
-						is allowed to gently emerge; providing us the opportunity to communicate with each other and hold a living enquiry, together.
-						<br><br>
-							
-						If you choose to live in a world where anything and everything is possible, and where absence of evidence 
-						is not evidence of absence, then we invite you to join us in this shared space of enquiry.	
-						<br><br>
-							
-						As PhD researchers we are exploring the deeper implications of quantum physics from a philosophical 
-						and spiritual perspective. Essentially, enquiring into how we can we move forward from a Newtonian 
-						physical view of the universe as being either/or, black/white, binary and abstract, to a space of deep 
-						interconnection and wholeness.	
-						<br><br>
-						
-						We invite you to share this journey with us as we explore the ‘space between’ 
-						different ways of knowing, enquiring into the possibility of bringing many worlds together.
-						<br><br>
-					</h9>
-				</div>
-<?php
-/*	########################################################################################################################################
-	This section holds the Middle of the welcome page. It is a general gap between the two columns	
-	##################################################################################################################################### */
-?>	
-				<div class="middle-section-box">		<?php //	middle separating bar between floating divs	?>										
-					&nbsp;		
-				</div>	
-<?php
-/*	########################################################################################################################################
-	This section holds the RHC of the index page.
-	In this section we shall present a trending box, the trending box will show the 7 latest  articles. news etc
-	The news and other table have not bee implements yet
-	##################################################################################################################################### */
-?>	
-				<div class="right-section-box">		<?php //	The RHS Floating div - the trending box (table)	?>									
+				$_SESSION['Page_Purpose'] = "index";
+				include_once("./CommonPages/PagePurpose.php");
+			?>	
+				
+	<?php
+	/*	########################################################################################################################################
+		This section holds new php includes
+		##################################################################################################################################### */
+		//require_once("includes/functions.php");
 
-					<table class="TrendingTable">
-					    <thead >	
-							<tr>	
-								<th colspan="2" bgcolor= <?php echo "$TableColour1" ?> >
-									<h12>
-										&nbsp;<br>Currently Trending (<em>Note: visited links will dim</em>)<br>&nbsp;
-									</h12>
-								</th>    
-							</tr>   
-						</thead>
-						
-					<?php
-						foreach ($articles as $article)
-						{
-						/* the table uses 2 colours #CCCCFF - light pinky purple & #99CCFF - light blue */
-							if($tablecolourbool == 0)	{	$tablecolour = $TableColour1;		$tablecolourbool = 1;		}
-							else						{	$tablecolour = $TableColour2;		$tablecolourbool = 0;		}
-					?>
-							<tbody>
-								<tr>	
-									<td width="5%" bgcolor= <?php echo " $tablecolour " ?> > 
-										<a href="displayarticle.php?id=<?php echo $article['article_id']; ?> " class="trendinglink">
-											<img border="0" src="images/mg.png" width="26" height="26">	
-										</a>
-									</td>	
-									
-									<td width="95%" bgcolor= <?php echo " $tablecolour " ?> >
-										<a href="displayarticle.php?id=<?php echo $article['article_id']; ?> " class="trendinglink">
-									<?php 
-											echo $article['article_title']; 
-											echo "<br>";
-											
-										echo "</a>";	
+	/*	########################################################################################################################################
+		This section holds the LHC of the welcome page. It holds a general greeting and general about us
+		The <div class = "container"> is used to center the boxes (the section-box) on the screen	
+		##################################################################################################################################### */
+	?>		
+			<div class="Container">		
+			<!-- header -->	
+					<div class="container-fluid">
+						<div class="row">
+							<?php 
+								include_once 'includes/leftside.php'
+							?>
+
+							<div id="wrapper" class="col-md-8 text-left">
+	
+								<div class="PagePurpose">			
+								
+									<table border="0" cellpadding="5" cellspacing="0" width="800px">
+									<?php
+										if 		($_SESSION['Page_Purpose'] == "index")				{		$Title_Text = "Welcome to the Institute for Holistic Science...";	}
+										else if ($_SESSION['Page_Purpose'] == "about")				{		$Title_Text = "Welcome to the about us page...";	}
+										else if ($_SESSION['Page_Purpose'] == "news")				{		$Title_Text = "Welcome to our news page...";	}
+										else if ($_SESSION['Page_Purpose'] == "journal")			{		$Title_Text = "Welcome to our journal...";	}
+										else if ($_SESSION['Page_Purpose'] == "research")			{		$Title_Text = "Welcome to our research page...";	}
+										else if ($_SESSION['Page_Purpose'] == "contactus")			{		$Title_Text = "Welcome to our contact-us page...";	}
+										else if ($_SESSION['Page_Purpose'] == "events")				{		$Title_Text = "Welcome to our events page...";	}
+										else if ($_SESSION['Page_Purpose'] == "adminpage")			{		$Title_Text = "Welcome to the administration area...";	}
+										else if ($_SESSION['Page_Purpose'] == "updatearticles")		{		$Title_Text = "Welcome to the articles administration area...";	}
 										
-										if ($tablecolourbool == 1)
-										{
-											echo "<small><em>posted: " . date('l jS F Y', $article['article_published_date']) . "</em></small>";					
-										}
-										else 
-										{
-											echo "<small2><em>posted: " . date('l jS F Y', $article['article_published_date']) . "</em></small2>";					
-										}
 									?>
+										<tr>										
+											<td align="left">
+												<div class="alert alert-info" role="alert">											
+													<?php echo $Title_Text;	?> 	
+												</div>
+											</td>	
+										</tr>
+									</table>
+								</div>
+								Can we go to the very root of conflict and be free from it?
+								<br><br>
+								
+								Can we go to the very root of illness and be free from it?
+								<br><br>
+								<h9>	
+								
+								Can we go to the very root of all things within our reality, and free ourselves from the inauthentic and 
+								manufactured meanings which have been bestowed upon them for centuries? Instead, opening ourselves up to contemplate, 
+								with the whole of our being and our authentic selves, the very essence of our True relationship with all phenomena.	
+								<br><br>
+									
+								If you say; “Yes, there might be a different way of knowing and being in the world”, a safe and nurturing space 
+								is allowed to gently emerge; providing us the opportunity to communicate with each other and hold a living enquiry, together.
+								<br><br>
+									
+								If you choose to live in a world where anything and everything is possible, and where absence of evidence 
+								is not evidence of absence, then we invite you to join us in this shared space of enquiry.	
+								<br><br>
+									
+								As PhD researchers we are exploring the deeper implications of quantum physics from a philosophical 
+								and spiritual perspective. Essentially, enquiring into how we can we move forward from a Newtonian 
+								physical view of the universe as being either/or, black/white, binary and abstract, to a space of deep 
+								interconnection and wholeness.	
+								<br><br>
+								
+								We invite you to share this journey with us as we explore the ‘space between’ 
+								different ways of knowing, enquiring into the possibility of bringing many worlds together.
+								<br><br>
+								</h9>
+							</div>
+							<div class="sidenav col-md-2 sidenav navbar-light">
+								<table class="TrendingTable">
+									
+								<?php
+									foreach ($articles as $article)
+									{
+								?>
+										<tbody>
+											<tr>	
+												<td> 
+													<a href="displayarticle.php?id=<?php echo $article['article_id']; ?> " class="trendinglink">
+													</a>
+												</td>	
+												
+												<td>
+													<div class="alert article alert-secondary"><a href="displayarticle.php?id=<?php echo $article['article_id']; ?> " class="trendinglink">
+												<?php 
+														echo $article['article_title']; 
+														echo "<br>";
+														
+													echo "</a></div>";	
+													if ($tablecolourbool == 1)
+													{
+														echo "<small><em><b>posted:</b> " . date('l jS F Y', $article['article_published_date']) . "</em></small><br><br>";					
+													}
+													else 
+													{
+														echo "<small2><em><b>posted:</b> " . date('l jS F Y', $article['article_published_date']) . "</em></small2><br><br>";					
+													}
 
-									</td>	
-								</tr>									
-							</tbody>
-					<?php
-							$tablecount++;
-							if ($tablecount >= 7)	
-								break;
-						}
-					?>
+													
+												?>
 
-						<tfoot>	
-							<tr>	
-								<th colspan="2" bgcolor = <?php echo "$TableColour1" ?> >
-									<h12>
-										<br>&nbsp;<em>all trending shown in descending order</em><br>&nbsp;
-									</h12>
-								</th>    
-							</tr>   
-						</tfoot>
-					</table>
+												</td>	
+											</tr>									
+										</tbody>
+								<?php
+										$tablecount++;
+										if ($tablecount >= 7)	
+											break;
+									}
+								?>
+								</table>
+							</div>
+													
+							<br style="clear: left;" />
+						</div>
+					</div>
 				</div>
-										
-				<br style="clear: left;" />
 			</div>
 			
 <!-- END of MAIN BODY div -->								
-			
-<!-- START of FOOTER -->
-
-			<div class="Footer">		</div>					<!-- shows the banner at the bottom of the page -->
-			
-<!-- END of FOOTER -->			
-
 <!-- END of PAGE CONTAINER div -->								
 
 		</body>

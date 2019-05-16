@@ -1,43 +1,18 @@
-	<div class="Container"> 																	<!-- overall page container div -->
-		<div class="Header">		</div> 														<!-- shows the banner at the top of the page -->
-	</div>
-
-	<div class="CenterContent"> 																	<!-- overall page container div -->
-	<?php	
-		include_once("MemberLoginRegisterandAdminMap.php"); 
-	?>		
-	</div>
-	
-	<br style="clear: left;" / >				
-		
-<!-- START of PAGE TITLE - e.g. welcome, journal, aboutus, etc. -->			
-
-	<div class="Container">
-		<div class="PagePurpose">			
-		
-			<table border="0" cellpadding="5" cellspacing="0" width="800px">
-			<?php
-				if 		($_SESSION['Page_Purpose'] == "index")				{		$Title_Text = "Welcome to the Institute for Holistic Science...";	}
-				else if ($_SESSION['Page_Purpose'] == "about")				{		$Title_Text = "Welcome to the about us page...";	}
-				else if ($_SESSION['Page_Purpose'] == "news")				{		$Title_Text = "Welcome to our news page...";	}
-				else if ($_SESSION['Page_Purpose'] == "journal")			{		$Title_Text = "Welcome to our journal...";	}
-				else if ($_SESSION['Page_Purpose'] == "research")			{		$Title_Text = "Welcome to our research page...";	}
-				else if ($_SESSION['Page_Purpose'] == "contactus")			{		$Title_Text = "Welcome to our contact-us page...";	}
-				else if ($_SESSION['Page_Purpose'] == "events")				{		$Title_Text = "Welcome to our events page...";	}
-				else if ($_SESSION['Page_Purpose'] == "adminpage")			{		$Title_Text = "Welcome to the administration area...";	}
-				else if ($_SESSION['Page_Purpose'] == "updatearticles")		{		$Title_Text = "Welcome to the articles administration area...";	}
-				
-			?>			
-				<tr>	
-					<td align="left" colspan="6">	
-						<h7>	<?php echo $Title_Text;	?>	</h7> 	
-					</td>	
-				</tr>
-			</table>
+	<div class="Container">																			<!-- header -->
+		<div class="navbar navbar-light navbar-expand-md">
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">&#x2630;</button> <a class="navbar-brand" href="/">HOLISTIC SCIENCE JOURNAL</a>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			</div>
+				<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+				  <form class="form-inline my-2 my-lg-0 ml-auto">
+					<input class="form-control" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Search</button>
+				  </form>
+			</div>
 		</div>
 	</div>
-
-<?php
+	
+		<?php
 
 	$tablecolourbool = 0;									// 	initialise variables for the trending table (controls the colour of the row on a bool switch)
 	$tablecolour = 0;										//	holds the colour of the table
