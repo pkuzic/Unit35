@@ -1,22 +1,20 @@
-var $carousel = $('.carousel').overlapSlideshow({ //.carousel is a css selector
-	imagesLoaded:true;
-	percentPosition: false;
-})
+var carousel = document.querySelector('.carousel');
+var cellCount = 6;
+var selectedIndex = 0;
 
-var $images = $carousel.find('carousel-cell img');
+function rotateCarousel() {
+  var angle = selectedIndex / cellCount * -360;
+  carousel.style.transform = 'translateZ(-288px) rotateY(' + angle + 'deg)';
+}
 
-var documentStyle = document.documentElement.style;
+var prevButton = document.querySelector('.carouselPrevButton');
+prevButton.addEventListener( 'click', function() {
+  selectedIndex--;
+  rotateCarousel();
+});
 
-var transformImg = typeof documentStyle.transform == 'string' ? 'transform' : 'WebkitTransform';
-
-var overlapSlide = $carousel.data('overlapSlideshow');
-
-$carousel.on ('scroll.overlapSlideshow', function() {
-
-		overlapSlide.slides.foreach (function(slide, i) {
-			var img = $img[i];
-			var x = (slide.target + overlapSlide.x) * -1/3;
-			img.style[transformImg] = 'translateX(' + x + 'px)';
-
-	  });
+var nextButton = document.querySelector('.carouselNextButton');
+nextButton.addEventListener( 'click', function() {
+  selectedIndex++;
+  rotateCarousel();
 });
