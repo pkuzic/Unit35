@@ -197,7 +197,6 @@ a.calendar:hover							{	color: #444;		border-bottom-color: #444;											}
 
 /* This table is used on the NEWS.php & RESEARCH.php page */
 .StyledTable1 td 													{  	vertical-align:middle; 	text-align:left;    	border:0.0px dotted slateGray; 			}
-.StyledTable1														{	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1); margin: 0.1em:								}
 
 /* This table is used on the PAGEPURPOSE.php page - for the main menu */
 .InvisibleTableBorders 											{	width:800px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
@@ -603,4 +602,8 @@ textarea#styled {
 	.fakebutton {
 		background-color: #f8f9fa!important;
 		border-color: #f8f9fa!important;
+	}
+	
+	.alert {
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 	}

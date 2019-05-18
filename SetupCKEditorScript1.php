@@ -6,7 +6,7 @@
 			<meta charset="utf-8">
 			<script src="./CKEditorFiles/Editor/ckeditor.js"></script>						
 			<script src="./CKEditorFiles/Editor/samples/sample.js"></script>
-			<link href="./CKEditorFiles/Editor/samples/sample.css" rel="stylesheet">
+			<?php //<link href="./CKEditorFiles/Editor/samples/sample.css" rel="stylesheet"> ?>
 			              
 			<!-- <link rel="stylesheet" href="./E/E/samples/sample.css"> -->
 			<meta name="ckeditor-sample-required-plugins" content="sourcearea">

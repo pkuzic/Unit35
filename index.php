@@ -71,7 +71,10 @@
 				$_SESSION['MEMBERPAGEYN'] = "YES";
 				
 				$_SESSION['Page_Purpose'] = "index";
-				include_once("./CommonPages/PagePurpose.php");
+				
+				include_once("includes/header.php");
+				include_once("includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
+				include_once("includes/variables.php"); //new pagepurpose.php to identify the purpose
 			?>					
 		<?php
 		/*	########################################################################################################################################
@@ -96,17 +99,6 @@
 								<div class="PagePurpose">			
 								
 									<table border="0" width="100%">
-									<?php
-										if 		($_SESSION['Page_Purpose'] == "index")				{		$Title_Text = "Institute for Holistic Science";	}
-										else if ($_SESSION['Page_Purpose'] == "about")				{		$Title_Text = "About Us";	}
-										else if ($_SESSION['Page_Purpose'] == "news")				{		$Title_Text = "News";	}
-										else if ($_SESSION['Page_Purpose'] == "journal")			{		$Title_Text = "Journal";	}
-										else if ($_SESSION['Page_Purpose'] == "research")			{		$Title_Text = "Research";	}
-										else if ($_SESSION['Page_Purpose'] == "contactus")			{		$Title_Text = "Contact Us";	}
-										else if ($_SESSION['Page_Purpose'] == "events")				{		$Title_Text = "Events";	}
-										else if ($_SESSION['Page_Purpose'] == "adminpage")			{		$Title_Text = "Admin Panel";	}
-										else if ($_SESSION['Page_Purpose'] == "updatearticles")		{		$Title_Text = "Articles Moderation";	}
-									?>
 										<tr>										
 											<td align="left">
 												<div class="alert alert-info" role="alert">											
@@ -162,7 +154,7 @@
 								}
 								?>
 							</div>
-							<div class="sidenav col-md-2 sidenav navbar-light">
+							<div class="sidenav col-md-2 sidenav navbar-light"> <?php //Right side bar ?>
 								<table class="TrendingTable">
 									
 								<?php

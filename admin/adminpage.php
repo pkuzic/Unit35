@@ -156,7 +156,7 @@
 							for ($x = 0; $x<16; $x++)
 							{
 						?>
-								<tr>	<td width="15%">	<img border="0" src="../../images/smallicon.png" width="26" height="26">	</td>	
+								<tr>	<td width="15%">	<img border="0" src="../images/smallicon.png" width="26" height="26">	</td>	
 										<td width="5%">		&nbsp;																	</td>	
 										<td width="80%">
 											<a href=<?php echo " $optionpagearray[$x] " ?> class = "memberlink">	
@@ -186,7 +186,7 @@
 									<br><br>Please logout out OR return to the members area<p>";
 						?>
 							<a href="logout.php" class = "memberlink">Logout<p>
-							<a href="../../members.php" class = "memberlink">Return to the members area<p>
+							<a href="../members.php" class = "memberlink">Return to the members area<p>
 						</div>
 					<?php
 							

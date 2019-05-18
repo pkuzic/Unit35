@@ -1,15 +1,27 @@
-<?php 
+<?php
 
-	// mp5 and blowfish
-	// echo md5('password');
+/*	########################################################################################################################################
+	Start the session - this will enable the setting of the following $_SESSION variables
+	
+	$_SESSION['Page_Purpose'] = "index" - indicates that we are currently displaying the HOME page;
+	
+	##################################################################################################################################### */
 	
 	if (session_status() == PHP_SESSION_NONE) 
 	{
 		session_start();
 	}
+
+/*	########################################################################################################################################
+	Include the Php libraries
 	
-	include_once ('./CMS/includes/connection.php');
+	article.php		- contains all of the classes that are used throughout the solution
+	connection.php	- connects to the DB
+
+	##################################################################################################################################### */
+
 	include_once ('./CMS/includes/article.php');
+	include_once ('./CMS/includes/connection.php');
 	
 	$x = 0;
 	$member = new Member;
@@ -17,45 +29,57 @@
 	$fillboxes = 0;
 
 ?>	
-
+	
 	<html>
-
 		<head>
 			<?php 
 				include_once 'includes/head.php'
 			?>
-
-	<!-- START of MEMBERSPAGE STYLES -->		
-			
-			<link rel="stylesheet" type="text/css" href="./CSS/MemberPageStyles.css">
-
-			
-	<!-- END of MEMBERSPAGE STYLES -->
-		
 		</head>
 
 		<body>
-
-			<div class="Container"> 																	<!-- overall page container div -->
-				<div class="Header">		</div> 														<!-- shows the banner at the top of the page -->
-			 	<div class = "Menu">		</div>
+	
+		<?php
+			$_SESSION['ADMINPAGEYN'] = "NO";
+			$_SESSION['MEMBERPAGEYN'] = "YES";
 			
+			$_SESSION['Page_Purpose'] = "register";
 
-<!-- START of PAGE TITIEL - e.g. welcome, journal, aboutus, etc. -->			
-
-				<div class="PagePurpose">			
-					<table border="0" cellpadding="5" cellspacing="0" width="800px">
-						<tr>	<td align="left" colspan="6">		
-								<h7>	Register as a new members of this site...</h7> 	
-								</td>	
-						</tr>
-					</table>
-				</div>
+			include_once("includes/header.php");
+			include_once("includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
+			include_once("includes/variables.php"); //new pagepurpose.php to identify the purpose
+		?>	
 			
+<?php
+/*	########################################################################################################################################
+	This section holds the LHC of the welcome page. It holds a general greeting and general about us
+	The <div class = "container"> is used to center the boxes (the section-box) on the screen	
+	##################################################################################################################################### */
+?>													
+			<div class="Container">		
+			<!-- header -->	
+					<div class="container-fluid">
+						<div class="row">
+							<?php 
+								include_once 'includes/leftside.php'
+							?>
 
-<!-- END of PAGE TITIEL - e.g. welcome, journal, aboutus, etc. -->							
-			
-			<?php				
+							<div id="wrapper" class="col-md-8 text-left">
+	
+								<div class="PagePurpose">			
+								
+									<table border="0" width="100%">
+										<tr>										
+											<td align="left">
+												<div class="alert alert-info" role="alert">											
+													<?php echo $Title_Text;	?> 	
+												</div>
+											</td>	
+										</tr>
+									</table>
+								</div>
+								<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>
+<?php				
 				if (isset($_SESSION['logged_in']) == true)
 				{
 					//<script type="text/javascript">	alert("in the logged in if part");	</script>
@@ -179,21 +203,24 @@
 			<?php
 					}
 				}
-			?>
-					
+			?>							
 			</div>
-			
+							</div>
+							<div class="sidenav col-md-2 sidenav navbar-light">
+								 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies vestibulum luctus. Aenean tincidunt eget felis vel maximus. Nunc id sapien elementum, sagittis quam luctus, dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, augue non cursus sodales, felis tortor dictum elit, fringilla rutrum turpis ex ac libero. Nullam at ipsum laoreet dui blandit finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent auctor iaculis elit eu interdum. Maecenas at libero id ante placerat imperdiet. Quisque vitae cursus ligula. Cras ac scelerisque dui.
+							</div>
+													
+							<br style="clear: left;" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+
 <!-- END of MAIN BODY div -->								
 
-<!-- START of FOOTER -->
-
-			<div class="Footer">		</div>					<!-- shows the banner at the bottom of the page -->
-			
-<!-- END of FOOTER -->			
-	
-		</div> 
-		
 <!-- END of PAGE CONTAINER div -->								
 
-	</body>
-</html>
+		</body>
+
+	</html>

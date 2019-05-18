@@ -22,7 +22,7 @@
 
 	include_once ('./CMS/includes/article.php');
 	include_once ('./CMS/includes/connection.php');
-		
+
 	$article = new Article;
 	$articles = $article->fetch_all();					// load all articles into memory
 	
@@ -37,13 +37,7 @@
 	
 	$_SESSION['minnumberofjournals'] = 1;
 	$_SESSION['maxnumberofjournals'] = $journalcount;
-	
-	
-/*	########################################################################################################################################
-	We want to load all of the used (staff members) into memory - just the title, first name and last name
-	we want to do this to show who wrote the article in the news section.
-	##################################################################################################################################### */
-	
+
 	$user_array_title = array();
 	$user_array_first_name = array();
 	$user_array_last_name = array();
@@ -59,13 +53,7 @@
 		$user_array_last_name[$usercount] = $user['user_name_last'];
 		$usercount++;
 	}
-	
-/*	########################################################################################################################################
-	We want to see the current journal that is to be displayed. The first time round (when the page initialliy loads)
-	this will be nothing - nothing is selected. However, when a journal is selected we load SELF again with an ID in the URL
-	if this URL ID is set then we want to load that particulat journal, then show all the articles assoiated with that journal
-	##################################################################################################################################### */	
-	
+
 	if (isset($_GET['prevnext']))
 	{
 		if ($_GET['prevnext'] == "1")
@@ -122,10 +110,11 @@
 		$_SESSION['big_journal_number'] = 1;
 	}
 	
+
+
 ?>	
 	
 	<html>
-
 		<head>
 			<?php 
 				include_once 'includes/head.php'
@@ -134,7 +123,6 @@
 			<?php	
 				include_once('./SetupCKEditorScript1.php');	// this include allows us to use the CKEditor for displaying the text (abstract) - not sure why
 			?>		
-			
 		</head>
 
 		<body>
@@ -144,17 +132,42 @@
 			$_SESSION['MEMBERPAGEYN'] = "YES";
 			
 			$_SESSION['Page_Purpose'] = "journal";
-			include_once("./CommonPages/PagePurpose.php");
-		?>	
 
-			<div class="Container">
-			<?php
-				include_once("./CommonPages/JournalNavigation.php");
-			?>	
+			include_once("includes/header.php");
+			include_once("includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
+			include_once("includes/variables.php"); //new pagepurpose.php to identify the purpose
+		?>	
 			
-			</div>
-		
-			<div class="Container">
+<?php
+/*	########################################################################################################################################
+	This section holds the LHC of the welcome page. It holds a general greeting and general about us
+	The <div class = "container"> is used to center the boxes (the section-box) on the screen	
+	##################################################################################################################################### */
+?>													
+			<div class="Container">		
+			<!-- header -->	
+					<div class="container-fluid">
+						<div class="row">
+							<?php 
+								include_once 'includes/leftside.php'
+							?>
+
+							<div id="wrapper" class="col-md-8 text-left">
+	
+								<div class="PagePurpose">			
+								
+									<table border="0" width="100%">
+										<tr>										
+											<td align="left">
+												<div class="alert alert-info" role="alert">											
+													<?php echo $Title_Text;	?> 	
+												</div>
+											</td>	
+										</tr>
+									</table>
+								</div>
+								<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>
+												<div class="Container">
 				<div class="section-box">
 				
 				<?php
@@ -341,17 +354,17 @@
 								if($tablecolourbool == 0)	{	$tablecolour = $TableColour1;		$tablecolourbool = 1;		}
 								else						{	$tablecolour = $TableColour2;		$tablecolourbool = 0;		}
 					?>
-<?php	// (1)	?>																			
+								<?php	// (1)	?>																			
 								<tr>	<th bgcolor = <?php echo "$tablecolour" ?> >
 											<h12>	
 												<img border="0" src = "./images/PDFIcon.png" align="center" width="45" height="45">	
 											</h12>	
 										</th>    
-<?php	// (2)	?>																													
+										<?php	// (2)	?>																													
 										<th width="2%" bgcolor = <?php echo "$tablecolour" ?>>
 											<h12>	&nbsp;	</h12>	
 										</th>    
-<?php	// (3)	?>
+										<?php	// (3)	?>
 										<th bgcolor = <?php echo "$tablecolour" ?> >
 											<h12>
 											<?php 	
@@ -403,20 +416,25 @@
 														
 				<br style="clear: left;" />
 			</div>
-			<p>
-			
-<!-- END of MAIN BODY div -->								
-			
-<!-- START of FOOTER -->
 
-			<div class="Footer">		</div>					<!-- shows the banner at the bottom of the page -->
-			
-<!-- END of FOOTER -->			
+								</div>
+
+							</div>
+							<div class="sidenav col-md-2 sidenav navbar-light">
+								 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies vestibulum luctus. Aenean tincidunt eget felis vel maximus. Nunc id sapien elementum, sagittis quam luctus, dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, augue non cursus sodales, felis tortor dictum elit, fringilla rutrum turpis ex ac libero. Nullam at ipsum laoreet dui blandit finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent auctor iaculis elit eu interdum. Maecenas at libero id ante placerat imperdiet. Quisque vitae cursus ligula. Cras ac scelerisque dui.
+							</div>
+													
+							<br style="clear: left;" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+<!-- END of MAIN BODY div -->								
 
 <!-- END of PAGE CONTAINER div -->								
 
 		</body>
 
 	</html>
-
-				
