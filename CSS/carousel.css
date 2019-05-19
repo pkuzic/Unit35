@@ -1,47 +1,22 @@
-.carousel_container{
-	margin: 40px auto;
-	width: 250px;
-	height: 300px;
-	position: relative;
-	perspective: 1000px;
+
+
+
+.glider  img{
+width:500px;
+height:auto;
+padding: 10px;
+/* Stop highlighting image */
+ 	-o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
-.carousel {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	transform: translateZ(-216px);
-	transform-style: preserve-3d;
-	transition: transform 1s;
-
+.glider{
+	overflow-x:hidden;
 }
 
-.carousel_cell {
-	position: absolute;
-	width: 240px;
-	height: 290px;
-	left: 10px;
-	right: 10px;
-	overflow: hidden;
-
+.glider-contain{
+	width: 95%;
 }
-
-.carousel_cell img{
-	width: 240px;
-	overflow: hidden;
-}
-
-/*Rotating the faces of the carousel */
-
-/* Working out TranslateZ             opposite should be half of width
-
-tan(60deg) = 200 / r      -        r = 200 / tan(20deg)     -        r = 549          */
-
-.carousel_cell:nth-child(1) { transform: rotateY(0deg) translateZ(216px);  }
-.carousel_cell:nth-child(2) { transform: rotateY(60deg) translateZ(216px);  }
-.carousel_cell:nth-child(3) { transform: rotateY(120deg) translateZ(216px); }
-.carousel_cell:nth-child(4) { transform: rotateY(180deg) translateZ(216px); }
-.carousel_cell:nth-child(5) { transform: rotateY(240deg) translateZ(216px); }
-.carousel_cell:nth-child(6) { transform: rotateY(300deg) translateZ(216px); }
-
 

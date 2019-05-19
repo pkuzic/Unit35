@@ -23,6 +23,25 @@
 	include_once ('./CMS/includes/article.php');
 	include_once ('./CMS/includes/connection.php');
 
+//Article PHP
+	$article = new Article;
+	$articles = $article->fetch_all();					// load all articles into memory
+	
+	$journal = new Journal;
+	$journals = $journal->fetch_journal_details();		// load all journals into memory
+	$journalcount=0;
+	
+	foreach ($journals as $journal)							// cycle through the data (from the DB table) and put it into the appropriate arrays
+	{
+		$journalcount++;
+	}
+	
+	$_SESSION['minnumberofjournals'] = 1;
+	$_SESSION['maxnumberofjournals'] = $journalcount;
+
+//Article PHP END
+
+
 	$news = new News;
 	$newss = $news->fetch_news_stories_decending();		// load all news articles into memory
 	
@@ -56,13 +75,21 @@
 	$article = new Article;									//	a new instance of class article
 	$articles = $article->fetch_all_date_descending();		// 	Get all of the articles in the database table (in descending order of date)
 	
+
 ?>	
+
+
 	
 	<html>
 		<head>
 			<?php 
 				include_once 'includes/head.php'
 			?>
+
+			<link rel="stylesheet" href="CSS/glider.css" type="text/css">
+    		<link rel="stylesheet" href="CSS/carousel.css" type="text/css">
+    		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
 		</head>
 
 		<body>
@@ -87,6 +114,7 @@
 			The <div class = "container"> is used to center the boxes (the section-box) on the screen	
 			##################################################################################################################################### */
 		?>		
+
 			<div class="Container">		
 			<!-- header -->	
 					<div class="container-fluid">
@@ -94,7 +122,7 @@
 							<?php 
 								include_once 'includes/leftside.php'
 							?>
-							<div id="wrapper" class="col-md-8 text-left">
+							<div  class="col-md-8 text-left">
 	
 								<div class="PagePurpose">			
 								
@@ -109,6 +137,39 @@
 									</table>
 								</div>
 
+	<div class="StyledTable1 alert">
+		<div class="glider-contain multiple">
+
+		    <div class="glider">
+
+
+				<?php
+					foreach ($journals as $journal)
+					{
+					
+						
+				?>
+
+								<?php 	$imagestring = $journal['journal_image']; ?>
+								<img border="0" <?php echo "src = $imagestring"; ?> >
+
+									<?php	
+					}
+			?>
+		
+		    </div>
+
+		  <button class="glider-prev">
+		    <i class="fa fa-chevron-left"></i>
+		  </button>
+
+		  <button class="glider-next">
+		    <i class="fa fa-chevron-right"></i>
+		  </button>
+
+		  <div id="dots" class="glider-dots"></div>
+		</div>
+	</div>
 				<?php
 				/*	########################################################################################################################################
 					Now put all of the news articles out in a tabular format
@@ -121,12 +182,9 @@
 									else						{	$tablecolour = $TableColour2;		$tablecolourbool = 0;		}
 							?>
 
-				<?php
-				/*	########################################################################################################################################
-					Show a table with collapsed border - a solid table
-					##################################################################################################################################### */
-				?>				
+
 								<div class="StyledTable1 alert">
+
 									<h4><?php 	
 										$news_title_string = 	$news['news_title'] . " "; 
 										echo $news_title_string;
@@ -153,6 +211,7 @@
 								<?php	
 								}
 								?>
+
 							</div>
 							<div class="sidenav col-md-2 sidenav navbar-light"> <?php //Right side bar ?>
 								<table class="TrendingTable">
@@ -206,7 +265,44 @@
 			</div>
 			
 <!-- END of MAIN BODY div -->								
-<!-- END of PAGE CONTAINER div -->								
+<!-- END of PAGE CONTAINER div -->	
+
+<script src="Javascript/glider.js"></script> 
+
+<script>
+new Glider(document.querySelector('.glider'), {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  draggable: true,
+  dots: '#dots',
+  scrollLock: true,
+  rewind:true,
+  arrows: {
+    prev: '.glider-prev',
+    next: '.glider-next'
+  },
+   responsive: [
+    {
+      // screens greater than >= 775px
+      breakpoint: 775,
+      settings: {
+        slidesToShow: 'auto',
+        slidesToScroll: 'auto',
+        itemWidth: 150,
+        duration: 0.25
+      }
+    },{
+      // screens greater than >= 1024px
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        itemWidth: 500,
+      }
+    }
+  ]
+})
+</script>
 
 		</body>
 
