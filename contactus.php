@@ -76,13 +76,9 @@
 									</tr>
 								</table>
 							</div>
-							<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>					
-						<?php
-							$tablecolourbool = 0;
-							if($tablecolourbool == 0)	{	$tablecolour = $TableColour1;		$tablecolourbool = 1;		}
-							else						{	$tablecolour = $TableColour2;		$tablecolourbool = 0;		}
-						?>
-								<form action="html_form_send.php" method="post">
+							<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>	
+							<div class="alert alert-danger" role="alert">This form is currently unavailable!</div>				
+								<form method="post">
 									<div class="form-group">
 										<label for="first_name">First name</label>
 										<input type="text" class="form-control" name="first_name" placeholder="Enter your first name">
@@ -101,10 +97,9 @@
 									</div>
 									<div class="form-group">
 										<label for="message">Contact Number</label>
-										<textarea id="styled" class="form-control" name="message" maxlength="1000" cols="39" rows="6"></textarea>
+										<textarea class="form-control" name="message" maxlength="1000" cols="39" rows="6"></textarea>
 									</div>
-
-									<button type="submit" class="btn btn-primary">Submit</button>
+									<button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
 								</form>
 							</div>
 						</div>
