@@ -85,7 +85,7 @@
 									</div>
 									<div class="form-group">
 										<label for="last_name">Last name</label>
-										<input type="text" class="form-control" name="last_name" placeholder="Enter your first name">
+										<input type="text" class="form-control" name="last_name" placeholder="Enter your last name">
 									</div>
 									<div class="form-group">
 										<label for="email">Email Name</label>

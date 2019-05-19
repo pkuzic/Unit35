@@ -115,14 +115,25 @@
 						//$query->execute();
 								
 						//$num = $query->rowCount();
-						
-						$num = $member->find_member($member_username);			// returns the number of rows in the DB related to the query
-						
-						if ($num >= 1)	
-						{	
+
+						$numemail = $member->find_member($member_email);			// returns the number of rows in the DB related to the query
+
+						if ($numemail >= 1) {	
 						?>	
 							<script type="text/javascript">	
-								alert("\tThe username already exists...\n\n Please select a different username\n\n");
+								alert("\tUser with such email is already registered.\n\n Please, select different email.\n\n");
+							</script>
+
+						<?php
+							$fillboxes = 1;
+						}
+
+						$numusername = $member->find_member($member_username);			// returns the number of rows in the DB related to the query
+						
+						if ($numusername >= 1)	{	
+						?>	
+							<script type="text/javascript">	
+								alert("\tUser with such username is already registered.\n\n Please, select different username.\n\n");
 							</script>
 
 						<?php
@@ -157,47 +168,54 @@
 					?>									
 						<div class="CenterContent">
 							<form action="register.php" method="post" autocomplete="off">
-								<h11>	
-									Please input your details	<small>** PLEASE NOTE - ALL fields must be completed </small>	
-									<br><br>
-									
-									Please enter your title <small>(Mr. Miss. Ms. Mrs. Dr. Prof.) </small> <br>
-									<input type = "text" 		name = 	"member_name_title"	size = 90 <?php if($fillboxes == 1)	echo "value = $member_name_title";	?>	/>	
-									<br><br>
-									
-									Please enter your first name <br>
-									<input type = "text" 		name = 	"member_name_first" size = 90 <?php if($fillboxes == 1)	echo "value = $member_name_first";	?>	/>	
-									<br><br>
-									
-									Please enter your last name <br>
-									<input type = "text" 		name = 	"member_name_last" 	size = 90 <?php if($fillboxes == 1)	echo "value = $member_name_last";	?>	/>	
-									<br><br>
+									<div class="form-group">
+										<label for="first_name">Title</label>
+										<select id="inputState" class="form-control" name = "member_name_title">
+											<option selected>Mr</option>
+											<option selected>Miss</option>
+											<option selected>Ms</option>
+											<option selected>Mrs</option>
+											<option selected>Dr</option>
+											<option selected>Prof</option>
+										</select>	
+									</div>
+
+									<div class="form-group">
+										First name
+										<input type = "text" class="form-control" placeholder="Enter your first name" 		name = 	"member_name_first" <?php if($fillboxes == 1)	echo "value = $member_name_first";	?>	/>	
+									</div>
+
+									<div class="form-group">
+										Last name
+										<input type = "text" class="form-control" placeholder="Enter your last name" 		name = 	"member_name_last"  <?php if($fillboxes == 1)	echo "value = $member_name_last";	?>	/>	
+									</div>
 								
-									Please enter a username <small>(8 or more characters - numbers, letters and symbols suggested) </small> <br>
-									<input type = "text" 		name = 	"username" 			size = 90 <?php /* we want to blank out this box so don't fill it */	?>	/>	
-									<br><br>
+									<div class="form-group">
+										Username
+										<input type = "text" class="form-control" placeholder="Enter your username"		name = 	"username"  <?php /* we want to blank out this box so don't fill it */	?>	/>	
+									</div>
+
+									<div class="form-group">
+										Password			
+										<input type = "password" class="form-control" placeholder="Enter your password"		name = 	"password" <?php /* we want to blank out this box so don't fill it */	?>	/>	
+									</div>
+
+									<div class="form-group">
+										Email				
+										<input type = "text" class="form-control" placeholder="Enter your email address"		name = 	"email" <?php if($fillboxes == 1)	echo "value = $member_email";		?>	/>
+									</div>
 									
-									Please enter a password  <small>(8 or more characters - numbers, letters and symbols suggested) </small> <br> 					
-									<input type = "text" 		name = 	"password" 			size = 90 <?php /* we want to blank out this box so don't fill it */	?>	/>	
-									<br><br>
-									
-									Please enter your email address  <small>(your_mail_address@your_domain  - e.g.info@yahoo.co.uk) </small> <br>					
-									<input type = "text" 		name = 	"email" 			size = 90 <?php if($fillboxes == 1)	echo "value = $member_email";		?>	/>
-									<br><br>
-									
-									<input type	= "checkbox" 	name=	"newsletterY" 
-									<?php 	
-										if($fillboxes == 1)	
-										{ 
-											if (isset($_POST['newsletterY']))	echo "checked";
-										}
-									?>	
-									
-									
-									Would you like to subscribe to our newsletter - tick for Y <small>(4 newsletters per year - subscription is free)</small> <br><br>
-								
-									<input type = "image" src="./images/RegisterButton.png" WIDTH="99" HEIGHT="20" BORDER="0" ALT="SUBMIT DETAIL AND REGISTER" /> 
-								</h11>
+									<div class="form-check">
+										<input class="form-check-input" type	= "checkbox" 	name=	"newsletterY"> 
+										<?php 	
+											if($fillboxes == 1)	
+											{ 
+												if (isset($_POST['newsletterY']))	echo "checked";
+											}
+										?></input>	
+									 <label class="form-check-label" for="newsletterY">Would you like to subscribe to our newsletter? <small>(4 newsletters per year - subscription is free)</small></label>
+									</div>
+									<br><button type="submit" class="btn btn-primary">Sign In</button>
 							</form>
 						</div>
 			<?php

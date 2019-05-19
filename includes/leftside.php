@@ -22,7 +22,7 @@
 
 
 	<?php 
-	if 		($_SESSION['Page_Purpose'] == "members" || $_SESSION['Page_Purpose'] == "register" || $_SESSION['Page_Purpose'] == "adminpage" || isset($_SESSION['logged_in']) == true)				{		}
+	if 		($_SESSION['Page_Purpose'] == "members" || $_SESSION['Page_Purpose'] == "register" || isset($_SESSION['logged_in']) == true)				{		}
 		else {
 	?>
 	<center><div class="btn fakebutton">
