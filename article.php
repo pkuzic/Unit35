@@ -106,6 +106,9 @@
 		$_SESSION['current_journal_number'] = 1;
 		$_SESSION['big_journal_number'] = 1;
 	}
+	
+
+
 if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 {
 	$_SESSION['big_journal_number'] =$_GET['id'];
@@ -167,7 +170,7 @@ if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 								</div>
 								<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>
 												<div class="Container">
-		
+				
 			
 			<div class="section-box2">	&nbsp; &nbsp; </div>
 				
@@ -179,20 +182,145 @@ if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 			(3)......blank
 	-------------------------------------------------------------------------------------------------------------------------------------------------	*/
 ?>				
+				<div class="section-box3">		
+				
+				<?php
 
-				<div class="d-flex flex-wrap">
-		<?php	foreach ($journals as $journal)	{	?>
-							<div class="p-2">
-								<?php 	$imagestring = $journal['journal_image'];
-										$journalid = $journal['journal_id'];
-									 ?>
-									 <a href="article.php?id=<?php echo $journalid ?>">
-								<img border="0" class="journalLink" width="300" <?php echo "src = $imagestring";  ?> ></a>
-							</div>
-									<?php	
+					$tablecolourbool = 0;
+						
+					foreach ($journals as $journal)					// start a loop to cycle through the journal list
+					{
+						
+
+						
+						
+						if ($journal['journal_id'] == $_SESSION['big_journal_number'])		// if we have found the journal
+						{
+							
+							$tablecolour = $TableColour1;
+				?>
+
+<?php	// (1)	?>										
+							<table class="JournalsTable">												 
+								<thead>	<tr>	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >		
+												<?php 	$name_string = "<h11>" . 	"Vol: " . $journal['journal_volume'] . " " . 
+																					"Iss: " . $journal['journal_issue'] . " " .
+																					$journal['journal_name'] . "<br>" .
+																					date('l jS F Y', $journal['journal_published_date']) . 
+																		"</h11>";
+														echo "&nbsp; <br>". $name_string . "<br>&nbsp;";
+												?>
+										</th>	</tr>
+								</thead>
+<?php	// (2)	?>																			
+								<tbody>	
+									<tr>	<td colspan="6" align="center"> 		
+											<?php 	$imagestring = $journal['journal_image']; ?>
+													<img border="0" <?php echo "src = $imagestring"; ?> align="center" width="324" height="390">	
+											</td>	
+									</tr>
+								</tbody>
+<?php	// (3)	?>																												
+								<tfoot>	
+									<tr>	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >
+												&nbsp <br><br>
+											</th>    
+									</tr>   
+								</tfoot>
+							</table>		
+				<?php
+						}
 					}
+				?>
+				<p>
+<?php	
+	/*	-------------------------------------------------------------------------------------------------------------------------------------------------
+		This table outputs the specific journal articles underneath the journal image and consists of three parts
+			(1)......a PDF icon
+			(2)......a blank column
+			(3)......the article - with the author and date
+	-------------------------------------------------------------------------------------------------------------------------------------------------	*/
+?>		
+					<hr><br>
+					<table class="ArticlesTable" colspan="5">
+						<thead>	<tr>	<th colspan="6" bgcolor= <?php echo $TableColour1; ?>>
+											
+											<h12>
+												&nbsp;<br>Current articles for this journal (<em>Note: visited links will dim</em>)<br>&nbsp;
+											</h12>
+										</th>    
+								</tr>   
+						</thead>
+			
+					<?php
+					
+						$tablecolourbool = 0;
+						
+						foreach ($articles as $article)
+						{
+							if($article['journal_reference'] == $_SESSION['big_journal_number'])		// get the journal reference from the current article 
+							{
+								if($tablecolourbool == 0)	{	$tablecolour = $TableColour1;		$tablecolourbool = 1;		}
+								else						{	$tablecolour = $TableColour2;		$tablecolourbool = 0;		}
+					?>
+								<?php	// (1)	?>																			
+								<tr>	<th bgcolor = <?php echo "$tablecolour" ?> >
+											<h12>	
+												<img border="0" src = "./images/PDFIcon.png" align="center" width="45" height="45">	
+											</h12>	
+										</th>    
+										<?php	// (2)	?>																													
+										<th width="2%" bgcolor = <?php echo "$tablecolour" ?>>
+											<h12>	&nbsp;	</h12>	
+										</th>    
+										<?php	// (3)	?>
+										<th bgcolor = <?php echo "$tablecolour" ?> >
+											<h12>
+											<?php 	
+												$linkstring = 	"<a href = displayarticle.php?id=" . 
+																$article['article_id'] . " class='trendinglink'>" . 
+																$article['article_title'] . 
+																"</a>";
+												echo $linkstring;
+												
+												$poster = $article['article_author'];
+												echo "</i><br><br><i>";
+												$article_written_by_string = 	$user_array_title[$poster] . " " .
+																				$user_array_first_name[$poster] . " " . 
+																				$user_array_last_name[$poster] . " " .
+																				date('l jS F Y', $article['article_id']);
+																				
+												
+																																
+												if ($tablecolourbool == 1)
+												{
+													echo "<small><em>" . $article_written_by_string . "</em></small>";					
+												}
+												else 
+												{
+													echo "<small2><em>" . $article_written_by_string . "</em></small2>";					
+												}
+											?>
+											<br><br>
+
+											</h12>	
+										</th>    
+								</tr>
+			<?php
+							}
+						}
 			?>
-		</div>
+						<tfoot>	
+							<tr>	
+								<th colspan="6" bgcolor= <?php echo $TableColour1; ?> >
+									<h12>
+										<br>&nbsp;<em>end of article list ...</em><br>&nbsp;
+									</h12>
+								</th>    
+							</tr>   
+						</tfoot>
+					</table>
+				</div>
 				
 														
 				<br style="clear: left;" />
