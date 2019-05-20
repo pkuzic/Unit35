@@ -102,19 +102,15 @@
 							//	echo "username << " . $_SESSION['username'] . " >> ";
 							//	echo "member_id << " . $_SESSION['member_id'] . " >> ";
 							
-							$loopnum = 5;
+							$loopnum = 3;
 							$optionpagearray = array		(	"searcharticles.php", 
 																"searchauthor.php", 
 																"searchdates.php", 
-																"changememberdetails.php", 
-																"logout.php"
 															);
 							
 							$optionpagetextarray = array	(	"Search articles from a particular journal", 
 																"Search articles from a particular author", 
 																"Search articles between certain dates", 
-																"Change your details on record", 
-																"Logout"
 															);
 
 						}
@@ -122,41 +118,38 @@
 						{
 							$optionpagearray = array 		(	"searcharticles.php", 
 																"searchauthor.php", 
-																"searchdates.php", 
-																"logout.php"
+																"searchdates.php"
 															);
 							
 							$optionpagetextarray = array	(	"Search articles from a particular journal", 
 																"Search articles from a particular author", 
-																"Search articles between certain dates", 
-																"Logout"
+																"Search articles between certain dates"
 															);
-							$loopnum = 4;
+							$loopnum = 3;
 						}
 							
 				?>
-						<table border="0" cellspacing="0" cellpadding="0" align="center">
 						<?php
 							for ($x = 0; $x<$loopnum; $x++)
 							{
 							?>
-								<tr>	<td width="15%">	<img border="0" src="./images/smallicon.png" width="26" height="26">	</td>	
-										<td width="5%">		&nbsp;																	</td>	
-										<td width="80%">
-											<a href=<?php echo " $optionpagearray[$x] " ?> class = "memberlink">	
+											<div class="alert alert-light" role="alert">											
+											<i class="fas fa-angle-right"></i><a href=<?php echo " $optionpagearray[$x] " ?>>	
 											<?php 
 												echo " $optionpagetextarray[$x] "; 
 											?>				
-											</a>									
-										</td>	
-								</tr>
+											</a></div>									
 						<?php
 						}
 					}
 						?>
-					</table>	
 					
-					<p>
+						<?php
+							if($_SESSION['logged_in_as_member'] == FALSE && $_SESSION['logged_in_as_a_user'] == TRUE) {
+								echo '<div class="alert alert-light" role="alert"><i class="fas fa-angle-right"></i><a href="adminpage.php"> Open Admin Panel</a></div>';
+							}
+
+						?>
 			<?php
 				}
 				
@@ -172,8 +165,7 @@
 						$password = $_POST['password'];	
 						
 						if (empty($username) or empty($password))
-							$error = 'Please supply data for all fields!';
-														
+							$error = '<div class="alert alert-danger" role="alert">Please supply data for all fields!</div>';
 						else
 						{
 							$num = $member->find_member_exist($username, $password);							
@@ -196,7 +188,7 @@
 							}
 							else			
 							{	
-								$error = "Sorry - incorrect details entered";	
+								$error = '<div class="alert alert-danger" role="alert">Sorry - incorrect details entered</div>';	
 								session_destroy();	
 								$_SESSION['logged_in_as_member'] = FALSE;
 							}
@@ -209,7 +201,7 @@
 						<div class="CenterContent">
 							<small style="color:#aa0000;">
 							<?php
-								echo $error . "<br>";
+								echo $error;
 							?>
 							<br />
 							</small>
@@ -220,15 +212,18 @@
 								
 					<div class="CenterContent">
 						<form action="members.php" method="post" autocomplete="off">
-							<h11>
-								Please input your username and password 
-							</h11>
-						
-							<small>** both fields must be completed </small>
-							<p>
-							<input type = "text" name = "username" placeholder = "Username" />
-							<input type = "password" name = "password" placeholder = "Password" />
-							<input type = "submit" value = "Login" />
+							<div class="form-group">
+								<label for="first_name">First name</label>
+								<input type="text" class="form-control" name="username" placeholder="Username">
+							</div>
+							<div class="form-group">
+								<label for="last_name">Last name</label>
+								<input type="password" class="form-control" name="password" placeholder="Password">
+							</div>
+
+							<button type="submit" class="btn btn-primary">Sign In</button>
+
+
 						</form>					
 					</div>
 			<?php

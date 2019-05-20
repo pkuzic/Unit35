@@ -5,8 +5,27 @@
 	<p><a class="nav-link btn btn-light" href="journal.php">Journal</a></p>
 	<p><a class="nav-link btn btn-light" href="events.php">Events</a></p>
 	<p><a class="nav-link btn btn-light" href="contactus.php">Contact us</a></p>
+	
+	<?php  // Don't show register button if the user is logged in
+	if 		(isset($_SESSION['logged_in']) == true)				{		}
+		else {
+	?>
 	<p><a class="nav-link btn btn-light" href="register.php">Register</a></p>
-	<div class="btn fakebutton" href="CMS/admin/adminpage.php">
+	<?php } ?>
+
+	<?php // Don't show Member Page page button if the user is logged in
+	if 		(isset($_SESSION['logged_in']) == false)				{		}
+		else {
+	?>
+	<p><a class="nav-link btn btn-light" href="members.php">Member Page</a></p>
+	<?php } ?>
+
+
+	<?php 
+	if 		($_SESSION['Page_Purpose'] == "members" || $_SESSION['Page_Purpose'] == "register" || isset($_SESSION['logged_in']) == true)				{		}
+		else {
+	?>
+	<center><div class="btn fakebutton">
 		<form action="members.php" method="post">
 		  <div class="form-group">
 			<label for="exampleInputEmail1">Email address</label>
@@ -18,6 +37,14 @@
 		  </div>
 		  <button type="submit" class="btn btn-primary">Sign In</button>
 		</form>
-	</div>
+	</div></center>
 	<br><br>
-	</div>
+		<?php
+	} 
+	if (isset($_SESSION['logged_in']) == true) {
+		?>
+		<center><div class="btn fakebutton"><form action="logout.php" method="post"><button type="submit" class="btn btn-primary">Logout</button></form></div></center>
+		<?php
+	}
+	?>
+</div>

@@ -50,7 +50,7 @@
 
 			include_once("includes/header.php");
 			include_once("includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
-			include_once("includes/variables.php"); //new pagepurpose.php to identify the purpose
+			include_once("includes/variables.php"); 
 		?>	
 			
 <?php
@@ -70,7 +70,6 @@
 							<div id="wrapper" class="col-md-8 text-left">
 	
 								<div class="PagePurpose">			
-								
 									<table border="0" width="100%">
 										<tr>										
 											<td align="left">
@@ -81,6 +80,7 @@
 										</tr>
 									</table>
 								</div>
+
 								<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>
 <?php				
 				if (isset($_SESSION['logged_in']) == true)
@@ -93,12 +93,11 @@
 						//	echo "username << " . $_SESSION['username'] . " >> ";
 						//	echo "user_id << " . $_SESSION['user_id'] . " >> ";					
 					
-						$welcomestring = "Welcome " . $_SESSION['title'] . " " . $_SESSION['first_name'] . " " . $_SESSION['last_name'] . ".<br>What administration would you like to perform?";
+						//	$welcomestring = "Welcome to Admin Page, " . $_SESSION['title'] . " " . $_SESSION['last_name'] . ".<br>What administration action would you like to perform?";
 			?>			
 						<div class="PagePurpose">			
-							<table border="0" cellpadding="5" cellspacing="0" width="800px">
+							<table border="0" cellpadding="5" cellspacing="0">
 								<tr>	<td align="left" colspan="6">		
-										<h9>	<?php echo $welcomestring; ?> </h9> 	
 										</td>	
 								</tr>
 							</table>
@@ -107,9 +106,6 @@
 						$optioncount = 0;
 				
 						$optionpagearray = array	(	"admin/updatearticlesondb.php",
-														
-						
-						
 														"admin/adminuser.php?id=1", 	
 														"admin/adminuser.php?id=2", 		
 														"admin/adminuser.php?id=3", 
@@ -129,10 +125,6 @@
 													);
 
 						$optionpagetextarray = array(	"Admin - Add, edit or delete articles",
-						
-						
-						
-						
 														"Admin - Add a member of staff to the system", 
 														"Admin - Edit details held on the system for a member of staff", 
 														"Admin - Delete a member of staff from the system", 
@@ -151,25 +143,18 @@
 														"Logout of administration area"
 													);
 					?>
-						<table border="0" cellspacing="0" cellpadding="0" align="center">
 						<?php
 							for ($x = 0; $x<16; $x++)
 							{
 						?>
-								<tr>	<td width="15%">	<img border="0" src="../../images/smallicon.png" width="26" height="26">	</td>	
-										<td width="5%">		&nbsp;																	</td>	
-										<td width="80%">
-											<a href=<?php echo " $optionpagearray[$x] " ?> class = "memberlink">	
+											<div class="alert alert-light" role="alert">											
+											<i class="fas fa-angle-right"></i><a href=<?php echo " $optionpagearray[$x] " ?>>	
 											<?php 
 												echo " $optionpagetextarray[$x] "; 
 											?>				
-											</a>									
-										</td>	
-								</tr>
-						<?php
+											</a></div>							<?php
 							}
 						?>
-						</table>	
 					<p>
 						
 				<?php
@@ -181,12 +166,12 @@
 						?>
 						<div class = "CenterContent">
 						<?php
-							echo "	<h11>Hello there. <br><br>It appears that you are not a member of staff. 
-									<br><br>Members are not allowed in the administration section
-									<br><br>Please logout out OR return to the members area<p>";
+							echo "	Hello there! <br>It appears that you are not a member of staff. 
+									<br>Members are not allowed in the administration section
+									<br><Please logout out OR return to the members area<br><br>";
 						?>
-							<a href="logout.php" class = "memberlink">Logout<p>
-							<a href="../../members.php" class = "memberlink">Return to the members area<p>
+							<div class="alert alert-light" role="alert"><i class="fas fa-angle-right"></i><a href="logout.php">Logout</a></div>
+							<div class="alert alert-light" role="alert"><i class="fas fa-angle-right"></i><a href="../../members.php">Return to the members area</a></div>
 						</div>
 					<?php
 							
@@ -199,7 +184,7 @@
 						$username = $_POST['username'];		$password = $_POST['password'];	
 						
 						if (empty($username) or empty($password))
-							$error = 'Please supply data for all fields!';
+							$error = '<div class="alert alert-danger" role="alert">Please supply data for all fields!</div>';
 														
 						else
 						{
@@ -227,7 +212,7 @@
 							}
 							else			
 							{	
-								$error = "Sorry - incorrect details entered";	
+								$error = '<div class="alert alert-danger" role="alert">Sorry - incorrect details entered</div>';	
 								session_destroy();	
 							}
 								
@@ -240,7 +225,7 @@
 						<div class="CenterContent">
 							<small style="color:#aa0000;">
 							<?php
-								echo $error . "<br>";
+								echo $error;
 							?>
 							<br />
 							</small>
