@@ -210,26 +210,26 @@ a.calendar:hover							{	color: #444;		border-bottom-color: #444;											}
 .InvisibleTableBorders tfoot tr:first-child th:last-child 			{   border-radius: 0 0 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
 
 /* This table is used on the JOURNAL.php page */
-.JournalsTable 													{	border-collapse: collapse; width:360px; 	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
-.JournalsTable  th 												{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.0em dotted slateGray; 		}
+.JournalsTable 													{	border-collapse: collapse; 	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.JournalsTable  th 												{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.0em dotted slateGray; 			  box-shadow: 2px 2px 5px #888888;}
 .JournalsTable  td 												{  	color:#000099;  vertical-align:middle; 	text-align:center;     	border:0.0px dotted slateGray; 		}
 .JournalsTable  thead tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
-.JournalsTable  thead tr:first-child th:last-child 					{   border-radius: 0.6em 0.6em 0.6em 0.6em;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.JournalsTable  thead tr:first-child th:last-child 					{   border-radius: 0 0 0 0;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
 .JournalsTable  tbody tr:last-child td:first-child 					{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
 .JournalsTable  tbody tr:last-child td:last-child 					{	border-radius: 0 0 0 0;																	}
-.JournalsTable  tfoot tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
-.JournalsTable  tfoot tr:first-child th:last-child 					{   border-radius: 0.6em 0.6em 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+.JournalsTable  tfoot tr:first-child th:first-child 				{	border-radius: 0 0 0 0;																	}
+.JournalsTable  tfoot tr:first-child th:last-child 					{   border-radius: 0 0 0 0;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
 
 /* This table is used on the JOURNAL.php page */
-.ArticlesTable 													{	border-collapse: collapse; width:360px; 	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
-.ArticlesTable  th 												{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.0em dotted slateGray; 		}
+.ArticlesTable 													{	border-collapse: collapse; width:95%;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
+.ArticlesTable  th 												{   color:#000;   	vertical-align:middle; 	text-align:center;    	border:0.0em dotted slateGray; 			  box-shadow: 2px 2px 5px #888888;}
 .ArticlesTable  td 												{  	color:#000099;  vertical-align:middle; 	text-align:center;     	border:0.0px dotted slateGray; 		}
 .ArticlesTable thead tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
-.ArticlesTable  thead tr:first-child th:last-child 					{   border-radius: 0.6em 0.6em 0em 0em;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
+.ArticlesTable  thead tr:first-child th:last-child 					{   border-radius: 0 0 0 0;		/* first row trending - TLHC, TRHC, BRHC, BLHC */	}
 .ArticlesTable  tbody tr:last-child td:first-child 					{   border-radius: 0 0 0 0;				/* each row trending - TLHC, TRHC, BRHC, BLHC */	}
 .ArticlesTable  tbody tr:last-child td:last-child 					{	border-radius: 0 0 0 0;																	}
-.ArticlesTable  tfoot tr:first-child th:first-child 					{	border-radius: 0 0 0 0;																	}
-.ArticlesTable  tfoot tr:first-child th:last-child 					{   border-radius: 0em 0em 0.6em 0.6em;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
+.ArticlesTable  tfoot tr:first-child th:first-child 				{	border-radius: 0 0 0 0;																	}
+.ArticlesTable  tfoot tr:first-child th:last-child 					{   border-radius: 0 0 0 0;		/* last row trending - TLHC, TRHC, BRHC, BLHC */	}
 
 /* This table is used on the JOURNAL.php page */
 .JournalInvisibleTableBorders 											{	width:305px;	margin:auto;			font-size:12px;			border:0.0em solid slateGray; 		}
@@ -606,4 +606,20 @@ textarea#styled {
 	
 	.alert {
 		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+	}
+
+	.journal_display{ /* Class for the box the journals sit it -  Journals.php */
+		margin: 10px;
+	  box-shadow: 2px 2px 5px #888888;
+	  transition: box-shadow 1s;
+
+	}
+
+	.journal_img{
+		width: 300px;
+	
+	}
+
+	.journal_display:hover{
+	  box-shadow: 2px 2px 10px #888888;
 	}

@@ -10,4 +10,5 @@
 	else if ($_SESSION['Page_Purpose'] == "updatearticles")		{		$Title_Text = "Articles Moderation";	}
 	else if ($_SESSION['Page_Purpose'] == "register")			{		$Title_Text = "Register";	}
 	else if ($_SESSION['Page_Purpose'] == "members")			{		$Title_Text = "Member Page";	}
+	else if ($_SESSION['Page_Purpose'] == "article")			{		$Title_Text = "Article Page";	}
 ?>

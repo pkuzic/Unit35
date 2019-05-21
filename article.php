@@ -118,6 +118,7 @@ if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 	
 	<html>
 		<head>
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 			<?php 
 				include_once 'includes/head.php'
 			?>
@@ -133,7 +134,7 @@ if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 			$_SESSION['ADMINPAGEYN'] = "NO";
 			$_SESSION['MEMBERPAGEYN'] = "YES";
 			
-			$_SESSION['Page_Purpose'] = "journal";
+			$_SESSION['Page_Purpose'] = "article";
 
 			include_once("includes/header.php");
 			include_once("includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
@@ -173,7 +174,7 @@ if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 				
 			
 			<div class="section-box2">	&nbsp; &nbsp; </div>
-				
+				<button onclick="location.href='journal.php';" class="btn btn-primary"><i class="fa fa-chevron-left" style="font-size:13px;"></i> Journal Page</button><br><br>
 <?php	
 	/*	-------------------------------------------------------------------------------------------------------------------------------------------------
 		This table outputs the specific journals down the right-hand-side of the page - There are three parts to the loop
@@ -182,7 +183,7 @@ if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 			(3)......blank
 	-------------------------------------------------------------------------------------------------------------------------------------------------	*/
 ?>				
-				<div class="section-box3">		
+				<div >		
 				
 				<?php
 
@@ -202,31 +203,48 @@ if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 
 <?php	// (1)	?>										
 							<table class="JournalsTable">												 
-								<thead>	<tr>	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >		
-												<?php 	$name_string = "<h11>" . 	"Vol: " . $journal['journal_volume'] . " " . 
+								<thead>	<tr>	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >	
+												<?php 	$name_string = "<h10>" . 	"Vol: " . $journal['journal_volume'] . " " . 
 																					"Iss: " . $journal['journal_issue'] . " " .
 																					$journal['journal_name'] . "<br>" .
 																					date('l jS F Y', $journal['journal_published_date']) . 
-																		"</h11>";
+																		"</h10>";
 														echo "&nbsp; <br>". $name_string . "<br>&nbsp;";
 												?>
 										</th>	</tr>
 								</thead>
 <?php	// (2)	?>																			
 								<tbody>	
-									<tr>	<td colspan="6" align="center"> 		
+									<tr>	<td colspan="6" align="center"> 	<br><br>	
 											<?php 	$imagestring = $journal['journal_image']; ?>
 													<img border="0" <?php echo "src = $imagestring"; ?> align="center" width="324" height="390">	
 											</td>	
 									</tr>
-								</tbody>
-<?php	// (3)	?>																												
-								<tfoot>	
-									<tr>	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >
-												&nbsp <br><br>
-											</th>    
-									</tr>   
-								</tfoot>
+
+
+									<tr>
+										<td>
+
+						<?php							
+								$journalabstracttextwithps = $journal['journal_abstract'];
+								$text = "";
+															
+								for($x = 0; $x <= strlen($journalabstracttextwithps); $x++)
+								{
+									if	( 	substr($journalabstracttextwithps, $x, 1) 		== "<" 	&& 
+											substr($journalabstracttextwithps, $x + 1, 1) 	== "p"	&& 
+											substr($journalabstracttextwithps, $x + 2, 1) 	== ">"	
+										)	{	$x = $x + 4;															}
+									else	{	$text = $text . substr($journalabstracttextwithps, $x, 1);				}
+								}	
+					
+								$journalabstracttextstripped = $text;
+					?>
+					<p><?php echo $text ?></p>
+										</td>
+									</tr>
+								</tbody>																											
+							
 							</table>		
 				<?php
 						}
@@ -246,7 +264,7 @@ if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 						<thead>	<tr>	<th colspan="6" bgcolor= <?php echo $TableColour1; ?>>
 											
 											<h12>
-												&nbsp;<br>Current articles for this journal (<em>Note: visited links will dim</em>)<br>&nbsp;
+												&nbsp;<br><strong>Current articles for this journal (<em>Note: visited links will dim</em>)</strong><br>&nbsp;
 											</h12>
 										</th>    
 								</tr>   

@@ -153,7 +153,7 @@
 								<?php 	$imagestring = $journal['journal_image'];
 										$journalid = $journal['journal_id'];
 									 ?>
-									 <a href="journal.php?id=<?php echo $journalid ?>">
+									 <a href="article.php?id=<?php echo $journalid ?>">
 								<img border="0" class="journalLink" <?php echo "src = $imagestring"; ?> ></a>
 							
 									<?php	

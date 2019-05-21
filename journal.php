@@ -182,12 +182,12 @@ if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 
 				<div class="d-flex flex-wrap">
 		<?php	foreach ($journals as $journal)	{	?>
-							<div class="p-2">
+							<div class="journal_display">
 								<?php 	$imagestring = $journal['journal_image'];
 										$journalid = $journal['journal_id'];
 									 ?>
 									 <a href="article.php?id=<?php echo $journalid ?>">
-								<img border="0" class="journalLink" width="300" <?php echo "src = $imagestring";  ?> ></a>
+								<img border="0" class="journal_img" width="300" <?php echo "src = $imagestring";  ?> ></a>
 							</div>
 									<?php	
 					}
