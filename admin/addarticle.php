@@ -29,9 +29,14 @@
 	<html>
 
 		<head>
+				<?php 
+				include_once '../includes/head.php';
+				include_once("../includes/header.php");
+			?>
 			<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 			<link rel="stylesheet" type="text/css" href=".../CSS/MainStyles.css">
-			
+			<link rel="stylesheet" type="text/css" href="../CSS/bootstrap.css">
+
 			<?php	include_once('./SetupCKEditorScript2.php');	?>			
 			
 		</head>

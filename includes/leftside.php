@@ -26,7 +26,7 @@
 		else {
 	?>
 	<center><div class="btn fakebutton">
-		<form action="members.php" method="post">
+		<form action="/unit35/members.php" method="post">
 		  <div class="form-group">
 			<label for="exampleInputEmail1">Email address</label>
 			<input type="text" class="form-control" name="username" placeholder="Enter Username">
@@ -43,7 +43,7 @@
 	} 
 	if (isset($_SESSION['logged_in']) == true) {
 		?>
-		<center><div class="btn fakebutton"><form action="logout.php" method="post"><button type="submit" class="btn btn-primary">Logout</button></form></div></center>
+		<center><div class="btn fakebutton"><form action="/unit35/logout.php" method="post"><button type="submit" class="btn btn-primary">Logout</button></form></div></center>
 		<?php
 	}
 	?>

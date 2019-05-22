@@ -627,3 +627,15 @@ textarea#styled {
 	.articleUpdate td{
 		padding: 10px;
 	}
+
+
+	.fas{
+		transition: background-color .5s;
+		padding: 5px;
+		border-radius: 5px;
+	}
+
+
+	.fas:hover{
+		background-color: #d1ecf1;
+	}

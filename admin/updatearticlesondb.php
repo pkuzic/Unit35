@@ -60,8 +60,8 @@
 		<body>
 	
 		<?php
-			$_SESSION['ADMINPAGEYN'] = "NO";
-			$_SESSION['MEMBERPAGEYN'] = "YES";
+			$_SESSION['ADMINPAGEYN'] = "YES";
+			$_SESSION['MEMBERPAGEYN'] = "NO";
 			
 			$_SESSION['Page_Purpose'] = "updatearticles";
 
@@ -77,6 +77,16 @@
 	##################################################################################################################################### */
 ?>													
 			<div class="Container">		
+				<?php
+				if (isset($_SESSION['logged_in']))
+				{
+				
+
+						
+						
+					if($_SESSION['logged_in_as_member'] == false && $_SESSION['logged_in_as_a_user'] == true) //If logged in as an Admin
+					{
+?>		
 			<!-- header -->	
 					<div class="container-fluid">
 						<div class="row">
@@ -113,7 +123,7 @@
 					<div class="Container">
 					
 						<table class="articleUpdate"><tr>
-							<td><i class="fas fa-plus"></i></td>
+							<td><i class="fas fa-plus" onclick="location.href='addarticle.php'"></i></td>
 							<td><i class="fas fa-edit"></i></td>
 							<td><i class="fas fa-trash-alt"></i></td>
 							<td><i class="fas fa-eye"></i></td>
@@ -217,6 +227,43 @@
 									
 							<br style="clear: left;" />
 						</div>
+						<?php				}
+					
+					elseif($_SESSION['logged_in_as_member'] == TRUE && $_SESSION['logged_in_as_a_user'] == FALSE)
+					{
+?>
+						<div class = "CenterContent">
+						<?php
+							echo "	<h11>Hello there. <br><br>It appears that you are not a member of staff. 
+									<br><br>Members are not allowed in the administration section
+									<br><br>Please logout out OR return to the members area<p>";
+						?>
+							<a href="../logout.php" class = "memberlink">Logout<p>
+							<a href="../members.php" class = "memberlink">Return to the members area<p>
+						</div>
+					<?php
+					}
+				}
+				
+				else				// not logged in
+				{
+?>
+					<div class = "CenterContent">
+<?php
+						echo "	<h11>Hello there. <br><br>It appears that you are not a logged in. 
+									<br><br>You must log into the system to use administration features
+									<br><br>Please visit the to the administration page...
+									<br><br>If you are a not an employee of the centre, please visit our members section to login;
+									<br><br>Or, please visit our registration page to become a member (registration is FREE)<p><p><p>";
+?>
+						<a href="../members.php" class = "memberlink">Members area</a><p>
+						<a href="../registration.php" class = "memberlink">Registeration</a><p>
+						<a href="../adminpage.php" class = "memberlink">Return to the admin area</a><p>
+							
+					</div>
+							
+<?php
+				} ?>
 					</div>
 				</div>
 			</div>
