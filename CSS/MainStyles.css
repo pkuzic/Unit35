@@ -600,8 +600,8 @@ textarea#styled {
 	}
 	
 	.fakebutton {
-		background-color: #f8f9fa!important;
-		border-color: #f8f9fa!important;
+		/*background-color: #f8f9fa!important;
+		border-color: #f8f9fa!important; */
 	}
 	
 	.alert {

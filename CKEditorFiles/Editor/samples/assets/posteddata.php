@@ -26,7 +26,7 @@ $articles = $article->fetch_all();
 <body>	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	
 	<link rel="stylesheet" type="text/css" href="../../../CSS/MainStyles.css">
-
+	<link rel="stylesheet" type="text/css" href="../../../CSS/bootstrap.css">
 	
 	<?php
 	$_SESSION['ADMINPAGEYN'] = "NO";
@@ -34,14 +34,14 @@ $articles = $article->fetch_all();
 
 	$_SESSION['Page_Purpose'] = "journal";
 
-	include_once("../../../includes/header.php");
+			include_once("../../../includes/header.php");
 			include_once("../../../includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
 			include_once("../../../includes/variables.php"); //new pagepurpose.php to identify the purpose
 			?>	
 
 
-	<?php
-	
+			<?php
+
 
 		function stripheadandtail($stringtostrip)  //Receives a string that comprises of a page. 1 is the start <html> and <body> tags
 												   //2. is the main body of text, which is needed later to display and 3. is the ending tags. 
@@ -54,107 +54,97 @@ $articles = $article->fetch_all();
 
 		?>
 
-			<div class="Container">		
-				<!-- header -->	
-				<div class="container-fluid">
-					<div class="row">
-						<?php 
-						include_once '../../../includes/leftside.php'
-						?>
+		<div class="Container">		
+			<!-- header -->	
+			<div class="container-fluid">
+				<div class="row">
+					<?php 
+					include_once '../../../includes/leftside.php'
+					?>
 
-						<div id="wrapper" class="col-md-8 text-left">
+					<div id="wrapper" class="col-md-8 text-left">
 
-							<div class="PagePurpose">			
-								
-								<table border="0" width="100%">
-									<tr>										
-										<td align="left">
-											<div class="alert alert-info" role="alert">											
-												<?php echo $Title_Text;	?> 	
-											</div>
-										</td>	
-									</tr>
-								</table>
-							</div>
-							<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>
-							<div class="Container">
+						<div class="PagePurpose">			
 
-<?php
-		
-		if (isset($_SESSION['logged_in']) == true)
-		{
-			if($_SESSION['logged_in_as_member'] == FALSE && $_SESSION['logged_in_as_a_user'] == TRUE)
-			{
-				?>
-				<div class="container">
-					
-					<table width="700" class="tableindexroundedtopandbottom"> 
-						<thead>	
-							<tr>	
-								<th colspan="6" bgcolor="#99BBFF">
-									<h12>
-										Success... You have added the following data to the articles table...
-									</h12>
-								</th>   
-							</tr>   
-						</thead>
-					</table>
-					
-					<br>
-					
-					<?php
-					$tablecolour = "#99BBFF"; 
-					$loopcount = 1;
-					
-					if (!empty($_POST))
-					{		
-						foreach ( $_POST as $key => $value )
-						{
-							if ( ( !is_string($value) && !is_numeric($value) ) || !is_string($key) )	{	continue;													}
-							if (get_magic_quotes_gpc())													
-							{	
-								$value = htmlspecialchars( stripslashes((string)$value) );	
-							}
-							else																		
-							{	
-								$value = htmlspecialchars((string)$value);					
-							}
-							
-		/*	-------------------------------------------------------------------------------------------------------------------------------------------------
+							<table border="0" width="100%">
+								<tr>										
+									<td align="left">
+										<div class="alert alert-info" role="alert">											
+											<?php echo $Title_Text;	?> 	
+										</div>
+									</td>	
+								</tr>
+							</table>
+						</div>
+
+						<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>
+						<div class="Container">
+
+							<?php
+
+							if (isset($_SESSION['logged_in']) == true)
+							{
+								if($_SESSION['logged_in_as_member'] == FALSE && $_SESSION['logged_in_as_a_user'] == TRUE)
+								{
+									?>
+									<div class="container">
+
+										<table width="500" class="tableindexroundedtopandbottom"> 
+											<thead>	
+												<tr>	
+													<th colspan="6" bgcolor="#99BBFF">
+														<h12>
+															Success... You have added the following data to the articles table...
+														</h12>
+													</th>   
+												</tr>   
+											</thead>
+										</table>
+
+										<br>
+
+										<?php
+										$tablecolour = "#99BBFF"; 
+										$loopcount = 1;
+
+										if (!empty($_POST))
+										{		
+											foreach ( $_POST as $key => $value )
+											{
+												if ( ( !is_string($value) && !is_numeric($value) ) || !is_string($key) )	{	continue;													}
+												if (get_magic_quotes_gpc())													
+												{	
+													$value = htmlspecialchars( stripslashes((string)$value) );	
+												}
+												else																		
+												{	
+													$value = htmlspecialchars((string)$value);					
+												}
+
+		/*	
 			The following variables marry to the following database fields
 			1....	(variable)	$articletext 		= 		article_title 			(database)
 			2....	(variable)	$journalnumber 		= 		journal_reference 		(database)
 			3....	(variable)	$abstracttext		=		article_abstract		(database)
 			4....	(variable)	$filenameandpath	=		article_reference		(database)
 			5....	(variable)	$authornumber		=		article_author			(database)
-			6....	(variable)	$datenumber			=		article_published_date	(database)	format	1234567890
-
-			--------------------------------------------------------------------------------------------------------------------------------------------	*/
+			6....	(variable)	$datenumber			=		article_published_date	(database)	format	1234567890  */
 
 			if ($loopcount == 1)		{	$articlename = htmlspecialchars((string)$key);		$articletext = $value;							}	
 			elseif ($loopcount == 2)	{	$journalname = htmlspecialchars((string)$key);		$journalnumber = $value;						}	
 			elseif ($loopcount == 3)	{	$abstractname = htmlspecialchars((string)$key);		$lvalue = $value;
 				
 				
-															/* 	----------------------------------------------------------------------
-																start to beautify the <HTML> output from the text area
-																this is probably a workaround, but will do until something 
-																better is developed or another editor is used
-																!! NOTE !! many functions to detect string components do not work with 
-																HTML formatting e.g. you cannot detect the </p><p> pairs with substr or str_replace
-																as the HTML formatting is invisible to these commands. Therefore we have to handle the
-																string character by character and manipulate the string directly
-																-----------------------------------------------------------------	*/
 																
-																$lvalue = stripheadandtail($value);	
-																$abstracttext = $lvalue;		
+													$lvalue = stripheadandtail($value);	
+													$abstracttext = $lvalue;		
 																
-																$text = $abstracttext;
-																$textwithbr = "";
+													$text = $abstracttext;
+													$textwithbr = "";
 																
-																for($x = 0; $x <= strlen($text); $x++)
-																{
-																	if (	substr($text, $x, 1) 		== "&" 	&& 
+												for($x = 0; $x <= strlen($text); $x++)
+													{
+													if (substr($text, $x, 1) 		== "&" 	&& 
 																		substr($text, $x + 1, 1) 	== "l"	&&  
 																		substr($text, $x + 2, 1) 	== "t"	&& 
 																		substr($text, $x + 3, 1) 	== ";" 	&& 
@@ -448,25 +438,25 @@ $articles = $article->fetch_all();
 			}
 			?>
 			
-							</div>
-
-						</div>
-
-					</div>
-					<div class="sidenav col-md-2 sidenav navbar-light"> <!-- Side bar! -->
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies vestibulum luctus. Aenean tincidunt eget felis vel maximus. Nunc id sapien elementum, sagittis quam luctus, dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, augue non cursus sodales, felis tortor dictum elit, fringilla rutrum turpis ex ac libero. Nullam at ipsum laoreet dui blandit finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent auctor iaculis elit eu interdum. Maecenas at libero id ante placerat imperdiet. Quisque vitae cursus ligula. Cras ac scelerisque dui.
-					</div>
-
-					<br style="clear: left;" />
-				</div>
-			</div>
 		</div>
+
 	</div>
 
+</div>
+<div class="sidenav col-md-2 sidenav navbar-light"> <!-- Side bar! -->
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies vestibulum luctus. Aenean tincidunt eget felis vel maximus. Nunc id sapien elementum, sagittis quam luctus, dictum nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc egestas, augue non cursus sodales, felis tortor dictum elit, fringilla rutrum turpis ex ac libero. Nullam at ipsum laoreet dui blandit finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent auctor iaculis elit eu interdum. Maecenas at libero id ante placerat imperdiet. Quisque vitae cursus ligula. Cras ac scelerisque dui.
+</div>
 
-	<!-- END of MAIN BODY div -->								
+<br style="clear: left;" />
+</div>
+</div>
+</div>
+</div>
 
-	<!-- END of PAGE CONTAINER div -->								
+
+<!-- END of MAIN BODY div -->								
+
+<!-- END of PAGE CONTAINER div -->								
 
 </body>
 

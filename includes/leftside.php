@@ -43,7 +43,7 @@
 	} 
 	if (isset($_SESSION['logged_in']) == true) {
 		?>
-		<center><div class="btn fakebutton"><form action="/unit35/logout.php" method="post"><button type="submit" class="btn btn-primary">Logout</button></form></div></center>
+		<center><div class="btn "><form action="/unit35/logout.php" method="post"><button type="submit" class="btn btn-primary">Logout</button></form></div></center>
 		<?php
 	}
 	?>

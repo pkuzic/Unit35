@@ -71,7 +71,7 @@ else
 			?>
 			
 			<?php	
-				include_once('./SetupCKEditorScript1.php');	// this include allows us to use the CKEditor for displaying the text (abstract) - not sure why
+				include_once('./SetupCKEditorScript1.php');
 			?>		
 		</head>
 
@@ -88,12 +88,7 @@ else
 			include_once("includes/variables.php"); //new pagepurpose.php to identify the purpose
 		?>	
 			
-<?php
-/*	########################################################################################################################################
-	This section holds the LHC of the welcome page. It holds a general greeting and general about us
-	The <div class = "container"> is used to center the boxes (the section-box) on the screen	
-	##################################################################################################################################### */
-?>													
+											
 			<div class="Container">		
 			<!-- header -->	
 					<div class="container-fluid">
@@ -116,7 +111,8 @@ else
 										</tr>
 									</table>
 								</div>
-								<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>
+								
+								<div class="alert"> <?php // Main block inside of wrap. Duplicate if required ?>
 												<div class="Container">
 				
 			

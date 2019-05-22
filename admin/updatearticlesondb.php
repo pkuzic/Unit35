@@ -108,7 +108,7 @@
 										</tr>
 									</table>
 								</div>
-								<div class="StyledTable1 alert"> 
+					<div class="StyledTable1 alert"> 
 								
 			<?php
 				
@@ -129,6 +129,7 @@
 							<td><i class="fas fa-eye"></i></td>
 						</tr></table>
 					</div>
+					
 					<div class="Container">	
 						<table class="ArticleTable"> 
 								<thead>	<tr>	<th colspan="13" bgcolor= <?php echo " $tablecolour " ?> >	<h12>&nbsp;</h12>	</th>   </tr>   </thead>
@@ -213,14 +214,14 @@
 							</table>
 						</div>
 						<br>
-					
+						<?php	
+				}
+			?>
 					</div>
 					<hr>
 					<br>
 
-			<?php	
-				}
-			?>
+		
 							</div>
 
 							</div>
