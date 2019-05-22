@@ -44,7 +44,9 @@
 		<body>
 
 			<div class="Container"> 																	<!-- overall page container div -->
-				<div class="Header">		</div> 														<!-- shows the banner at the top of the page -->
+				<div class="Header">		<?php 
+								include_once '../includes/leftside.php'
+							?>	</div> 														<!-- shows the banner at the top of the page -->
 		
 				<div class="section-box">	<h12><?php echo "a"; ?></h12>		</div>
 				<div class="section-box2">	<h12><?php echo "b"; ?></h12>		</div>

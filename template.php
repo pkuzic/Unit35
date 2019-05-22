@@ -17,7 +17,7 @@ $articles = $article->fetch_all();
 <html>
 <head>
 	<?php 
-	include_once '../../../includes/head.php'
+	include_once 'includes/head.php'
 	?>
 
 
@@ -34,7 +34,7 @@ $articles = $article->fetch_all();
 
 	$_SESSION['Page_Purpose'] = "journal";
 
-	include_once("../../../includes/header.php");
+	include_once("includes/header.php");
 			include_once("../../../includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
 			include_once("../../../includes/variables.php"); //new pagepurpose.php to identify the purpose
 			?>	
@@ -59,7 +59,7 @@ $articles = $article->fetch_all();
 				<div class="container-fluid">
 					<div class="row">
 						<?php 
-						include_once '../../../includes/leftside.php'
+						include_once 'includes/leftside.php'
 						?>
 
 						<div id="wrapper" class="col-md-8 text-left">
