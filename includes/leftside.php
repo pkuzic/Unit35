@@ -1,10 +1,10 @@
 <div class="sidenav col-md-2 navbar-light navbar-expand-md">
-	<p><a class="nav-link btn btn-light" href="index.php">Homepage</a></p>
-	<p><a class="nav-link btn btn-light" href="aboutus.php">About us</a></p>
-	<p><a class="nav-link btn btn-light" href="researchers.php">Researchers</a></p>
-	<p><a class="nav-link btn btn-light" href="journal.php">Journal</a></p>
-	<p><a class="nav-link btn btn-light" href="events.php">Events</a></p>
-	<p><a class="nav-link btn btn-light" href="contactus.php">Contact us</a></p>
+	<p><a class="nav-link btn btn-light" href="/unit35/index">Homepage</a></p>
+	<p><a class="nav-link btn btn-light" href="/unit35/aboutus">About us</a></p>
+	<p><a class="nav-link btn btn-light" href="/unit35/researchers">Researchers</a></p>
+	<p><a class="nav-link btn btn-light" href="/unit35/journal">Journal</a></p>
+	<p><a class="nav-link btn btn-light" href="/unit35/events">Events</a></p>
+	<p><a class="nav-link btn btn-light" href="//contactus">Contact us</a></p>
 	
 	<?php  // Don't show register button if the user is logged in
 	if 		(isset($_SESSION['logged_in']) == true)				{		}

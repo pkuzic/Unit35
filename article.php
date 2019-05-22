@@ -48,70 +48,17 @@
 
 
 
-	if (isset($_GET['prevnext']))
-	{
-		if ($_GET['prevnext'] == "1")
-		{
-			$_SESSION['big_journal_number'] = $_SESSION['minnumberofjournals'];
-			$_SESSION['current_journal_number'] = $_SESSION['minnumberofjournals'];	
-		}
-		
-		else if ($_GET['prevnext'] == "prev")
-		{
-			if(isset($_SESSION['current_journal_number']))
-			{
-				if ($_SESSION['current_journal_number'] > $_SESSION['minnumberofjournals'])		
-					$_SESSION['current_journal_number'] = $_SESSION['current_journal_number'] - 1;
-				else																			
-					$_SESSION['current_journal_number'] = $_SESSION['minnumberofjournals'];
-			}	
-			
-			else																				
-				$_SESSION['current_journal_number'] = $_SESSION['minnumberofjournals'];
 
-		}
-
-
-
-		
-		else if ($_GET['prevnext'] == "next")
-		{
-			if(isset($_SESSION['current_journal_number']))
-			{
-				if ($_SESSION['current_journal_number'] < $_SESSION['maxnumberofjournals'])					
-					$_SESSION['current_journal_number'] = $_SESSION['current_journal_number'] + 1;
-				else
-					$_SESSION['current_journal_number'] = $_SESSION['maxnumberofjournals'];
-			}	
-			
-			else			
-				$_SESSION['current_journal_number'] = $_SESSION['maxnumberofjournals'];
-			
-		}
-		
-		if ($_GET['prevnext'] == "show")
-		{
-			if(isset($_SESSION['big_journal_number']))
-			{
-				$_SESSION['big_journal_number'] = $_SESSION['current_journal_number'];
-			}	
-			
-			else			
-				$_SESSION['big_journal_number'] = $_SESSION['minnumberofjournals'];
-		}
-	}
-	
-	else
-	{
-		$_SESSION['current_journal_number'] = 1;
-		$_SESSION['big_journal_number'] = 1;
-	}
-	
 
 
 if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 {
 	$_SESSION['big_journal_number'] =$_GET['id'];
+}
+else
+{
+	header('location: index.php'); //Incase the ID is not set
+	exit();
 }
 
 ?>	
@@ -283,8 +230,8 @@ if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 					?>
 								<?php	// (1)	?>																			
 								<tr>	<th bgcolor = <?php echo "$tablecolour" ?> >
-											<h12>	
-												<img border="0" src = "./images/PDFIcon.png" align="center" width="45" height="45">	
+											<h12>	 <a href="displayarticle.php?id=<?php echo $article['article_id'] ?>">
+												<img border="0" src = "./images/PDFIcon.png" align="center" width="45" height="45">	</a>
 											</h12>	
 										</th>    
 										<?php	// (2)	?>																													

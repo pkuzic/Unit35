@@ -1,27 +1,21 @@
 <?php
 
-/*	########################################################################################################################################
+/*	
 	Start the session - this will enable the setting of the following $_SESSION variables
 	
 	$_SESSION['Page_Purpose'] = "index" - indicates that we are currently displaying the HOME page;
 	
-	##################################################################################################################################### */
+*/
 	
 	if (session_status() == PHP_SESSION_NONE) 
 	{
 		session_start();
 	}
 
-/*	########################################################################################################################################
-	Include the Php libraries
-	
-	article.php		- contains all of the classes that are used throughout the solution
-	connection.php	- connects to the DB
 
-	##################################################################################################################################### */
 
-	include_once ('../includes/connection.php');
-	include_once ('../includes/article.php');
+	include_once ('../CMS/includes/article.php');
+	include_once ('../CMS/includes/connection.php');
 
 	$article = new Article;
 	$articles = $article->fetch_all_date_descending();
@@ -51,43 +45,62 @@
 	$tablecolourbool = 0;
 	$tablecolour = 0;
 	$tablecount = 0;
-		
 ?>	
 	
 	<html>
-
 		<head>
-			<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-			<link rel="stylesheet" type="text/css" href="../CSS/MainStyles.css">
+			<?php 
+				include_once '../includes/head.php'
+			?>
+						<link rel="stylesheet" type="text/css" href="../CSS/MainStyles.css">
+						<link rel="stylesheet" type="text/css" href="../CSS/bootstrap.css">
+						<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 		</head>
 
 		<body>
 	
 		<?php
-			$_SESSION['ADMINPAGEYN'] = "YES";
-			$_SESSION['MEMBERPAGEYN'] = "NO";
+			$_SESSION['ADMINPAGEYN'] = "NO";
+			$_SESSION['MEMBERPAGEYN'] = "YES";
 			
 			$_SESSION['Page_Purpose'] = "updatearticles";
-			include_once("../includes/pagepurpose.php");
+
+			include_once("../includes/header.php");
+			include_once("../includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
+			include_once("../includes/variables.php"); //new pagepurpose.php to identify the purpose
 		?>	
 			
-			<div class="Container">
-				<!-- <table border="0" width="100%" cellspacing="0" cellpadding="0" align=center class="tableindex"> -->
-				
-				<table class="tablewithroundedtopandbottom"> 
-					<thead>	
-						<tr>	
-							<th colspan="6">
-								<h12>
-									&nbsp;<br>Our latest articles (<em>newest article first</em>)...<br>&nbsp;
-								</h12>
-							</th>   
-						</tr>   
-					</thead>
-				</table>
-				<br><br>
-																	
-				<?php
+<?php
+/*	########################################################################################################################################
+	This section holds the LHC of the welcome page. It holds a general greeting and general about us
+	The <div class = "container"> is used to center the boxes (the section-box) on the screen	
+	##################################################################################################################################### */
+?>													
+			<div class="Container">		
+			<!-- header -->	
+					<div class="container-fluid">
+						<div class="row">
+							<?php 
+								include_once '../includes/leftside.php'
+							?>
+
+							<div id="wrapper" class="col-md-8 text-left">
+	
+								<div class="PagePurpose">			
+								
+									<table border="0" width="100%">
+										<tr>										
+											<td align="left">
+												<div class="alert alert-info" role="alert">											
+													<?php echo $Title_Text;	?> 	
+												</div>
+											</td>	
+										</tr>
+									</table>
+								</div>
+								<div class="StyledTable1 alert"> 
+								
+			<?php
 				
 				foreach ($articles as $article)
 				{
@@ -99,13 +112,13 @@
 					
 					<div class="Container">
 					
-					<?php
-						include("../CommonPages/ArticleNavigation.php");		// use an include NOT an include_once as if include_once is used
-																				// then the nave bar only shows once - use include in the 
-																				// ArticleNavigation.php for the same reason
-					?>	
+						<table class="articleUpdate"><tr>
+							<td><i class="fas fa-plus"></i></td>
+							<td><i class="fas fa-edit"></i></td>
+							<td><i class="fas fa-trash-alt"></i></td>
+							<td><i class="fas fa-eye"></i></td>
+						</tr></table>
 					</div>
-					
 					<div class="Container">	
 						<table class="ArticleTable"> 
 								<thead>	<tr>	<th colspan="13" bgcolor= <?php echo " $tablecolour " ?> >	<h12>&nbsp;</h12>	</th>   </tr>   </thead>
@@ -115,7 +128,6 @@
 										<td width="5%" bgcolor= <?php echo " $tablecolour " ?> > 	<h11>	ID				</h11>	</td>	
 										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >			&nbsp;					</td>
 										<td width="43%" bgcolor= <?php echo " $tablecolour " ?> > 	<h11>	Article title	</h11>	</td>	
-										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >			&nbsp;					</td>
 										<td width="15%" bgcolor= <?php echo " $tablecolour " ?> > 	<h11>	Author			</h11>	</td>	
 										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >			&nbsp;					</td>
 										<td width="15%" bgcolor= <?php echo " $tablecolour " ?> > 	<h11>	Published		</h11>	</td>		
@@ -199,31 +211,21 @@
 			<?php	
 				}
 			?>
-				<table class="tableindexroundedtopandbottom"> 
-					<tfoot>	
-						<tr>	
-							<th colspan="6" bgcolor = <?php echo " $tablecolour " ?> >
-								<h12>
-									&nbsp;
-								</h12>
-							</th>    
-						</tr>   
-					</tfoot>
-				</table>
+							</div>
 
+							</div>
+									
+							<br style="clear: left;" />
+						</div>
+					</div>
+				</div>
 			</div>
-			<br style="clear: left;" />
-			
-			
-<!-- END of MAIN BODY div -->								
-			
-<!-- START of FOOTER -->
 
-			<div class="Footer">		</div>					<!-- shows the banner at the bottom of the page -->
-			
-<!-- END of FOOTER -->			
-		</div>	
+
+<!-- END of MAIN BODY div -->								
+
 <!-- END of PAGE CONTAINER div -->								
 
-	</body>
-</html>
+		</body>
+
+	</html>

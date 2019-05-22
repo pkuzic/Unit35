@@ -52,13 +52,7 @@
 			include_once("includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
 			include_once("includes/variables.php"); //new pagepurpose.php to identify the purpose
 		?>	
-			
-<?php
-/*	########################################################################################################################################
-	This section holds the LHC of the welcome page. It holds a general greeting and general about us
-	The <div class = "container"> is used to center the boxes (the section-box) on the screen	
-	##################################################################################################################################### */
-?>													
+														
 			<div class="Container">		
 			<!-- header -->	
 					<div class="container-fluid">

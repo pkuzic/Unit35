@@ -48,64 +48,7 @@
 
 
 
-	if (isset($_GET['prevnext']))
-	{
-		if ($_GET['prevnext'] == "1")
-		{
-			$_SESSION['big_journal_number'] = $_SESSION['minnumberofjournals'];
-			$_SESSION['current_journal_number'] = $_SESSION['minnumberofjournals'];	
-		}
-		
-		else if ($_GET['prevnext'] == "prev")
-		{
-			if(isset($_SESSION['current_journal_number']))
-			{
-				if ($_SESSION['current_journal_number'] > $_SESSION['minnumberofjournals'])		
-					$_SESSION['current_journal_number'] = $_SESSION['current_journal_number'] - 1;
-				else																			
-					$_SESSION['current_journal_number'] = $_SESSION['minnumberofjournals'];
-			}	
-			
-			else																				
-				$_SESSION['current_journal_number'] = $_SESSION['minnumberofjournals'];
 
-		}
-
-
-
-		
-		else if ($_GET['prevnext'] == "next")
-		{
-			if(isset($_SESSION['current_journal_number']))
-			{
-				if ($_SESSION['current_journal_number'] < $_SESSION['maxnumberofjournals'])					
-					$_SESSION['current_journal_number'] = $_SESSION['current_journal_number'] + 1;
-				else
-					$_SESSION['current_journal_number'] = $_SESSION['maxnumberofjournals'];
-			}	
-			
-			else			
-				$_SESSION['current_journal_number'] = $_SESSION['maxnumberofjournals'];
-			
-		}
-		
-		if ($_GET['prevnext'] == "show")
-		{
-			if(isset($_SESSION['big_journal_number']))
-			{
-				$_SESSION['big_journal_number'] = $_SESSION['current_journal_number'];
-			}	
-			
-			else			
-				$_SESSION['big_journal_number'] = $_SESSION['minnumberofjournals'];
-		}
-	}
-	
-	else
-	{
-		$_SESSION['current_journal_number'] = 1;
-		$_SESSION['big_journal_number'] = 1;
-	}
 if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 {
 	$_SESSION['big_journal_number'] =$_GET['id'];
@@ -188,6 +131,14 @@ if(isset($_GET['id']))  //Checks to see if ID is set, prevents undefined Index
 									 ?>
 									 <a href="article.php?id=<?php echo $journalid ?>">
 								<img border="0" class="journal_img" width="300" <?php echo "src = $imagestring";  ?> ></a>
+								<center>
+								<?php 	$name_string = "<h12>" . 	"Vol: " . $journal['journal_volume'] . " " . 
+																					"Iss: " . $journal['journal_issue'] . " " .
+																					$journal['journal_name'] . "<br>" .
+																					date('l jS F Y', $journal['journal_published_date']) . 
+																		"</h12>";
+														echo "&nbsp;<br>" . $name_string . "<br> &nbsp;";
+												?></center>
 							</div>
 									<?php	
 					}
