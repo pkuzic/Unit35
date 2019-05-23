@@ -217,6 +217,16 @@
 
 		//public function find_member($title, $firstname, $lastname, $username, $password, $datenow, $date1year, $email, $newsletter)
 		
+		
+		public function fetch_all_members()
+		{
+			global $pdo;
+			$query = $pdo->prepare("SELECT * FROM members");
+			$query->execute();
+			
+			return $query->fetchAll();			
+		}
+		
 		public function find_member($member_username)
 		{
 			global $pdo;

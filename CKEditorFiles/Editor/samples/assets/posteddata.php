@@ -15,7 +15,7 @@ $articles = $article->fetch_all();
 ?>	
 
 <html>
-<head>
+<head>	
 	<?php 
 	include_once '../../../includes/head.php'
 	?>
@@ -92,7 +92,7 @@ $articles = $article->fetch_all();
 										<table width="500" class="tableindexroundedtopandbottom"> 
 											<thead>	
 												<tr>	
-													<th colspan="6" bgcolor="#99BBFF">
+													<th colspan="6" >
 														<h12>
 															Success... You have added the following data to the articles table...
 														</h12>
@@ -104,7 +104,7 @@ $articles = $article->fetch_all();
 										<br>
 
 										<?php
-										$tablecolour = "#99BBFF"; 
+										
 										$loopcount = 1;
 
 										if (!empty($_POST))
@@ -209,7 +209,7 @@ $articles = $article->fetch_all();
 														<table class="tableindex"> 
 															<thead>	
 																<tr>	
-																	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >	
+																	<th colspan="6" >	
 																		<h12>&nbsp;</h12>	
 																	</th>	
 																</tr>	
@@ -217,15 +217,15 @@ $articles = $article->fetch_all();
 															
 															<tbody>
 																<tr>
-																	<td width = "25%" bgcolor= <?php echo " $tablecolour " ?> > 		
-																		<h11>	<?php	echo $articlename;	?>	</h11>
+																	<td width = "25%" > 		
+																		<h11>	<strong> <?php	echo $articlename;	?></strong>	</h11>
 																	</td>	
 																	
 																	<td width = "25%" >	
 																		<h11>	<?php echo $articletext; ?>		</h11>
 																	</td>	
 																	
-																	<td width = "25%" bgcolor= <?php echo " $tablecolour " ?> > 		
+																	<td width = "25%" > 		
 																		<h11>	<?php	echo $journalname;	?>	</h11>
 																	</td>	
 																	
@@ -235,7 +235,7 @@ $articles = $article->fetch_all();
 																	
 																</tr>
 															</tbody>
-															<tfoot>	<tr>	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >	<h12>	&nbsp;	</h12>	</th>	</tr>	</tfoot>
+															<tfoot>	<tr>	<th colspan="6" >	<h12>	&nbsp;	</h12>	</th>	</tr>	</tfoot>
 														</table>
 														
 														<br>
@@ -243,7 +243,7 @@ $articles = $article->fetch_all();
 														<table class="tableindex"> 
 															<thead>	
 																<tr>	
-																	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >	
+																	<th colspan="6" >	
 																		<h12>&nbsp;</h12>	
 																	</th>	
 																</tr>	
@@ -251,7 +251,7 @@ $articles = $article->fetch_all();
 															
 															<tbody>
 																<tr>
-																	<td width = "25%" bgcolor= <?php echo " $tablecolour " ?> > 		
+																	<td width = "25%" > 		
 																		<h11>	<?php	echo $filename;	?>	</h11>
 																	</td>	
 																	
@@ -264,7 +264,7 @@ $articles = $article->fetch_all();
 																	$users = $user->fetch_data_on_user_ID($authornumber);
 																	?>				
 																	
-																	<td width = "25%" bgcolor= <?php echo " $tablecolour " ?> > 		
+																	<td width = "25%" > 		
 																		<h11>	<?php	echo $authorname;	?>	</h11>
 																	</td>	
 																	
@@ -274,7 +274,7 @@ $articles = $article->fetch_all();
 																	
 																</tr>
 															</tbody>
-															<tfoot>	<tr>	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >	<h12>	&nbsp;	</h12>	</th>	</tr>	</tfoot>
+															<tfoot>	<tr>	<th colspan="6" >	<h12>	&nbsp;	</h12>	</th>	</tr>	</tfoot>
 															
 														</table>					
 														
@@ -283,7 +283,7 @@ $articles = $article->fetch_all();
 														<table class="tableindex"> 
 															<thead>	
 																<tr>	
-																	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >	
+																	<th colspan="6" >	
 																		<h12>&nbsp;</h12>	
 																	</th>	
 																</tr>	
@@ -291,7 +291,7 @@ $articles = $article->fetch_all();
 															
 															<tbody>
 																<tr>
-																	<td width = "25%" bgcolor= <?php echo " $tablecolour " ?> > 		
+																	<td width = "25%" > 		
 																		<h11>	<?php	echo $abstractname;	?>	</h11>
 																	</td>	
 																	
@@ -301,14 +301,14 @@ $articles = $article->fetch_all();
 																</tbody>
 															</tbody>
 
-															<tfoot>	<tr>	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >	<h12>	&nbsp;	</h12>	</th>	</tr>	</tfoot>
+															<tfoot>	<tr>	<th colspan="6" >	<h12>	&nbsp;	</h12>	</th>	</tr>	</tfoot>
 
 														</table>			
 
 														<table class="tableindex"> 
 															<thead>	
 																<tr>	
-																	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >	
+																	<th colspan="6" >	
 																		<h12>&nbsp;</h12>	
 																	</th>	
 																</tr>	
@@ -316,7 +316,7 @@ $articles = $article->fetch_all();
 															
 															<tbody>
 																<tr>
-																	<td width = "25%" bgcolor= <?php echo " $tablecolour " ?> > 		
+																	<td width = "25%" > 		
 																		<h11>	<?php	echo $datename;	?>	</h11>
 																	</td>	
 																	
@@ -326,7 +326,7 @@ $articles = $article->fetch_all();
 																</tbody>
 															</tbody>
 															
-															<tfoot>	<tr>	<th colspan="6" bgcolor= <?php echo " $tablecolour " ?> >	<h12>	&nbsp;	</h12>	</th>	</tr>	</tfoot>
+															<tfoot>	<tr>	<th colspan="6" >	<h12>	&nbsp;	</h12>	</th>	</tr>	</tfoot>
 															<br>
 															
 														</table>
@@ -391,7 +391,7 @@ $articles = $article->fetch_all();
 			else
 			{
 				
-		/*	-------------------------------------------------------------------------------------------------------------------------------------------------
+		/*	
 			The following variables marry to the following database fields
 			1....	(variable)	$articletext 		= 		article_title 			(database)
 			2....	(variable)	$journalnumber 		= 		journal_reference 		(database)
@@ -399,8 +399,7 @@ $articles = $article->fetch_all();
 			4....	(variable)	$filenameandpath	=		article_reference		(database)
 			5....	(variable)	$authornumber		=		article_author			(database)
 			6....	(variable)	$datenumber			=		article_published_date	(database)	format	1234567890
-
-			--------------------------------------------------------------------------------------------------------------------------------------------	*/				
+		*/				
 			
 			$article = new Article;				
 			$article->store_record_on_DB($articletext, $journalnumber, $abstracttext, $filenameandpath, $authornumber, $datenumber);

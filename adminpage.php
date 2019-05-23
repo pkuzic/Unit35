@@ -105,10 +105,10 @@
 			<?php
 						$optioncount = 0;
 				
-						$optionpagearray = array	(	"admin/updatearticlesondb.php",
-														"admin/editstaffmember.php", 	
+						$optionpagearray = array	(	"admin/updatearticlesondb.php", // Done
+														"admin/editstaffmember.php", 	//Done
 														"admin/adminuser.php?id=2", 		
-														"admin/adminuser.php?id=3", 
+														"admin/deleteuser", 
 														"admin/adminmember.php?id=1", 
 														"admin/adminnewsletter.php?id=1", 
 														"admin/adminnewsletter.php?id=2",
@@ -120,7 +120,7 @@
 														"admin/adminjournal.php?id=3",
 														"admin/addarticle.php", 
 														"admin/editarticle.php?id=2", 	
-														"admin/adminarticle.php?id=3",
+														"admin/delete.php",
 														"logout.php"
 													);
 

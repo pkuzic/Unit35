@@ -124,8 +124,8 @@
 					
 						<table class="articleUpdate"><tr>
 							<td><i class="fas fa-plus" onclick="location.href='addarticle.php'"></i></td>
-							<td><i class="fas fa-edit" onclick="location.href='editarticle2.php'"></i></td>
-							<td><i class="fas fa-trash-alt"></i></td>
+							<td><i class="fas fa-edit" onclick="location.href='editarticle3.php?id=<?php echo $article[ 'article_id' ] ?>'"></i></td>
+							<td><i class="fas fa-trash-alt" onclick="location.href='delete.php?id=<?php echo $article[ 'article_id' ] ?>'"></i></td>
 							<td><i class="fas fa-eye"></i></td>
 						</tr></table>
 					</div>
@@ -137,10 +137,10 @@
 								<tbody>	
 									<tr>
 										<td width="5%" bgcolor= <?php echo " $tablecolour " ?> > 	<h11>	ID				</h11>	</td>	
-										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >			&nbsp;					</td>
+										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >&nbsp;								</td>
 										<td width="43%" bgcolor= <?php echo " $tablecolour " ?> > 	<h11>	Article title	</h11>	</td>	
 										<td width="15%" bgcolor= <?php echo " $tablecolour " ?> > 	<h11>	Author			</h11>	</td>	
-										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >			&nbsp;					</td>
+										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >&nbsp;								</td>
 										<td width="15%" bgcolor= <?php echo " $tablecolour " ?> > 	<h11>	Published		</h11>	</td>		
 									</tr>
 								
@@ -152,7 +152,7 @@
 											</h11>
 										</td>	
 								
-										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >	&nbsp;	</td>
+										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >&nbsp;		</td>
 								
 										<td width="43%" bgcolor= <?php echo " $tablecolour " ?> > 		
 											<h11>	<?php 	$name_string = 	$article['article_title'];
@@ -161,7 +161,7 @@
 											</h11>
 										</td>	
 									
-										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >	&nbsp;	</td>
+										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >&nbsp;		</td>
 			
 										<td width="15%" bgcolor= <?php echo " $tablecolour " ?> > 		
 											<h11>
@@ -176,7 +176,7 @@
 										</td>		
 									
 							
-										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >	&nbsp;	</td>
+										<td width="2%" bgcolor= <?php echo " $tablecolour " ?> >&nbsp;		</td>
 								
 										<td width="24%" bgcolor= <?php echo " $tablecolour " ?> > 		
 											<h11>

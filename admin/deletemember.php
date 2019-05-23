@@ -7,24 +7,21 @@ if ( session_status() == PHP_SESSION_NONE ) {
 include_once( '../CMS/includes/article.php' );
 include_once( '../CMS/includes/connection.php' );
 
-$article = new Article;
+$member = new Members;
+$members = $member->fetch_all_members()
 
 if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 	if ( isset( $_GET[ 'id' ] ) ) {
 		$id = $_GET[ 'id' ];
-		$query = $pdo->prepare( 'DELETE FROM journaltable WHERE article_id = ?' );
+		$query = $pdo->prepare( 'DELETE FROM member WHERE member_id = ?' );
 		$query->bindValue( 1, $id );
 		$query->execute();
-		
-	
 
-		//* header( 'Location: delete.php' ); *//
 
-	}
 
-	$articles = $article->fetch_all();
+	} 
+
 	?>
-
 	<html>
 
 	<head>
@@ -78,37 +75,28 @@ if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 								</tr>
 							</table>
 						</div>
-						
-			
 
 						<div class="alert">
 							<!--// Main block inside of wrap. Duplicate if required -->
 							<div class="Container">
 
-							<?php	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
-	if ( isset( $_GET[ 'id' ] ) ) {
-								echo '<script language="javascript">';
-		echo 'alert("File deleted")';
-		echo '</script>'; ?>
-								
-								<?php } }?>
 
-								<form action="delete.php" method="get">
-									<select name="id" style="width: 100%;" >
+								<form action="editstaffmember.php" method="get">
+									<select name="id">
 										<?php 
-											foreach($articles as $article)
-											{
-										?>
-										<option class="form-control" value="<?php echo $article['article_id']; ?>" >
+							foreach($users as $user)
+							{
+						?>
+										<option value="<?php echo $user['user_id']; ?>">
 											<?php
-											echo $article[ 'article_title' ];
+											echo $user[ 'user_name_first' ] ;
+											echo " ";
+											echo  $user[ 'user_name_last' ] ;	
 											?>
 										</option>
-										<?php
-										}
-										?>
-										<input class="form-control" type="submit" value="Submit">
+									<?php } ?>
 									</select>
+									<input class="form-control" type="submit" value="Submit">
 								</form>
 
 							</div>
@@ -117,24 +105,21 @@ if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 						</div>
 
 					</div>
-
-
-					<br style="clear: left;"/>
+					
 				</div>
 			</div>
 		</div>
-	
+		
 
-		<?php
-		} else {
-			header( 'Location: adminpage.php' );
-		}
 
-		?>
 		<!-- END of MAIN BODY div -->
 
 		<!-- END of PAGE CONTAINER div -->
 
 	</body>
-
+	<?php
+} else {
+	header( 'Location: adminpage.php' );
+}
+?>
 	</html>

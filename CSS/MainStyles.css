@@ -639,3 +639,7 @@ textarea#styled {
 	.fas:hover{
 		background-color: #d1ecf1;
 	}
+
+.deleteform{
+	width: 100%;
+}

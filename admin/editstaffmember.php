@@ -1,70 +1,69 @@
-<?php 
+<?php
 
-	session_start();
-	
-	include_once ('../includes/article.php');
-	include_once ('../includes/connection.php');
-		
-	$article = new Article;
-	
-	if (isset($_SESSION['logged_in']))
-	{
-		if (isset($_GET['id']))
-		{
-			$id = $_GET['id'];
-			$query = $pdo->prepare('DELETE FROM articles WHERE article_id = ?');
-			$query->bindValue(1, $id);
-			$query->execute();
-			
-			header('Location: delete.php');
-			
-		}
-		
-		$articles = $article->fetch_all();
+session_start();
+
+include_once( '../CMS/includes/article.php' );
+include_once( '../CMS/includes/connection.php' );
+
+$user = new Users;
+$users = $user->fetch_researcher_details();
+
+if ( isset( $_SESSION[ 'logged_in' ] ) ) {
+	if ( isset( $_GET[ 'id' ] ) ) {
+		$id = $_GET[ 'id' ];
+		$query = $pdo->prepare( 'DELETE FROM users WHERE user_id = ?' );
+		$query->bindValue( 1, $id );
+		$query->execute();
+
+		header( 'Location: editstaffmember.php' );
+
+	}
+
 	?>
-		<html>
+	<html>
 
-			<head>
-				<title>CMS Tutorial</title>
-				<link rel="stylesheet" href="../assets/styles.css">
-			</head>
-		
-			<body>
-				<div class="container">
-					<a href="../index.php" id="logo">CMS</a>
-					<br />
-					
-					<h4>
+	<head>
+		<title>CMS Tutorial</title>
+		<link rel="stylesheet" href="../assets/styles.css">
+		<link rel="stylesheet" type="text/css" href="../CSS/MainStyles.css">
+		<link rel="stylesheet" type="text/css" href="../CSS/bootstrap.css">
+	</head>
+
+	<body>
+		<div class="container">
+			<a href="../index.php" id="logo">CMS</a>
+			<br/>
+
+			<h4>
 						Select and article to delete
 					</h4>
-					
-					<form action = "delete.php" method = "get">
-						<select onchange="this.form.submit();" name="id">
-						<?php 
-							foreach($articles as $article)
+		
+
+			<form action="editstaffmember.php" method="get">
+				<select name="id">
+					<?php 
+							foreach($users as $user)
 							{
 						?>
-								<option value = "<?php echo $article['article_id']; ?>">
-								<?php
-									echo $article['article_title'];
-								?>
-								</option>
-						<?php		
-							}
+					<option value="<?php echo $user['user_id']; ?>">
+						<?php
+						echo $user[ 'user_name_first' ];
 						?>
-						</select>
-							<input class="form-control" type="submit" value="Submit">
-					</form>
-					
-				</div>
-			</body>
+					</option>
+					<?php
+					}
+					?>
+				</select>
+				<input class="form-control" type="submit" value="Submit">
+			</form>
 
-		</html>
+		</div>
+	</body>
+
+	</html>
 	<?php
-	}
-	else
-	{
-		header('Location: adminpage.php');
-	}
+} else {
+	header( 'Location: adminpage.php' );
+}
 
 ?>
