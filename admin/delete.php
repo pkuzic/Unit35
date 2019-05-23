@@ -84,7 +84,7 @@ if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 						<div class="alert">
 							<!--// Main block inside of wrap. Duplicate if required -->
 							<div class="Container">
-
+<!-- POPUP FOR USER TO TELL THEM THEY HAVE LOGGED IN -->
 							<?php	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 	if ( isset( $_GET[ 'id' ] ) ) {
 								echo '<script language="javascript">';

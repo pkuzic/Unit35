@@ -16,7 +16,8 @@ if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 		$query = $pdo->prepare( 'DELETE FROM users WHERE user_id = ?' );
 		$query->bindValue( 1, $id );
 		$query->execute();
-
+		
+		
 
 
 	} 
@@ -79,7 +80,14 @@ if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 						<div class="alert">
 							<!--// Main block inside of wrap. Duplicate if required -->
 							<div class="Container">
-
+								<!-- popup to say user deleted -->
+<?php	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
+	if ( isset( $_GET[ 'id' ] ) ) {
+								echo '<script language="javascript">';
+		echo 'alert("User deleted")';
+		echo '</script>'; ?>
+								
+								<?php } }?>
 
 								<form action="deleteuser.php" method="get">
 									<select name="id">

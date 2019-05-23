@@ -7,19 +7,19 @@ if ( session_status() == PHP_SESSION_NONE ) {
 include_once( '../CMS/includes/article.php' );
 include_once( '../CMS/includes/connection.php' );
 
-$member = new Members;
-$members = $member->fetch_all_members()
+$Member = new Member;
+$members = $Member->fetch_all_members();
 
 if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 	if ( isset( $_GET[ 'id' ] ) ) {
 		$id = $_GET[ 'id' ];
-		$query = $pdo->prepare( 'DELETE FROM member WHERE member_id = ?' );
+		$query = $pdo->prepare( 'DELETE FROM members WHERE member_id = ?' );
 		$query->bindValue( 1, $id );
 		$query->execute();
 
 
 
-	} 
+	}
 
 	?>
 	<html>
@@ -80,21 +80,29 @@ if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 							<!--// Main block inside of wrap. Duplicate if required -->
 							<div class="Container">
 
+								<?php
+								if ( isset( $_SESSION[ 'logged_in' ] ) ) {
+									if ( isset( $_GET[ 'id' ] ) ) {
+										echo '<script language="javascript">';
+										echo 'alert("User deleted")';
+										echo '</script>';
+										?>
 
-								<form action="editstaffmember.php" method="get">
+								<?php } }?>
+								<form action="deletemember.php" method="get">
 									<select name="id">
 										<?php 
-							foreach($users as $user)
+							foreach($members as $Member)
 							{
 						?>
-										<option value="<?php echo $user['user_id']; ?>">
+										<option value="<?php echo $Member['member_id']; ?>">
 											<?php
-											echo $user[ 'user_name_first' ] ;
+											echo $Member[ 'member_name_first' ];
 											echo " ";
-											echo  $user[ 'user_name_last' ] ;	
+											echo $Member[ 'member_name_last' ];
 											?>
 										</option>
-									<?php } ?>
+										<?php } ?>
 									</select>
 									<input class="form-control" type="submit" value="Submit">
 								</form>
@@ -105,11 +113,11 @@ if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 						</div>
 
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
-		
+
 
 
 		<!-- END of MAIN BODY div -->
@@ -118,8 +126,9 @@ if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 
 	</body>
 	<?php
-} else {
-	header( 'Location: adminpage.php' );
-}
-?>
+	} else {
+		header( 'Location: adminpage.php' );
+	}
+	?>
+
 	</html>
