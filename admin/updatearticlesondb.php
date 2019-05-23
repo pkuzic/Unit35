@@ -124,12 +124,12 @@
 					
 						<table class="articleUpdate"><tr>
 							<td><i class="fas fa-plus" onclick="location.href='addarticle.php'"></i></td>
-							<td><i class="fas fa-edit"></i></td>
+							<td><i class="fas fa-edit" onclick="location.href='editarticle2.php'"></i></td>
 							<td><i class="fas fa-trash-alt"></i></td>
 							<td><i class="fas fa-eye"></i></td>
 						</tr></table>
 					</div>
-					
+
 					<div class="Container">	
 						<table class="ArticleTable"> 
 								<thead>	<tr>	<th colspan="13" bgcolor= <?php echo " $tablecolour " ?> >	<h12>&nbsp;</h12>	</th>   </tr>   </thead>

@@ -106,7 +106,7 @@
 						$optioncount = 0;
 				
 						$optionpagearray = array	(	"admin/updatearticlesondb.php",
-														"admin/adminuser.php?id=1", 	
+														"admin/editstaffmember.php", 	
 														"admin/adminuser.php?id=2", 		
 														"admin/adminuser.php?id=3", 
 														"admin/adminmember.php?id=1", 

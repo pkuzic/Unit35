@@ -53,6 +53,7 @@
 							}
 						?>
 						</select>
+							<input class="form-control" type="submit" value="Submit">
 					</form>
 					
 				</div>
