@@ -80,6 +80,7 @@ if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 						<div class="alert">
 							<!--// Main block inside of wrap. Duplicate if required -->
 							<div class="Container">
+								<h4>Delete user</h4>
 								<!-- popup to say user deleted -->
 <?php	if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 	if ( isset( $_GET[ 'id' ] ) ) {

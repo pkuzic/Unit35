@@ -1,24 +1,17 @@
 <?php
 
-/*	########################################################################################################################################
-	Start the session - this will enable the setting of the following $_SESSION variables
-	
-	$_SESSION['Page_Purpose'] = "index" - indicates that we are currently displaying the HOME page;
-	
-	##################################################################################################################################### */
 	
 	if (session_status() == PHP_SESSION_NONE) 
 	{
 		session_start();
 	}
 
-/*	########################################################################################################################################
+/*	
 	Include the Php libraries
 	
 	article.php		- contains all of the classes that are used throughout the solution
 	connection.php	- connects to the DB
-
-	##################################################################################################################################### */
+*/
 
 	include_once ('./CMS/includes/article.php');
 	include_once ('./CMS/includes/connection.php');
@@ -109,7 +102,7 @@
 														"admin/editstaffmember.php", 	//Done
 														"admin/adminuser.php?id=2", 		
 														"admin/deleteuser", 
-														"admin/adminmember.php?id=1", 
+														"admin/deletemember", 
 														"admin/adminnewsletter.php?id=1", 
 														"admin/adminnewsletter.php?id=2",
 														"admin/adminnews.php?id=1", 	

@@ -50,7 +50,7 @@ $tablecount = 0;
 	$_SESSION['ADMINPAGEYN'] = "NO";
 	$_SESSION['MEMBERPAGEYN'] = "YES";
 
-	$_SESSION['Page_Purpose'] = "journal";
+	$_SESSION['Page_Purpose'] = "adminpage";
 
 	include_once("../includes/header.php");
 		include_once("../includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
@@ -83,7 +83,7 @@ $tablecount = 0;
 						<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>
 						<div class="Container">
 
-
+	<h4>Add article</h4>
 							<?php
 							if (isset($_SESSION['logged_in']))
 							{

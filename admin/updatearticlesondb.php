@@ -77,6 +77,7 @@
 	##################################################################################################################################### */
 ?>													
 			<div class="Container">		
+					
 				<?php
 				if (isset($_SESSION['logged_in']))
 				{
@@ -124,7 +125,7 @@
 					
 						<table class="articleUpdate"><tr>
 							<td><i class="fas fa-plus" onclick="location.href='addarticle.php'"></i></td>
-							<td><i class="fas fa-edit" onclick="location.href='editarticle3.php?id=<?php echo $article[ 'article_id' ] ?>'"></i></td>
+							<td><i class="fas fa-edit" onclick="location.href='editarticle.php?id=<?php echo $article[ 'article_id' ] ?>'"></i></td>
 							<td><i class="fas fa-trash-alt" onclick="location.href='delete.php?id=<?php echo $article[ 'article_id' ] ?>'"></i></td>
 							<td><i class="fas fa-eye"></i></td>
 						</tr></table>

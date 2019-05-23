@@ -46,7 +46,7 @@ if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 		$_SESSION[ 'ADMINPAGEYN' ] = "NO";
 		$_SESSION[ 'MEMBERPAGEYN' ] = "YES";
 
-		$_SESSION[ 'Page_Purpose' ] = "adminpage"; //Page purpose shows the title
+		$_SESSION[ 'Page_Purpose' ] = "deletearticle"; //Page purpose shows the title
 
 		include_once( "../includes/header.php" ); //Header of the website
 		include_once( "../includes/pagepurpose.php" ); //new pagepurpose.php to identify the purpose

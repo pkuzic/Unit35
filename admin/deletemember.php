@@ -79,6 +79,7 @@ if ( isset( $_SESSION[ 'logged_in' ] ) ) {
 						<div class="alert">
 							<!--// Main block inside of wrap. Duplicate if required -->
 							<div class="Container">
+									<h4>Delete member</h4>
 
 								<?php
 								if ( isset( $_SESSION[ 'logged_in' ] ) ) {

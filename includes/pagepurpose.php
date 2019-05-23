@@ -11,4 +11,7 @@
 	else if ($_SESSION['Page_Purpose'] == "register")			{		$Title_Text = "Register";	}
 	else if ($_SESSION['Page_Purpose'] == "members")			{		$Title_Text = "Member Page";	}
 	else if ($_SESSION['Page_Purpose'] == "article")			{		$Title_Text = "Article Page";	}
+	else if ($_SESSION['Page_Purpose'] == "deletearticle")		{		$Title_Text = "Delete Article ";	}
+
+
 ?>
