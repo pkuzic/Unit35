@@ -9,27 +9,9 @@ if (session_status() == PHP_SESSION_NONE)
 include_once ('../CMS/includes/article.php');
 include_once ('../CMS/includes/connection.php');
 
-$journal = new Journal;
-$journals = $journal->fetch_journal_details();
-$journals2 = $journal->fetch_journal_details();
+$Member = new Member;
+$members = $Member->fetch_all_members();
 
-$user = new Users;
-$users = $user->fetch_researcher_details();
-
-$article = new Article;
-$articles = $article->fetch_all();
-
-$tablecolourbool = 0;
-$tablecolour = 0;
-$tablecount = 0;
-
-if ( isset( $_GET[ 'id' ] ) ) {
-	$id = $_GET[ 'id' ];
-	$data = $article->fetch_data( $id );
-} else {
-	header( 'location: ../index.php' );
-	exit();
-}
 
 
 ?>	
@@ -53,7 +35,7 @@ if ( isset( $_GET[ 'id' ] ) ) {
 		$_SESSION['ADMINPAGEYN'] = "NO";
 		$_SESSION['MEMBERPAGEYN'] = "YES";
 
-		$_SESSION['Page_Purpose'] = "journal"; //Page purpose shows the title
+		$_SESSION['Page_Purpose'] = "editmember"; //Page purpose shows the title
 
 		include_once("../includes/header.php"); //Header of the website
 		include_once("../includes/pagepurpose.php"); //new pagepurpose.php to identify the purpose
@@ -109,22 +91,22 @@ if ( isset( $_GET[ 'id' ] ) ) {
 			<form action="../CKEditorFiles/Editor/samples/sample_posteddata.php" method="post">
 
 				<h11>
-					Please input the <strong>NEW details</strong> for the<strong> current </strong>article
+					Please input the <strong>NEW details</strong> for the<strong> current </strong>member
 					<small>** PLEASE NOTE - ALL fields must be completed </small>
 					<br>
 					<hr><br> Original title for this article: <br><br>
-					<?php echo "<h11>' <i> $data[article_title] </i>'</h11>" ; ?><br><br>
+					<?php echo "<h11>' <i> $data[member_name_first] </i>'</h11>" ; ?><br><br>
 
 					<!-- Grab new title -->
 
-					Please enter the <strong>NEW</strong> title for this article <br>
+					Please enter the <strong>NEW</strong> first name for this user <br>
 
-					<?php $titletext = $data['article_title']; ?>
-					<input type="text" name="new_article_title" size=90 value="<?php echo $titletext; ?>"/>
+					<?php $membernamefirst = $data['member_name_first']; ?>
+					<input type="text" name="new_article_title" size=90 value="<?php echo $membernamefirst; ?>"/>
 					<br><br>
 					<hr><br> Original journal entry for this article: <br><br>
 					<?php 
-									foreach($journals as $journal)
+									foreach($members as $Member)
 									{
 										if ($journal['journal_id'] == $data['journal_reference'])
 										{
