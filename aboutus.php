@@ -74,7 +74,23 @@
 									</table>
 								</div>
 								<div class="StyledTable1 alert"> <?php // Main block inside of wrap. Duplicate if required ?>
-									<img border="0" src="./images/UnderConstruction.jpg" width="183" height="204">	
+									<p>
+									<i>Can we go to the very root of conflict and be free from it?
+									<br><br>
+									Can we go to the very root of illness and be free from it?
+									<br><br>
+									Can we go to the very root of all things within our reality, and free ourselves from the inauthentic and manufactured meanings which have been bestowed upon them for centuries?</i>
+									<br><br>
+									Instead, opening ourselves up to contemplate, with the whole of our being and our authentic selves, the very essence of our True relationship with all phenomena.
+									<br><br>
+									If you say; “Yes, there might be a different way of knowing and being in the world”, a safe and nurturing space is allowed to gently emerge; providing us the opportunity to communicate with each other and hold a living enquiry, together.
+									<br><br>
+									If you choose to live in a world where anything and everything is possible, and where absence of evidence is not evidence of absence, then we invite you to join us in this shared space of enquiry.
+									<br><br>
+									As PhD researchers we are exploring the deeper implications of quantum physics from a philosophical and spiritual perspective. Essentially, enquiring into how we can we move forward from a Newtonian physical view of the universe as being either/or, black/white, binary and abstract, to a space of deep interconnection and wholeness.
+									<br><br>
+									We invite you to share this journey with us as we explore the ‘space between’ different ways of knowing, enquiring into the possibility of bringing many worlds together.
+									</p> 
 								</div>
 
 							</div>

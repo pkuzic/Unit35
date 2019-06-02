@@ -4,7 +4,7 @@
 	<p><a class="nav-link btn btn-light" href="/unit35/researchers">Researchers</a></p>
 	<p><a class="nav-link btn btn-light" href="/unit35/journal">Journal</a></p>
 	<p><a class="nav-link btn btn-light" href="/unit35/events">Events</a></p>
-	<p><a class="nav-link btn btn-light" href="//contactus">Contact us</a></p>
+	<p><a class="nav-link btn btn-light" href="/unit35/contactus">Contact us</a></p>
 	
 	<?php  // Don't show register button if the user is logged in
 	if 		(isset($_SESSION['logged_in']) == true)				{		}
